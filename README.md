@@ -56,7 +56,7 @@ REPRODUCED: D3 results, main-table repetitions and figure data match the release
 
 ## 从原始数据完整重建
 
-按 `docs/RESULTS.md` 的"Inputs"表依次执行：构建测试床、对各系统编码打分（一块 RTX 4080 SUPER 上约 4.2 GPU 小时）、调用判官（DeepSeek 开放平台按挂牌价约 271 元）、运行评估器（论文全部表格约 56 个进程小时）。判官调用通过环境变量 `DS_BASE_URL` 与 `DS_API_KEY` 配置，代码不从仓库内的任何文件读取密钥。
+按 `docs/RESULTS.md` 的"Inputs"表依次执行：构建测试床、对各系统编码打分（一块 RTX 4080 SUPER 上约 4.2 GPU 小时）、调用判官（DeepSeek 开放平台按挂牌价约 271 元）、运行评估器（`results/runs/logs/` 中 980 条重复记录合计约 26 个进程小时）。判官调用通过环境变量 `DS_BASE_URL` 与 `DS_API_KEY` 配置，代码不从仓库内的任何文件读取密钥。
 
 ## 目录结构
 
@@ -130,7 +130,7 @@ All paths are relative to one root directory, `WITNESS_ROOT`.
 
 ## Rebuilding from raw data
 
-Follow the "Inputs" table of `docs/RESULTS.md`: build the testbeds, encode and score the systems (about 4.2 GPU hours on one RTX 4080 SUPER), call the judges (about 271 yuan at DeepSeek list prices), and run the evaluator (about 56 process hours for every table of the paper). Judge calls are configured by the environment variables `DS_BASE_URL` and `DS_API_KEY`; the code never reads a key from a file in the repository.
+Follow the "Inputs" table of `docs/RESULTS.md`: build the testbeds, encode and score the systems (about 4.2 GPU hours on one RTX 4080 SUPER), call the judges (about 271 yuan at DeepSeek list prices), and run the evaluator (the 980 repetition records in `results/runs/logs/` add up to about 26 process hours). Judge calls are configured by the environment variables `DS_BASE_URL` and `DS_API_KEY`; the code never reads a key from a file in the repository.
 
 ## Layout
 
