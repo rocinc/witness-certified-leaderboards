@@ -1,0 +1,13 @@
+frame N=30529 rho=0.0; group sizes: {'lex_only': 1962, 'neural_only': 10370, 'both': 18197}
+state (flash,pro): per group n / mean u / mean judge error b
+  (+0,+0) lex_only: n=  795 u=0.013 b=-0.013 | neural_only: n= 2984 u=0.025 b=-0.025 | both: n= 3497 u=0.024 b=-0.024
+  (+1,+0) lex_only: n=  194 u=0.031 b=-0.031 | neural_only: n= 1035 u=0.054 b=-0.054 | both: n= 1565 u=0.050 b=-0.050
+  (+0,+1) lex_only: n=   56 u=0.000 b=+0.000 | neural_only: n=  302 u=0.046 b=-0.046 | both: n=  485 u=0.027 b=-0.027
+  (+1,+1) lex_only: n=  630 u=0.052 b=-0.052 | neural_only: n= 3535 u=0.081 b=-0.081 | both: n= 6407 u=0.077 b=-0.077
+  (+2,+1) lex_only: n=   88 u=0.091 b=+0.409 | neural_only: n=  566 u=0.150 b=+0.350 | both: n= 1336 u=0.147 b=+0.353
+  (+0,+2) lex_only: n=    4 u=0.000 b=+0.500 | neural_only: n=   13 u=0.000 b=+0.500 | both: n=   56 u=0.089 b=+0.411
+  (+1,+2) lex_only: n=   45 u=0.022 b=+0.478 | neural_only: n=  369 u=0.133 b=+0.367 | both: n=  849 u=0.098 b=+0.402
+  (+2,+2) lex_only: n=  149 u=0.114 b=+0.886 | neural_only: n= 1561 u=0.218 b=+0.782 | both: n= 3986 u=0.191 b=+0.809
+pooled state-weighted gap b(lex_only) - b(neural_only) = +0.0309  query-bootstrap 95% [+0.0213, +0.0405]
+DONE
+EXIT:0

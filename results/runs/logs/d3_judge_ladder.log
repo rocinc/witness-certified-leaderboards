@@ -1,0 +1,277 @@
+md5 witness_d3_judge_ladder.py d81f4fe95607214b1c728faf4bf22d27
+md5 witness.py a0535c091d9ab47debee7bc009b7c1b5
+md5 witness_d3.py df1f121dfd3b1cd198d46361a3edf38b
+frame N=61554 (L 8989, U 52565); labels 843 (batch 1 470, batch 2 373; U 705, L 138); mixture a=0.558
+BM25 char1 recomputed for every frame item; stored top-100 scores reproduced for all queries
+LLM mean marginal grade shares on the frame (target of the score-judge thresholds): [0.7153, 0.1963, 0.0884]
+cos_bge_m3:
+   thresholds [0.6076, 0.7033] -> shares [0.7153, 0.1963, 0.0884]
+cos_e5_small:
+   thresholds [0.8909, 0.9148] -> shares [0.7153, 0.1963, 0.0884]
+cos_text2vec_zh:
+   thresholds [0.5633, 0.6348] -> shares [0.7153, 0.1963, 0.0884]
+bm25_char1:
+   thresholds [9.6845, 13.4602] -> shares [0.7153, 0.1963, 0.0884]
+[S] content/score bge_m3 cosine (continuous) AUC on U 0.818 [0.773, 0.860]
+[S] content/score e5_small cosine (continuous) AUC on U 0.807 [0.763, 0.848]
+[S] content/score text2vec_zh cosine (continuous) AUC on U 0.676 [0.617, 0.731]
+[S] bm25_char1 score (continuous) AUC on U 0.636 [0.575, 0.697]
+==== rung pro+flash: 2 judge(s), content feature bge_m3
+[S] pro+flash: AUC on U mean grade 0.874 [0.822, 0.922]; P(y>=1) plug-in 0.871 [0.820, 0.919]; states 9
+[S] pro+flash component 0: weighted exact agreement 0.828 [0.799, 0.855], binary 0.908 [0.886, 0.929] (all labels)
+[S] pro+flash component 1: weighted exact agreement 0.828 [0.799, 0.854], binary 0.898 [0.873, 0.920] (all labels)
+[P] pro+flash pu: e(x,1) on U mean 0.196 range [0.057, 0.899]; e(x,2) mean 0.194
+[P] pro+flash pu_nc: e(x,1) on U mean 0.197 range [0.059, 0.894]; e(x,2) mean 0.198
+[P] pro+flash pu           AUC on U 0.884 [0.830, 0.936]; mean P(y>=1) on U 0.121; mean(p - y) on labelled U -0.054; AUC within judge states (4 states) 0.549 [0.417, 0.674]
+[P] pro+flash pu_prior     AUC on U 0.912 [0.865, 0.950]; mean P(y>=1) on U 0.149; mean(p - y) on labelled U -0.027; AUC within judge states (4 states) 0.681 [0.572, 0.788]
+[P] pro+flash pu_nc        AUC on U 0.848 [0.771, 0.920]; mean P(y>=1) on U 0.121; mean(p - y) on labelled U -0.053; AUC within judge states (4 states) 0.369 [0.259, 0.522]
+[P] pro+flash pu_nc_prior  AUC on U 0.896 [0.832, 0.947]; mean P(y>=1) on U 0.150; mean(p - y) on labelled U -0.026; AUC within judge states (4 states) 0.600 [0.446, 0.758]
+[P] pro+flash judge        AUC on U 0.871 [0.820, 0.919]; mean P(y>=1) on U 0.172; mean(p - y) on labelled U -0.001
+[P] pro+flash: corr(posterior, prior) of P(y>=1) on U: pu 0.9586, pu_nc 0.9591
+[D] pro+flash judge            certified BH 13/21, BY 12/21; mean SE rho=0 0.0647, 1/2 0.0554, 1 0.0786
+[D] pro+flash judge_cos        certified BH 13/21, BY 12/21; mean SE rho=0 0.0647, 1/2 0.0551, 1 0.0773
+[D] pro+flash pu               certified BH 13/21, BY 12/21; mean SE rho=0 0.0653, 1/2 0.0565, 1 0.0795
+[D] pro+flash pu_prior         certified BH 13/21, BY 12/21; mean SE rho=0 0.0647, 1/2 0.0553, 1 0.0781
+[D] pro+flash pu_nc            certified BH 13/21, BY 12/21; mean SE rho=0 0.0652, 1/2 0.0567, 1 0.0799
+[D] pro+flash pu_nc_prior      certified BH 13/21, BY 12/21; mean SE rho=0 0.0647, 1/2 0.0557, 1 0.0789
+[D] pro+flash SE ratio judge_cos / judge per pair: rho=0 median 1.001 [0.990, 1.002] boot CI [0.998, 1.004]; rho=1/2 median 0.996 [0.984, 1.002] boot CI [0.986, 1.007]; rho=1 median 0.985 [0.968, 1.000] boot CI [0.967, 1.005]; BH decisions differing: 0
+[D] pro+flash SE ratio pu / judge per pair: rho=0 median 1.008 [0.999, 1.016] boot CI [1.000, 1.017]; rho=1/2 median 1.026 [0.999, 1.034] boot CI [1.007, 1.040]; rho=1 median 1.013 [0.995, 1.021] boot CI [1.002, 1.025]; BH decisions differing: 0
+[D] pro+flash SE ratio pu_prior / judge per pair: rho=0 median 1.000 [0.985, 1.008] boot CI [0.992, 1.010]; rho=1/2 median 1.000 [0.972, 1.013] boot CI [0.987, 1.011]; rho=1 median 0.992 [0.971, 1.007] boot CI [0.983, 1.003]; BH decisions differing: 0
+[D] pro+flash SE ratio pu_nc / judge per pair: rho=0 median 1.007 [1.001, 1.016] boot CI [0.999, 1.017]; rho=1/2 median 1.030 [1.001, 1.041] boot CI [1.012, 1.046]; rho=1 median 1.018 [0.998, 1.031] boot CI [1.007, 1.032]; BH decisions differing: 0
+[D] pro+flash SE ratio pu_nc_prior / judge per pair: rho=0 median 1.001 [0.990, 1.008] boot CI [0.994, 1.008]; rho=1/2 median 1.007 [0.989, 1.015] boot CI [0.998, 1.017]; rho=1 median 1.004 [0.985, 1.008] boot CI [0.996, 1.013]; BH decisions differing: 0
+[D] pro+flash judge+fam        certified BH 14/21, BY 12/21; mean SE rho=0 0.0641, 1/2 0.0545, 1 0.0767
+[D] pro+flash judge_cos+fam    certified BH 14/21, BY 12/21; mean SE rho=0 0.0641, 1/2 0.0545, 1 0.0764
+[D] pro+flash pu+fam           certified BH 13/21, BY 12/21; mean SE rho=0 0.0644, 1/2 0.0548, 1 0.0766
+[D] pro+flash pu_prior+fam     certified BH 13/21, BY 12/21; mean SE rho=0 0.0642, 1/2 0.0544, 1 0.0763
+[D] pro+flash pu_nc+fam        certified BH 14/21, BY 12/21; mean SE rho=0 0.0643, 1/2 0.0550, 1 0.0771
+[D] pro+flash pu_nc_prior+fam  certified BH 14/21, BY 12/21; mean SE rho=0 0.0641, 1/2 0.0547, 1 0.0769
+[D] pro+flash SE ratio judge_cos+fam / judge+fam per pair: rho=0 median 1.000 [0.998, 1.002] boot CI [0.998, 1.004]; rho=1/2 median 1.001 [0.997, 1.003] boot CI [0.997, 1.005]; rho=1 median 0.996 [0.991, 1.000] boot CI [0.991, 1.003]; BH decisions differing: 0
+[D] pro+flash SE ratio pu+fam / judge+fam per pair: rho=0 median 1.004 [0.996, 1.010] boot CI [0.997, 1.011]; rho=1/2 median 1.006 [0.991, 1.015] boot CI [0.997, 1.018]; rho=1 median 0.999 [0.990, 1.005] boot CI [0.991, 1.009]; BH decisions differing: 1
+[D] pro+flash SE ratio pu_prior+fam / judge+fam per pair: rho=0 median 1.001 [0.995, 1.007] boot CI [0.994, 1.009]; rho=1/2 median 0.997 [0.988, 1.008] boot CI [0.989, 1.007]; rho=1 median 0.996 [0.977, 1.003] boot CI [0.986, 1.003]; BH decisions differing: 1
+[D] pro+flash SE ratio pu_nc+fam / judge+fam per pair: rho=0 median 1.003 [0.998, 1.011] boot CI [0.995, 1.010]; rho=1/2 median 1.011 [0.995, 1.022] boot CI [1.000, 1.027]; rho=1 median 1.006 [0.994, 1.018] boot CI [0.996, 1.020]; BH decisions differing: 0
+[D] pro+flash SE ratio pu_nc_prior+fam / judge+fam per pair: rho=0 median 1.000 [0.994, 1.006] boot CI [0.994, 1.006]; rho=1/2 median 1.004 [1.000, 1.009] boot CI [0.998, 1.011]; rho=1 median 1.004 [0.991, 1.008] boot CI [0.999, 1.008]; BH decisions differing: 0
+==== rung pro: 1 judge(s), content feature bge_m3
+[S] pro: AUC on U mean grade 0.822 [0.773, 0.866]; P(y>=1) plug-in 0.817 [0.769, 0.861]; states 3
+[S] pro component 0: weighted exact agreement 0.828 [0.799, 0.855], binary 0.908 [0.886, 0.929] (all labels)
+[P] pro pu: e(x,1) on U mean 0.192 range [0.055, 0.894]; e(x,2) mean 0.188
+[P] pro pu_nc: e(x,1) on U mean 0.189 range [0.055, 0.886]; e(x,2) mean 0.187
+[P] pro pu           AUC on U 0.870 [0.821, 0.916]; mean P(y>=1) on U 0.127; mean(p - y) on labelled U -0.046; AUC within judge states (2 states) 0.645 [0.552, 0.731]
+[P] pro pu_prior     AUC on U 0.906 [0.862, 0.942]; mean P(y>=1) on U 0.156; mean(p - y) on labelled U -0.019; AUC within judge states (2 states) 0.753 [0.672, 0.829]
+[P] pro pu_nc        AUC on U 0.798 [0.725, 0.865]; mean P(y>=1) on U 0.133; mean(p - y) on labelled U -0.040; AUC within judge states (2 states) 0.427 [0.345, 0.530]
+[P] pro pu_nc_prior  AUC on U 0.869 [0.807, 0.921]; mean P(y>=1) on U 0.161; mean(p - y) on labelled U -0.014; AUC within judge states (2 states) 0.641 [0.525, 0.756]
+[P] pro judge        AUC on U 0.817 [0.769, 0.861]; mean P(y>=1) on U 0.154; mean(p - y) on labelled U -0.019
+[P] pro: corr(posterior, prior) of P(y>=1) on U: pu 0.9600, pu_nc 0.9634
+[D] pro judge            certified BH 14/21, BY 12/21; mean SE rho=0 0.0687, 1/2 0.0602, 1 0.0854
+[D] pro judge_cos        certified BH 14/21, BY 12/21; mean SE rho=0 0.0686, 1/2 0.0597, 1 0.0835
+[D] pro pu               certified BH 13/21, BY 12/21; mean SE rho=0 0.0691, 1/2 0.0611, 1 0.0856
+[D] pro pu_prior         certified BH 14/21, BY 12/21; mean SE rho=0 0.0683, 1/2 0.0596, 1 0.0841
+[D] pro pu_nc            certified BH 14/21, BY 12/21; mean SE rho=0 0.0689, 1/2 0.0612, 1 0.0862
+[D] pro pu_nc_prior      certified BH 14/21, BY 12/21; mean SE rho=0 0.0685, 1/2 0.0600, 1 0.0850
+[D] pro SE ratio judge_cos / judge per pair: rho=0 median 1.000 [0.991, 1.002] boot CI [0.997, 1.004]; rho=1/2 median 0.991 [0.978, 1.001] boot CI [0.979, 1.003]; rho=1 median 0.981 [0.960, 0.998] boot CI [0.960, 1.001]; BH decisions differing: 0
+[D] pro SE ratio pu / judge per pair: rho=0 median 1.006 [0.991, 1.014] boot CI [0.997, 1.017]; rho=1/2 median 1.017 [0.983, 1.030] boot CI [0.999, 1.036]; rho=1 median 1.004 [0.981, 1.015] boot CI [0.989, 1.018]; BH decisions differing: 1
+[D] pro SE ratio pu_prior / judge per pair: rho=0 median 0.997 [0.976, 1.004] boot CI [0.984, 1.008]; rho=1/2 median 0.991 [0.960, 1.008] boot CI [0.974, 1.005]; rho=1 median 0.983 [0.963, 1.004] boot CI [0.971, 0.999]; BH decisions differing: 0
+[D] pro SE ratio pu_nc / judge per pair: rho=0 median 1.003 [0.999, 1.009] boot CI [0.997, 1.013]; rho=1/2 median 1.018 [1.001, 1.031] boot CI [1.005, 1.033]; rho=1 median 1.009 [0.997, 1.022] boot CI [0.999, 1.023]; BH decisions differing: 0
+[D] pro SE ratio pu_nc_prior / judge per pair: rho=0 median 0.998 [0.984, 1.004] boot CI [0.987, 1.008]; rho=1/2 median 0.997 [0.982, 1.005] boot CI [0.985, 1.008]; rho=1 median 0.995 [0.981, 1.005] boot CI [0.983, 1.008]; BH decisions differing: 0
+[D] pro judge+fam        certified BH 15/21, BY 12/21; mean SE rho=0 0.0680, 1/2 0.0590, 1 0.0830
+[D] pro judge_cos+fam    certified BH 15/21, BY 12/21; mean SE rho=0 0.0680, 1/2 0.0589, 1 0.0825
+[D] pro pu+fam           certified BH 14/21, BY 12/21; mean SE rho=0 0.0682, 1/2 0.0592, 1 0.0824
+[D] pro pu_prior+fam     certified BH 14/21, BY 12/21; mean SE rho=0 0.0679, 1/2 0.0587, 1 0.0824
+[D] pro pu_nc+fam        certified BH 15/21, BY 12/21; mean SE rho=0 0.0680, 1/2 0.0592, 1 0.0830
+[D] pro pu_nc_prior+fam  certified BH 16/21, BY 12/21; mean SE rho=0 0.0679, 1/2 0.0590, 1 0.0832
+[D] pro SE ratio judge_cos+fam / judge+fam per pair: rho=0 median 1.000 [0.997, 1.002] boot CI [0.998, 1.003]; rho=1/2 median 0.999 [0.995, 1.001] boot CI [0.995, 1.005]; rho=1 median 0.993 [0.986, 1.000] boot CI [0.986, 1.002]; BH decisions differing: 0
+[D] pro SE ratio pu+fam / judge+fam per pair: rho=0 median 1.003 [0.993, 1.008] boot CI [0.996, 1.012]; rho=1/2 median 1.003 [0.985, 1.013] boot CI [0.991, 1.016]; rho=1 median 0.994 [0.981, 1.003] boot CI [0.981, 1.005]; BH decisions differing: 1
+[D] pro SE ratio pu_prior+fam / judge+fam per pair: rho=0 median 0.998 [0.992, 1.004] boot CI [0.990, 1.009]; rho=1/2 median 0.996 [0.984, 1.007] boot CI [0.985, 1.007]; rho=1 median 0.992 [0.979, 1.002] boot CI [0.981, 1.004]; BH decisions differing: 1
+[D] pro SE ratio pu_nc+fam / judge+fam per pair: rho=0 median 1.001 [0.997, 1.005] boot CI [0.995, 1.007]; rho=1/2 median 1.003 [0.998, 1.013] boot CI [0.997, 1.012]; rho=1 median 1.000 [0.994, 1.006] boot CI [0.994, 1.008]; BH decisions differing: 0
+[D] pro SE ratio pu_nc_prior+fam / judge+fam per pair: rho=0 median 1.000 [0.994, 1.005] boot CI [0.992, 1.007]; rho=1/2 median 1.002 [0.995, 1.007] boot CI [0.995, 1.007]; rho=1 median 1.002 [0.996, 1.005] boot CI [0.997, 1.006]; BH decisions differing: 1
+==== rung flash: 1 judge(s), content feature bge_m3
+[S] flash: AUC on U mean grade 0.846 [0.795, 0.894]; P(y>=1) plug-in 0.839 [0.789, 0.886]; states 3
+[S] flash component 0: weighted exact agreement 0.828 [0.799, 0.854], binary 0.898 [0.873, 0.920] (all labels)
+[P] flash pu: e(x,1) on U mean 0.183 range [0.052, 0.895]; e(x,2) mean 0.183
+[P] flash pu_nc: e(x,1) on U mean 0.184 range [0.053, 0.890]; e(x,2) mean 0.183
+[P] flash pu           AUC on U 0.872 [0.820, 0.922]; mean P(y>=1) on U 0.132; mean(p - y) on labelled U -0.043; AUC within judge states (2 states) 0.596 [0.487, 0.701]
+[P] flash pu_prior     AUC on U 0.897 [0.851, 0.936]; mean P(y>=1) on U 0.160; mean(p - y) on labelled U -0.016; AUC within judge states (2 states) 0.690 [0.600, 0.778]
+[P] flash pu_nc        AUC on U 0.822 [0.751, 0.889]; mean P(y>=1) on U 0.136; mean(p - y) on labelled U -0.039; AUC within judge states (2 states) 0.410 [0.319, 0.526]
+[P] flash pu_nc_prior  AUC on U 0.867 [0.800, 0.920]; mean P(y>=1) on U 0.164; mean(p - y) on labelled U -0.012; AUC within judge states (2 states) 0.577 [0.447, 0.704]
+[P] flash judge        AUC on U 0.839 [0.789, 0.886]; mean P(y>=1) on U 0.190; mean(p - y) on labelled U +0.017
+[P] flash: corr(posterior, prior) of P(y>=1) on U: pu 0.9617, pu_nc 0.9622
+[D] flash judge            certified BH 12/21, BY 12/21; mean SE rho=0 0.0690, 1/2 0.0606, 1 0.0864
+[D] flash judge_cos        certified BH 12/21, BY 12/21; mean SE rho=0 0.0689, 1/2 0.0600, 1 0.0845
+[D] flash pu               certified BH 12/21, BY 12/21; mean SE rho=0 0.0694, 1/2 0.0614, 1 0.0870
+[D] flash pu_prior         certified BH 12/21, BY 12/21; mean SE rho=0 0.0687, 1/2 0.0599, 1 0.0850
+[D] flash pu_nc            certified BH 12/21, BY 12/21; mean SE rho=0 0.0695, 1/2 0.0619, 1 0.0878
+[D] flash pu_nc_prior      certified BH 12/21, BY 12/21; mean SE rho=0 0.0688, 1/2 0.0606, 1 0.0863
+[D] flash SE ratio judge_cos / judge per pair: rho=0 median 0.999 [0.989, 1.001] boot CI [0.997, 1.003]; rho=1/2 median 0.993 [0.975, 1.002] boot CI [0.980, 1.004]; rho=1 median 0.980 [0.956, 0.999] boot CI [0.960, 1.000]; BH decisions differing: 0
+[D] flash SE ratio pu / judge per pair: rho=0 median 1.007 [0.992, 1.017] boot CI [0.998, 1.018]; rho=1/2 median 1.014 [0.992, 1.028] boot CI [1.000, 1.031]; rho=1 median 1.007 [0.991, 1.015] boot CI [0.996, 1.020]; BH decisions differing: 0
+[D] flash SE ratio pu_prior / judge per pair: rho=0 median 0.995 [0.974, 1.010] boot CI [0.985, 1.008]; rho=1/2 median 0.991 [0.959, 1.013] boot CI [0.973, 1.003]; rho=1 median 0.982 [0.963, 1.005] boot CI [0.968, 0.997]; BH decisions differing: 0
+[D] flash SE ratio pu_nc / judge per pair: rho=0 median 1.008 [1.000, 1.016] boot CI [1.000, 1.020]; rho=1/2 median 1.028 [0.998, 1.036] boot CI [1.008, 1.049]; rho=1 median 1.021 [0.998, 1.027] boot CI [1.007, 1.034]; BH decisions differing: 0
+[D] flash SE ratio pu_nc_prior / judge per pair: rho=0 median 0.999 [0.982, 1.008] boot CI [0.989, 1.009]; rho=1/2 median 1.004 [0.977, 1.010] boot CI [0.990, 1.013]; rho=1 median 1.000 [0.976, 1.007] boot CI [0.989, 1.009]; BH decisions differing: 0
+[D] flash judge+fam        certified BH 14/21, BY 12/21; mean SE rho=0 0.0682, 1/2 0.0592, 1 0.0836
+[D] flash judge_cos+fam    certified BH 14/21, BY 12/21; mean SE rho=0 0.0682, 1/2 0.0592, 1 0.0831
+[D] flash pu+fam           certified BH 13/21, BY 12/21; mean SE rho=0 0.0684, 1/2 0.0593, 1 0.0833
+[D] flash pu_prior+fam     certified BH 13/21, BY 12/21; mean SE rho=0 0.0681, 1/2 0.0589, 1 0.0829
+[D] flash pu_nc+fam        certified BH 14/21, BY 12/21; mean SE rho=0 0.0684, 1/2 0.0597, 1 0.0841
+[D] flash pu_nc_prior+fam  certified BH 14/21, BY 12/21; mean SE rho=0 0.0681, 1/2 0.0593, 1 0.0838
+[D] flash SE ratio judge_cos+fam / judge+fam per pair: rho=0 median 1.000 [0.997, 1.002] boot CI [0.998, 1.003]; rho=1/2 median 1.000 [0.998, 1.001] boot CI [0.996, 1.005]; rho=1 median 0.994 [0.989, 1.001] boot CI [0.988, 1.002]; BH decisions differing: 0
+[D] flash SE ratio pu+fam / judge+fam per pair: rho=0 median 1.004 [0.992, 1.010] boot CI [0.997, 1.012]; rho=1/2 median 1.002 [0.986, 1.012] boot CI [0.993, 1.012]; rho=1 median 0.997 [0.987, 1.002] boot CI [0.988, 1.007]; BH decisions differing: 1
+[D] flash SE ratio pu_prior+fam / judge+fam per pair: rho=0 median 0.997 [0.992, 1.009] boot CI [0.990, 1.008]; rho=1/2 median 0.995 [0.982, 1.011] boot CI [0.982, 1.004]; rho=1 median 0.992 [0.975, 1.003] boot CI [0.980, 1.002]; BH decisions differing: 1
+[D] flash SE ratio pu_nc+fam / judge+fam per pair: rho=0 median 1.004 [0.999, 1.008] boot CI [0.997, 1.011]; rho=1/2 median 1.010 [0.996, 1.019] boot CI [0.999, 1.027]; rho=1 median 1.008 [0.995, 1.016] boot CI [0.998, 1.019]; BH decisions differing: 0
+[D] flash SE ratio pu_nc_prior+fam / judge+fam per pair: rho=0 median 1.000 [0.993, 1.005] boot CI [0.993, 1.007]; rho=1/2 median 1.003 [0.995, 1.009] boot CI [0.996, 1.010]; rho=1 median 1.003 [0.990, 1.007] boot CI [0.998, 1.008]; BH decisions differing: 0
+==== rung cos_bge_m3: 1 judge(s), content feature e5_small
+[S] cos_bge_m3: AUC on U mean grade 0.722 [0.670, 0.772]; P(y>=1) plug-in 0.713 [0.663, 0.762]; states 3
+[S] cos_bge_m3 component 0: weighted exact agreement 0.739 [0.702, 0.777], binary 0.816 [0.783, 0.848] (all labels)
+[S] cos_bge_m3 continuous score before grading: AUC on U 0.818 [0.773, 0.860]
+[P] cos_bge_m3 pu: e(x,1) on U mean 0.163 range [0.038, 0.923]; e(x,2) mean 0.161
+[P] cos_bge_m3 pu_nc: e(x,1) on U mean 0.151 range [0.037, 0.880]; e(x,2) mean 0.151
+[P] cos_bge_m3 pu           AUC on U 0.777 [0.728, 0.819]; mean P(y>=1) on U 0.164; mean(p - y) on labelled U -0.018; AUC within judge states (2 states) 0.680 [0.625, 0.731]
+[P] cos_bge_m3 pu_prior     AUC on U 0.820 [0.778, 0.859]; mean P(y>=1) on U 0.205; mean(p - y) on labelled U +0.022; AUC within judge states (2 states) 0.726 [0.677, 0.773]
+[P] cos_bge_m3 pu_nc        AUC on U 0.770 [0.717, 0.819]; mean P(y>=1) on U 0.194; mean(p - y) on labelled U +0.014; AUC within judge states (2 states) 0.605 [0.543, 0.664]
+[P] cos_bge_m3 pu_nc_prior  AUC on U 0.792 [0.739, 0.841]; mean P(y>=1) on U 0.232; mean(p - y) on labelled U +0.053; AUC within judge states (2 states) 0.654 [0.593, 0.714]
+[P] cos_bge_m3 judge        AUC on U 0.713 [0.663, 0.762]; mean P(y>=1) on U 0.186; mean(p - y) on labelled U +0.018
+[P] cos_bge_m3: corr(posterior, prior) of P(y>=1) on U: pu 0.9071, pu_nc 0.8981
+[D] cos_bge_m3 judge            certified BH 15/21, BY 12/21; mean SE rho=0 0.0906, 1/2 0.0834, 1 0.1037
+[D] cos_bge_m3 judge_cos        certified BH 15/21, BY 12/21; mean SE rho=0 0.0898, 1/2 0.0817, 1 0.1017
+[D] cos_bge_m3 pu               certified BH 15/21, BY 12/21; mean SE rho=0 0.0910, 1/2 0.0832, 1 0.1035
+[D] cos_bge_m3 pu_prior         certified BH 15/21, BY 12/21; mean SE rho=0 0.0887, 1/2 0.0795, 1 0.1002
+[D] cos_bge_m3 pu_nc            certified BH 15/21, BY 12/21; mean SE rho=0 0.0907, 1/2 0.0837, 1 0.1038
+[D] cos_bge_m3 pu_nc_prior      certified BH 14/21, BY 12/21; mean SE rho=0 0.0877, 1/2 0.0797, 1 0.0996
+[D] cos_bge_m3 SE ratio judge_cos / judge per pair: rho=0 median 0.993 [0.984, 1.007] boot CI [0.985, 1.002]; rho=1/2 median 0.980 [0.957, 0.997] boot CI [0.967, 0.997]; rho=1 median 0.981 [0.958, 0.997] boot CI [0.965, 0.996]; BH decisions differing: 0
+[D] cos_bge_m3 SE ratio pu / judge per pair: rho=0 median 1.006 [0.985, 1.015] boot CI [0.992, 1.020]; rho=1/2 median 1.004 [0.968, 1.013] boot CI [0.973, 1.021]; rho=1 median 1.003 [0.948, 1.014] boot CI [0.971, 1.025]; BH decisions differing: 0
+[D] cos_bge_m3 SE ratio pu_prior / judge per pair: rho=0 median 0.983 [0.955, 1.007] boot CI [0.953, 1.005]; rho=1/2 median 0.960 [0.903, 0.996] boot CI [0.921, 0.996]; rho=1 median 0.970 [0.928, 0.996] boot CI [0.930, 1.003]; BH decisions differing: 0
+[D] cos_bge_m3 SE ratio pu_nc / judge per pair: rho=0 median 1.003 [0.984, 1.009] boot CI [0.997, 1.011]; rho=1/2 median 1.005 [0.979, 1.013] boot CI [0.991, 1.022]; rho=1 median 1.002 [0.979, 1.015] boot CI [0.988, 1.019]; BH decisions differing: 0
+[D] cos_bge_m3 SE ratio pu_nc_prior / judge per pair: rho=0 median 0.975 [0.934, 1.002] boot CI [0.951, 0.996]; rho=1/2 median 0.960 [0.917, 0.991] boot CI [0.926, 0.993]; rho=1 median 0.959 [0.922, 0.995] boot CI [0.925, 0.995]; BH decisions differing: 1
+[D] cos_bge_m3 judge+fam        certified BH 14/21, BY 12/21; mean SE rho=0 0.0865, 1/2 0.0793, 1 0.0995
+[D] cos_bge_m3 judge_cos+fam    certified BH 14/21, BY 12/21; mean SE rho=0 0.0863, 1/2 0.0786, 1 0.0985
+[D] cos_bge_m3 pu+fam           certified BH 14/21, BY 12/21; mean SE rho=0 0.0865, 1/2 0.0786, 1 0.0987
+[D] cos_bge_m3 pu_prior+fam     certified BH 14/21, BY 12/21; mean SE rho=0 0.0857, 1/2 0.0770, 1 0.0976
+[D] cos_bge_m3 pu_nc+fam        certified BH 14/21, BY 12/21; mean SE rho=0 0.0869, 1/2 0.0797, 1 0.0998
+[D] cos_bge_m3 pu_nc_prior+fam  certified BH 14/21, BY 12/21; mean SE rho=0 0.0864, 1/2 0.0789, 1 0.0989
+[D] cos_bge_m3 SE ratio judge_cos+fam / judge+fam per pair: rho=0 median 0.998 [0.988, 1.007] boot CI [0.991, 1.004]; rho=1/2 median 0.990 [0.972, 1.003] boot CI [0.979, 1.003]; rho=1 median 0.992 [0.966, 1.002] boot CI [0.979, 1.005]; BH decisions differing: 0
+[D] cos_bge_m3 SE ratio pu+fam / judge+fam per pair: rho=0 median 1.001 [0.981, 1.010] boot CI [0.987, 1.015]; rho=1/2 median 0.991 [0.968, 1.009] boot CI [0.968, 1.013]; rho=1 median 0.996 [0.956, 1.008] boot CI [0.967, 1.018]; BH decisions differing: 0
+[D] cos_bge_m3 SE ratio pu_prior+fam / judge+fam per pair: rho=0 median 0.994 [0.972, 1.009] boot CI [0.971, 1.011]; rho=1/2 median 0.978 [0.923, 1.009] boot CI [0.934, 1.009]; rho=1 median 0.989 [0.934, 1.009] boot CI [0.949, 1.013]; BH decisions differing: 0
+[D] cos_bge_m3 SE ratio pu_nc+fam / judge+fam per pair: rho=0 median 1.004 [0.999, 1.007] boot CI [1.000, 1.009]; rho=1/2 median 1.004 [0.998, 1.009] boot CI [0.997, 1.014]; rho=1 median 1.003 [0.996, 1.012] boot CI [0.996, 1.012]; BH decisions differing: 0
+[D] cos_bge_m3 SE ratio pu_nc_prior+fam / judge+fam per pair: rho=0 median 0.998 [0.995, 1.005] boot CI [0.993, 1.003]; rho=1/2 median 0.995 [0.991, 1.000] boot CI [0.988, 1.001]; rho=1 median 0.994 [0.990, 0.999] boot CI [0.987, 1.000]; BH decisions differing: 0
+==== rung cos_e5_small: 1 judge(s), content feature bge_m3
+[S] cos_e5_small: AUC on U mean grade 0.683 [0.631, 0.735]; P(y>=1) plug-in 0.676 [0.624, 0.727]; states 3
+[S] cos_e5_small component 0: weighted exact agreement 0.725 [0.686, 0.762], binary 0.809 [0.777, 0.843] (all labels)
+[S] cos_e5_small continuous score before grading: AUC on U 0.807 [0.763, 0.848]
+[P] cos_e5_small pu: e(x,1) on U mean 0.163 range [0.041, 0.907]; e(x,2) mean 0.162
+[P] cos_e5_small pu_nc: e(x,1) on U mean 0.162 range [0.044, 0.900]; e(x,2) mean 0.160
+[P] cos_e5_small pu           AUC on U 0.783 [0.731, 0.828]; mean P(y>=1) on U 0.164; mean(p - y) on labelled U -0.018; AUC within judge states (2 states) 0.689 [0.631, 0.747]
+[P] cos_e5_small pu_prior     AUC on U 0.819 [0.772, 0.863]; mean P(y>=1) on U 0.204; mean(p - y) on labelled U +0.022; AUC within judge states (2 states) 0.766 [0.712, 0.817]
+[P] cos_e5_small pu_nc        AUC on U 0.732 [0.671, 0.786]; mean P(y>=1) on U 0.174; mean(p - y) on labelled U -0.010; AUC within judge states (2 states) 0.593 [0.527, 0.656]
+[P] cos_e5_small pu_nc_prior  AUC on U 0.768 [0.717, 0.819]; mean P(y>=1) on U 0.213; mean(p - y) on labelled U +0.029; AUC within judge states (2 states) 0.674 [0.613, 0.729]
+[P] cos_e5_small judge        AUC on U 0.676 [0.624, 0.727]; mean P(y>=1) on U 0.184; mean(p - y) on labelled U -0.003
+[P] cos_e5_small: corr(posterior, prior) of P(y>=1) on U: pu 0.9074, pu_nc 0.8986
+[D] cos_e5_small judge            certified BH 13/21, BY 12/21; mean SE rho=0 0.0894, 1/2 0.0835, 1 0.1084
+[D] cos_e5_small judge_cos        certified BH 12/21, BY 12/21; mean SE rho=0 0.0887, 1/2 0.0816, 1 0.1053
+[D] cos_e5_small pu               certified BH 14/21, BY 12/21; mean SE rho=0 0.0902, 1/2 0.0840, 1 0.1084
+[D] cos_e5_small pu_prior         certified BH 12/21, BY 12/21; mean SE rho=0 0.0873, 1/2 0.0791, 1 0.1026
+[D] cos_e5_small pu_nc            certified BH 13/21, BY 12/21; mean SE rho=0 0.0900, 1/2 0.0841, 1 0.1087
+[D] cos_e5_small pu_nc_prior      certified BH 13/21, BY 12/21; mean SE rho=0 0.0870, 1/2 0.0795, 1 0.1035
+[D] cos_e5_small SE ratio judge_cos / judge per pair: rho=0 median 0.991 [0.984, 0.999] boot CI [0.986, 1.000]; rho=1/2 median 0.980 [0.958, 0.992] boot CI [0.964, 0.994]; rho=1 median 0.972 [0.951, 0.991] boot CI [0.952, 0.994]; BH decisions differing: 1
+[D] cos_e5_small SE ratio pu / judge per pair: rho=0 median 1.010 [0.990, 1.020] boot CI [0.999, 1.019]; rho=1/2 median 1.010 [0.983, 1.019] boot CI [0.989, 1.025]; rho=1 median 1.002 [0.976, 1.010] boot CI [0.983, 1.015]; BH decisions differing: 1
+[D] cos_e5_small SE ratio pu_prior / judge per pair: rho=0 median 0.980 [0.950, 0.993] boot CI [0.963, 0.996]; rho=1/2 median 0.952 [0.904, 0.980] boot CI [0.916, 0.980]; rho=1 median 0.946 [0.924, 0.987] boot CI [0.908, 0.980]; BH decisions differing: 1
+[D] cos_e5_small SE ratio pu_nc / judge per pair: rho=0 median 1.005 [0.994, 1.014] boot CI [1.001, 1.013]; rho=1/2 median 1.009 [0.991, 1.017] boot CI [0.998, 1.022]; rho=1 median 1.003 [0.991, 1.011] boot CI [0.993, 1.012]; BH decisions differing: 0
+[D] cos_e5_small SE ratio pu_nc_prior / judge per pair: rho=0 median 0.976 [0.939, 0.999] boot CI [0.957, 0.996]; rho=1/2 median 0.955 [0.904, 0.996] boot CI [0.922, 0.990]; rho=1 median 0.955 [0.924, 1.002] boot CI [0.913, 0.995]; BH decisions differing: 0
+[D] cos_e5_small judge+fam        certified BH 13/21, BY 13/21; mean SE rho=0 0.0854, 1/2 0.0785, 1 0.1021
+[D] cos_e5_small judge_cos+fam    certified BH 13/21, BY 12/21; mean SE rho=0 0.0852, 1/2 0.0783, 1 0.1015
+[D] cos_e5_small pu+fam           certified BH 13/21, BY 12/21; mean SE rho=0 0.0859, 1/2 0.0785, 1 0.1013
+[D] cos_e5_small pu_prior+fam     certified BH 13/21, BY 12/21; mean SE rho=0 0.0852, 1/2 0.0775, 1 0.1006
+[D] cos_e5_small pu_nc+fam        certified BH 14/21, BY 13/21; mean SE rho=0 0.0858, 1/2 0.0789, 1 0.1021
+[D] cos_e5_small pu_nc_prior+fam  certified BH 14/21, BY 13/21; mean SE rho=0 0.0853, 1/2 0.0782, 1 0.1018
+[D] cos_e5_small SE ratio judge_cos+fam / judge+fam per pair: rho=0 median 0.999 [0.986, 1.002] boot CI [0.998, 1.002]; rho=1/2 median 0.998 [0.979, 1.002] boot CI [0.991, 1.003]; rho=1 median 0.994 [0.978, 1.002] boot CI [0.987, 1.003]; BH decisions differing: 0
+[D] cos_e5_small SE ratio pu+fam / judge+fam per pair: rho=0 median 1.006 [0.989, 1.019] boot CI [0.998, 1.015]; rho=1/2 median 1.002 [0.981, 1.017] boot CI [0.984, 1.016]; rho=1 median 0.991 [0.977, 1.007] boot CI [0.977, 1.006]; BH decisions differing: 0
+[D] cos_e5_small SE ratio pu_prior+fam / judge+fam per pair: rho=0 median 1.000 [0.983, 1.004] boot CI [0.989, 1.009]; rho=1/2 median 0.985 [0.972, 1.002] boot CI [0.966, 1.003]; rho=1 median 0.985 [0.972, 1.003] boot CI [0.969, 0.999]; BH decisions differing: 0
+[D] cos_e5_small SE ratio pu_nc+fam / judge+fam per pair: rho=0 median 1.004 [0.999, 1.010] boot CI [1.001, 1.010]; rho=1/2 median 1.005 [0.996, 1.012] boot CI [0.998, 1.013]; rho=1 median 1.001 [0.995, 1.005] boot CI [0.995, 1.006]; BH decisions differing: 1
+[D] cos_e5_small SE ratio pu_nc_prior+fam / judge+fam per pair: rho=0 median 1.000 [0.992, 1.003] boot CI [0.994, 1.004]; rho=1/2 median 0.997 [0.989, 1.002] boot CI [0.989, 1.002]; rho=1 median 0.997 [0.991, 1.003] boot CI [0.992, 1.003]; BH decisions differing: 1
+==== rung cos_text2vec_zh: 1 judge(s), content feature bge_m3
+[S] cos_text2vec_zh: AUC on U mean grade 0.640 [0.587, 0.690]; P(y>=1) plug-in 0.632 [0.579, 0.682]; states 3
+[S] cos_text2vec_zh component 0: weighted exact agreement 0.650 [0.608, 0.693], binary 0.719 [0.679, 0.756] (all labels)
+[S] cos_text2vec_zh continuous score before grading: AUC on U 0.676 [0.617, 0.731]
+[P] cos_text2vec_zh pu: e(x,1) on U mean 0.153 range [0.033, 0.901]; e(x,2) mean 0.151
+[P] cos_text2vec_zh pu_nc: e(x,1) on U mean 0.142 range [0.031, 0.857]; e(x,2) mean 0.142
+[P] cos_text2vec_zh pu           AUC on U 0.790 [0.744, 0.833]; mean P(y>=1) on U 0.181; mean(p - y) on labelled U -0.002; AUC within judge states (3 states) 0.765 [0.717, 0.812]
+[P] cos_text2vec_zh pu_prior     AUC on U 0.825 [0.780, 0.868]; mean P(y>=1) on U 0.223; mean(p - y) on labelled U +0.042; AUC within judge states (3 states) 0.797 [0.750, 0.844]
+[P] cos_text2vec_zh pu_nc        AUC on U 0.763 [0.711, 0.812]; mean P(y>=1) on U 0.216; mean(p - y) on labelled U +0.032; AUC within judge states (3 states) 0.714 [0.662, 0.765]
+[P] cos_text2vec_zh pu_nc_prior  AUC on U 0.769 [0.716, 0.819]; mean P(y>=1) on U 0.257; mean(p - y) on labelled U +0.075; AUC within judge states (3 states) 0.723 [0.670, 0.774]
+[P] cos_text2vec_zh judge        AUC on U 0.632 [0.579, 0.682]; mean P(y>=1) on U 0.228; mean(p - y) on labelled U +0.056
+[P] cos_text2vec_zh: corr(posterior, prior) of P(y>=1) on U: pu 0.9098, pu_nc 0.9425
+[D] cos_text2vec_zh judge            certified BH 15/21, BY 12/21; mean SE rho=0 0.0940, 1/2 0.0894, 1 0.1156
+[D] cos_text2vec_zh judge_cos        certified BH 15/21, BY 12/21; mean SE rho=0 0.0920, 1/2 0.0853, 1 0.1095
+[D] cos_text2vec_zh pu               certified BH 13/21, BY 12/21; mean SE rho=0 0.0929, 1/2 0.0873, 1 0.1123
+[D] cos_text2vec_zh pu_prior         certified BH 12/21, BY 12/21; mean SE rho=0 0.0893, 1/2 0.0818, 1 0.1054
+[D] cos_text2vec_zh pu_nc            certified BH 14/21, BY 12/21; mean SE rho=0 0.0910, 1/2 0.0853, 1 0.1105
+[D] cos_text2vec_zh pu_nc_prior      certified BH 14/21, BY 12/21; mean SE rho=0 0.0882, 1/2 0.0814, 1 0.1059
+[D] cos_text2vec_zh SE ratio judge_cos / judge per pair: rho=0 median 0.981 [0.956, 0.992] boot CI [0.966, 0.994]; rho=1/2 median 0.956 [0.933, 0.985] boot CI [0.929, 0.979]; rho=1 median 0.948 [0.912, 0.986] boot CI [0.915, 0.979]; BH decisions differing: 0
+[D] cos_text2vec_zh SE ratio pu / judge per pair: rho=0 median 0.991 [0.951, 1.001] boot CI [0.974, 1.003]; rho=1/2 median 0.977 [0.945, 0.994] boot CI [0.954, 0.999]; rho=1 median 0.975 [0.940, 0.994] boot CI [0.944, 0.993]; BH decisions differing: 2
+[D] cos_text2vec_zh SE ratio pu_prior / judge per pair: rho=0 median 0.955 [0.920, 0.975] boot CI [0.922, 0.980]; rho=1/2 median 0.913 [0.886, 0.961] boot CI [0.867, 0.958]; rho=1 median 0.908 [0.856, 0.978] boot CI [0.857, 0.961]; BH decisions differing: 3
+[D] cos_text2vec_zh SE ratio pu_nc / judge per pair: rho=0 median 0.979 [0.927, 0.995] boot CI [0.959, 0.991]; rho=1/2 median 0.961 [0.913, 0.989] boot CI [0.934, 0.984]; rho=1 median 0.961 [0.905, 0.993] boot CI [0.929, 0.989]; BH decisions differing: 1
+[D] cos_text2vec_zh SE ratio pu_nc_prior / judge per pair: rho=0 median 0.948 [0.884, 0.989] boot CI [0.902, 0.985]; rho=1/2 median 0.916 [0.861, 0.977] boot CI [0.850, 0.969]; rho=1 median 0.916 [0.872, 0.985] boot CI [0.848, 0.977]; BH decisions differing: 1
+[D] cos_text2vec_zh judge+fam        certified BH 14/21, BY 12/21; mean SE rho=0 0.0878, 1/2 0.0811, 1 0.1055
+[D] cos_text2vec_zh judge_cos+fam    certified BH 14/21, BY 12/21; mean SE rho=0 0.0875, 1/2 0.0804, 1 0.1043
+[D] cos_text2vec_zh pu+fam           certified BH 14/21, BY 12/21; mean SE rho=0 0.0875, 1/2 0.0803, 1 0.1042
+[D] cos_text2vec_zh pu_prior+fam     certified BH 14/21, BY 12/21; mean SE rho=0 0.0871, 1/2 0.0797, 1 0.1033
+[D] cos_text2vec_zh pu_nc+fam        certified BH 14/21, BY 12/21; mean SE rho=0 0.0880, 1/2 0.0814, 1 0.1057
+[D] cos_text2vec_zh pu_nc_prior+fam  certified BH 14/21, BY 12/21; mean SE rho=0 0.0876, 1/2 0.0807, 1 0.1049
+[D] cos_text2vec_zh SE ratio judge_cos+fam / judge+fam per pair: rho=0 median 0.999 [0.965, 1.003] boot CI [0.996, 1.002]; rho=1/2 median 0.994 [0.960, 1.002] boot CI [0.986, 1.001]; rho=1 median 0.989 [0.967, 1.001] boot CI [0.979, 1.000]; BH decisions differing: 0
+[D] cos_text2vec_zh SE ratio pu+fam / judge+fam per pair: rho=0 median 1.000 [0.961, 1.009] boot CI [0.988, 1.009]; rho=1/2 median 0.991 [0.957, 1.007] boot CI [0.973, 1.009]; rho=1 median 0.985 [0.969, 1.006] boot CI [0.965, 1.007]; BH decisions differing: 0
+[D] cos_text2vec_zh SE ratio pu_prior+fam / judge+fam per pair: rho=0 median 0.995 [0.960, 1.004] boot CI [0.981, 1.005]; rho=1/2 median 0.983 [0.952, 1.004] boot CI [0.961, 1.003]; rho=1 median 0.979 [0.960, 1.004] boot CI [0.952, 0.999]; BH decisions differing: 0
+[D] cos_text2vec_zh SE ratio pu_nc+fam / judge+fam per pair: rho=0 median 1.004 [0.998, 1.006] boot CI [0.998, 1.009]; rho=1/2 median 1.003 [0.997, 1.012] boot CI [0.997, 1.011]; rho=1 median 1.001 [0.992, 1.011] boot CI [0.994, 1.010]; BH decisions differing: 0
+[D] cos_text2vec_zh SE ratio pu_nc_prior+fam / judge+fam per pair: rho=0 median 0.998 [0.991, 1.002] boot CI [0.993, 1.003]; rho=1/2 median 0.997 [0.984, 1.001] boot CI [0.988, 1.002]; rho=1 median 0.996 [0.981, 1.002] boot CI [0.987, 1.002]; BH decisions differing: 0
+==== rung bm25_char1: 1 judge(s), content feature bge_m3
+[S] bm25_char1: AUC on U mean grade 0.605 [0.556, 0.657]; P(y>=1) plug-in 0.599 [0.550, 0.650]; states 3
+[S] bm25_char1 component 0: weighted exact agreement 0.634 [0.592, 0.676], binary 0.683 [0.642, 0.725] (all labels)
+[S] bm25_char1 continuous score before grading: AUC on U 0.636 [0.575, 0.697]
+[P] bm25_char1 pu: e(x,1) on U mean 0.153 range [0.032, 0.901]; e(x,2) mean 0.150
+[P] bm25_char1 pu_nc: e(x,1) on U mean 0.141 range [0.032, 0.854]; e(x,2) mean 0.141
+[P] bm25_char1 pu           AUC on U 0.789 [0.741, 0.834]; mean P(y>=1) on U 0.182; mean(p - y) on labelled U -0.001; AUC within judge states (3 states) 0.771 [0.720, 0.819]
+[P] bm25_char1 pu_prior     AUC on U 0.823 [0.777, 0.867]; mean P(y>=1) on U 0.224; mean(p - y) on labelled U +0.044; AUC within judge states (3 states) 0.805 [0.755, 0.856]
+[P] bm25_char1 pu_nc        AUC on U 0.755 [0.702, 0.808]; mean P(y>=1) on U 0.216; mean(p - y) on labelled U +0.032; AUC within judge states (3 states) 0.733 [0.679, 0.786]
+[P] bm25_char1 pu_nc_prior  AUC on U 0.765 [0.713, 0.815]; mean P(y>=1) on U 0.257; mean(p - y) on labelled U +0.075; AUC within judge states (3 states) 0.737 [0.682, 0.790]
+[P] bm25_char1 judge        AUC on U 0.599 [0.550, 0.650]; mean P(y>=1) on U 0.232; mean(p - y) on labelled U +0.062
+[P] bm25_char1: corr(posterior, prior) of P(y>=1) on U: pu 0.9089, pu_nc 0.9497
+[D] bm25_char1 judge            certified BH 14/21, BY 13/21; mean SE rho=0 0.0946, 1/2 0.0933, 1 0.1179
+[D] bm25_char1 judge_cos        certified BH 14/21, BY 12/21; mean SE rho=0 0.0915, 1/2 0.0863, 1 0.1094
+[D] bm25_char1 pu               certified BH 13/21, BY 12/21; mean SE rho=0 0.0929, 1/2 0.0899, 1 0.1129
+[D] bm25_char1 pu_prior         certified BH 12/21, BY 12/21; mean SE rho=0 0.0892, 1/2 0.0831, 1 0.1059
+[D] bm25_char1 pu_nc            certified BH 15/21, BY 12/21; mean SE rho=0 0.0916, 1/2 0.0877, 1 0.1110
+[D] bm25_char1 pu_nc_prior      certified BH 14/21, BY 12/21; mean SE rho=0 0.0892, 1/2 0.0838, 1 0.1073
+[D] bm25_char1 SE ratio judge_cos / judge per pair: rho=0 median 0.970 [0.939, 0.997] boot CI [0.923, 1.001]; rho=1/2 median 0.927 [0.882, 0.992] boot CI [0.860, 0.982]; rho=1 median 0.938 [0.875, 0.991] boot CI [0.885, 0.978]; BH decisions differing: 0
+[D] bm25_char1 SE ratio pu / judge per pair: rho=0 median 0.981 [0.950, 1.016] boot CI [0.961, 1.002]; rho=1/2 median 0.956 [0.921, 1.008] boot CI [0.928, 0.992]; rho=1 median 0.951 [0.916, 1.004] boot CI [0.917, 0.990]; BH decisions differing: 1
+[D] bm25_char1 SE ratio pu_prior / judge per pair: rho=0 median 0.939 [0.913, 1.008] boot CI [0.887, 0.992]; rho=1/2 median 0.885 [0.831, 0.999] boot CI [0.808, 0.964]; rho=1 median 0.900 [0.817, 0.999] boot CI [0.836, 0.954]; BH decisions differing: 2
+[D] bm25_char1 SE ratio pu_nc / judge per pair: rho=0 median 0.966 [0.930, 0.996] boot CI [0.948, 0.991]; rho=1/2 median 0.933 [0.906, 0.999] boot CI [0.905, 0.974]; rho=1 median 0.932 [0.908, 1.006] boot CI [0.899, 0.975]; BH decisions differing: 1
+[D] bm25_char1 SE ratio pu_nc_prior / judge per pair: rho=0 median 0.938 [0.888, 0.994] boot CI [0.883, 0.998]; rho=1/2 median 0.883 [0.837, 0.999] boot CI [0.803, 0.980]; rho=1 median 0.909 [0.840, 1.006] boot CI [0.838, 0.972]; BH decisions differing: 0
+[D] bm25_char1 judge+fam        certified BH 14/21, BY 13/21; mean SE rho=0 0.0889, 1/2 0.0832, 1 0.1065
+[D] bm25_char1 judge_cos+fam    certified BH 14/21, BY 12/21; mean SE rho=0 0.0885, 1/2 0.0823, 1 0.1051
+[D] bm25_char1 pu+fam           certified BH 13/21, BY 12/21; mean SE rho=0 0.0887, 1/2 0.0822, 1 0.1050
+[D] bm25_char1 pu_prior+fam     certified BH 13/21, BY 12/21; mean SE rho=0 0.0881, 1/2 0.0813, 1 0.1040
+[D] bm25_char1 pu_nc+fam        certified BH 14/21, BY 12/21; mean SE rho=0 0.0892, 1/2 0.0836, 1 0.1068
+[D] bm25_char1 pu_nc_prior+fam  certified BH 14/21, BY 12/21; mean SE rho=0 0.0890, 1/2 0.0831, 1 0.1062
+[D] bm25_char1 SE ratio judge_cos+fam / judge+fam per pair: rho=0 median 0.999 [0.963, 1.004] boot CI [0.993, 1.004]; rho=1/2 median 0.990 [0.959, 1.002] boot CI [0.977, 1.002]; rho=1 median 0.985 [0.964, 1.001] boot CI [0.971, 1.005]; BH decisions differing: 0
+[D] bm25_char1 SE ratio pu+fam / judge+fam per pair: rho=0 median 0.999 [0.959, 1.013] boot CI [0.984, 1.013]; rho=1/2 median 0.988 [0.955, 1.010] boot CI [0.965, 1.008]; rho=1 median 0.983 [0.963, 1.007] boot CI [0.953, 1.013]; BH decisions differing: 1
+[D] bm25_char1 SE ratio pu_prior+fam / judge+fam per pair: rho=0 median 0.990 [0.959, 1.012] boot CI [0.974, 1.009]; rho=1/2 median 0.969 [0.949, 1.008] boot CI [0.946, 1.003]; rho=1 median 0.972 [0.950, 1.006] boot CI [0.939, 1.006]; BH decisions differing: 1
+[D] bm25_char1 SE ratio pu_nc+fam / judge+fam per pair: rho=0 median 1.004 [0.999, 1.005] boot CI [0.999, 1.009]; rho=1/2 median 1.004 [0.998, 1.010] boot CI [0.997, 1.013]; rho=1 median 1.002 [0.996, 1.011] boot CI [0.994, 1.011]; BH decisions differing: 0
+[D] bm25_char1 SE ratio pu_nc_prior+fam / judge+fam per pair: rho=0 median 1.000 [0.994, 1.004] boot CI [0.996, 1.005]; rho=1/2 median 0.999 [0.988, 1.003] boot CI [0.992, 1.005]; rho=1 median 0.998 [0.986, 1.003] boot CI [0.991, 1.005]; BH decisions differing: 0
+==== [T] table (extras []; ratio = median per-pair SE ratio vs judge at rho=1/2 with bootstrap CI)
+rung | judge AUC(grade) | judge AUC(P>=1) | PU AUC | PU_nc AUC | ratio pu | ratio pu_prior | ratio pu_nc | ratio judge_cos | cert judge/pu/pu_nc/judge_cos | cert +fam judge/pu
+pro+flash | 0.874 [0.822, 0.922] | 0.871 | 0.884 [0.830, 0.936] | 0.848 | 1.026 [1.007, 1.040] | 1.000 [0.987, 1.011] | 1.030 [1.012, 1.046] | 0.996 [0.986, 1.007] | 13/13/13/13 | 14/13
+pro | 0.822 [0.773, 0.866] | 0.817 | 0.870 [0.821, 0.916] | 0.798 | 1.017 [0.999, 1.036] | 0.991 [0.974, 1.005] | 1.018 [1.005, 1.033] | 0.991 [0.979, 1.003] | 14/13/14/14 | 15/14
+flash | 0.846 [0.795, 0.894] | 0.839 | 0.872 [0.820, 0.922] | 0.822 | 1.014 [1.000, 1.031] | 0.991 [0.973, 1.003] | 1.028 [1.008, 1.049] | 0.993 [0.980, 1.004] | 12/12/12/12 | 14/13
+cos_bge_m3 | 0.722 [0.670, 0.772] | 0.713 | 0.777 [0.728, 0.819] | 0.770 | 1.004 [0.973, 1.021] | 0.960 [0.921, 0.996] | 1.005 [0.991, 1.022] | 0.980 [0.967, 0.997] | 15/15/15/15 | 14/14
+cos_e5_small | 0.683 [0.631, 0.735] | 0.676 | 0.783 [0.731, 0.828] | 0.732 | 1.010 [0.989, 1.025] | 0.952 [0.916, 0.980] | 1.009 [0.998, 1.022] | 0.980 [0.964, 0.994] | 13/14/13/12 | 13/13
+cos_text2vec_zh | 0.640 [0.587, 0.690] | 0.632 | 0.790 [0.744, 0.833] | 0.763 | 0.977 [0.954, 0.999] | 0.913 [0.867, 0.958] | 0.961 [0.934, 0.984] | 0.956 [0.929, 0.979] | 15/13/14/15 | 14/14
+bm25_char1 | 0.605 [0.556, 0.657] | 0.599 | 0.789 [0.741, 0.834] | 0.755 | 0.956 [0.928, 0.992] | 0.885 [0.808, 0.964] | 0.933 [0.905, 0.974] | 0.927 [0.860, 0.982] | 14/13/15/14 | 14/13
+[R] pu rho=0: Spearman(judge AUC, log SE ratio) +0.643 (exact permutation p 0.1389), Pearson +0.734 (p 0.0602); slope of log ratio per +.1 AUC +0.0076
+[R] pu rho=1/2: Spearman(judge AUC, log SE ratio) +0.929 (exact permutation p 0.0067), Pearson +0.874 (p 0.0100); slope of log ratio per +.1 AUC +0.0209
+[R] pu rho=1: Spearman(judge AUC, log SE ratio) +1.000 (exact permutation p 0.0004), Pearson +0.832 (p 0.0201); slope of log ratio per +.1 AUC +0.0179
+[R] pu_nc rho=0: Spearman(judge AUC, log SE ratio) +0.857 (exact permutation p 0.0238), Pearson +0.806 (p 0.0286); slope of log ratio per +.1 AUC +0.0126
+[R] pu_nc rho=1/2: Spearman(judge AUC, log SE ratio) +0.964 (exact permutation p 0.0028), Pearson +0.886 (p 0.0080); slope of log ratio per +.1 AUC +0.0312
+[R] pu_nc rho=1: Spearman(judge AUC, log SE ratio) +0.929 (exact permutation p 0.0067), Pearson +0.861 (p 0.0128); slope of log ratio per +.1 AUC +0.0274
+[R] pu_prior rho=0: Spearman(judge AUC, log SE ratio) +0.964 (exact permutation p 0.0028), Pearson +0.924 (p 0.0029); slope of log ratio per +.1 AUC +0.0209
+[R] pu_prior rho=1/2: Spearman(judge AUC, log SE ratio) +1.000 (exact permutation p 0.0004), Pearson +0.953 (p 0.0009); slope of log ratio per +.1 AUC +0.0414
+[R] pu_prior rho=1: Spearman(judge AUC, log SE ratio) +0.964 (exact permutation p 0.0028), Pearson +0.941 (p 0.0016); slope of log ratio per +.1 AUC +0.0351
+[R] judge_cos rho=0: Spearman(judge AUC, log SE ratio) +0.964 (exact permutation p 0.0028), Pearson +0.918 (p 0.0035); slope of log ratio per +.1 AUC +0.0099
+[R] judge_cos rho=1/2: Spearman(judge AUC, log SE ratio) +1.000 (exact permutation p 0.0004), Pearson +0.878 (p 0.0093); slope of log ratio per +.1 AUC +0.0215
+[R] judge_cos rho=1: Spearman(judge AUC, log SE ratio) +0.857 (exact permutation p 0.0238), Pearson +0.857 (p 0.0137); slope of log ratio per +.1 AUC +0.0159
+DONE
+EXIT:0

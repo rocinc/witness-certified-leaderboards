@@ -1,0 +1,37 @@
+config: {'out_dir': '/root/autodl-tmp/work/witness/d1', 'id_prefix': 't2r', 'k': 5, 'pool_systems': ['bm25_char1', 'bm25_char2', 'bm25_jieba'], 'pool_k': 5, 'judges': ['flash', 'pro'], 'reranker': 'rerank_qwen3', 'mnar': {'a': -2.5, 'b': 4.0, 'a_fp': -6.5, 'c': 0.0}, 'h_bins': [0.01, 0.34, 0.67, 0.99], 'budgets': [3200, 12800], 'fracs': [0.25, 0.75], 'alpha': 0.05, 'z_plan': 2.5, 'ridge': 20.0, 'pi_min_frac': 0.2, 'v_floor': 0.03, 'cell_prior': 10, 'plan_iters': 2, 'xfit_folds': 5, 'reps': 10, 'seed': 0, 'tag': 'rivals', 'methods': ['ppi_tuned', 'active', 'witness', 'oost_ppi', 'oost_ppi_qrels', 'lara', 'lara_code'], 'rivals': {'lara': {'lr': 0.01, 'batch': 32, 'epochs': 2, 'transition_w': 0.1, 'diff_w': 0.1, 'lbfgs_iter': 50}}}
+md5 witness_eval.py 7cd515f12f286817a00f31c55b20312a
+md5 witness.py 90c782aeac46cd02b7f745510f2d3abd
+md5 rivals.py 25c44c90e831e82fd02d0f29e5e4691a
+systems=13 pairs=78 items=48640 queries=3000 frame=30529
+true DCG@k at rho=1/2: {'bge_small_zh': np.float64(0.8186), 'bge_base_zh': np.float64(0.8292), 'gte_base_zh': np.float64(0.8274), 'm3e_base': np.float64(0.8415), 'text2vec_zh': np.float64(0.7913), 'e5_small': np.float64(0.8218), 'e5_base': np.float64(0.8163), 'bge_m3': np.float64(0.8537), 'qwen3_emb': np.float64(0.8444), 'bm25_char1': np.float64(0.7818), 'bm25_char2': np.float64(0.7677), 'bm25_jieba': np.float64(0.7662), 'rerank_qwen3': np.float64(0.8433)}
+judges: ['flash', 'pro'] exact agreement: [0.504, 0.541] refused: [1, 1]
+rep 5: qrels recall=0.361 qrels error share=0.084 pu: max|e_hat-e| on relevant=0.128 corr(P(y>=1), u1) on U=0.339
+rep 5 done 320s
+rep 6: qrels recall=0.365 qrels error share=0.083 pu: max|e_hat-e| on relevant=0.103 corr(P(y>=1), u1) on U=0.344
+rep 6 done 368s
+rep 7: qrels recall=0.366 qrels error share=0.088 pu: max|e_hat-e| on relevant=0.111 corr(P(y>=1), u1) on U=0.340
+rep 7 done 282s
+rep 8: qrels recall=0.369 qrels error share=0.082 pu: max|e_hat-e| on relevant=0.106 corr(P(y>=1), u1) on U=0.348
+rep 8 done 122s
+rep 9: qrels recall=0.364 qrels error share=0.085 pu: max|e_hat-e| on relevant=0.113 corr(P(y>=1), u1) on U=0.346
+rep 9 done 166s
+                       n_labels  cert_bh  cert_dec_bh  fdp_bh  nwrong_bh  cert_by  cert_dec_by  fdp_by  nwrong_by  cover_pairs  cover_sys  z_mean     z_sd    rmse     tau  n_decidable
+method         budget                                                                                                                                                                  
+active         3200      3204.2   0.1128       0.1239  0.0000        0.0   0.0436       0.0479  0.0000        0.0       0.9538     0.9846  0.3400   0.8701  0.0168  0.7179         71.0
+               12800    12805.6   0.4949       0.5437  0.0000        0.0   0.4359       0.4789  0.0000        0.0       0.9333     0.9846  0.0433   1.0185  0.0075  0.8974         71.0
+judge_plugin   0            0.0   0.5564       0.3521  0.4238       18.4   0.4897       0.3324  0.3818       14.6       0.1590     0.0000 -6.1815   7.8107  0.0762  0.0513         71.0
+lara           3200      3200.0   0.3897       0.3042  0.3110        8.8   0.2769       0.2197  0.3392        6.0       0.2744     0.0000 -0.2918   4.1702  0.0377  0.3026         71.0
+               12800    12800.0   0.5436       0.5972  0.0000        0.0   0.5026       0.5521  0.0000        0.0       0.6667     0.0000 -0.2228   1.7958  0.0103  0.8718         71.0
+lara_code      3200      3200.0   0.7282       0.6704  0.1619        9.2   0.6615       0.6141  0.1551        8.0       0.2179     0.0000 -1.7240   5.2841  0.0368  0.5385         71.0
+               12800    12800.0   0.6872       0.6648  0.1186        6.4   0.6231       0.6338  0.0734        3.6       0.3436     0.0000 -0.9936   3.5082  0.0257  0.6410         71.0
+official       0            0.0   0.7615       0.2507  0.7012       41.6   0.7128       0.2169  0.7232       40.2       0.2308     0.4154 -8.8160  15.8190  0.1714 -0.1333         71.0
+oost_ppi       3200      3186.4   0.0103       0.0113  0.0000        0.0   0.0000       0.0000  0.0000        0.0       0.9667     0.8615  0.1458   0.9400  0.0258  0.7282         71.0
+               12800    12763.0   0.2590       0.2845  0.0000        0.0   0.1385       0.1521  0.0000        0.0       1.0000     1.0000  0.0113   0.6019  0.0091  0.8821         71.0
+oost_ppi_qrels 3200      3216.6   0.0000       0.0000  0.0000        0.0   0.0000       0.0000  0.0000        0.0       0.9769     1.0000 -0.2487   0.8167  0.0210  0.6718         71.0
+               12800    12833.6   0.2205       0.2423  0.0000        0.0   0.1333       0.1465  0.0000        0.0       0.9923     0.9692  0.1477   0.6636  0.0101  0.8974         71.0
+ppi_tuned      3200      3200.8   0.0692       0.0761  0.0000        0.0   0.0205       0.0225  0.0000        0.0       0.9744     0.9692  0.1166   0.8670  0.0157  0.7641         71.0
+               12800    12791.8   0.4769       0.5239  0.0000        0.0   0.4026       0.4423  0.0000        0.0       0.9051     0.8923  0.0137   1.0448  0.0083  0.9077         71.0
+witness        3200      3178.4   0.2026       0.2225  0.0000        0.0   0.1128       0.1239  0.0000        0.0       0.9744     0.9846  0.0600   0.9434  0.0147  0.7744         71.0
+               12800    12802.0   0.5923       0.6507  0.0000        0.0   0.5231       0.5746  0.0000        0.0       0.9179     0.9846  0.3298   1.0402  0.0069  0.9128         71.0
+DONE
+EXIT:0

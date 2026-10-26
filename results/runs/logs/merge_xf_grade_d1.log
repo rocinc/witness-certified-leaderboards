@@ -1,0 +1,6 @@
+files=2 reps=20
+                     n_labels  cert_dec_bh  fdp_bh  cert_dec_by  fdp_by  cover_pairs     z_sd    rmse     tau  cert_dec_bh_se  fdp_bh_se
+budget method                                                                                                                           
+0      judge_plugin       0.0       0.3500  0.4264       0.3282  0.3902       0.1436   7.7101  0.0755  0.0551          0.0026     0.0042
+       official           0.0       0.2662  0.6821       0.2232  0.7113       0.2410  15.0263  0.1660 -0.1256          0.0064     0.0056
+3200   witness_xfit    3213.7       0.2099  0.0000       0.1232  0.0000       0.9622   0.8910  0.0143  0.7962          0.0300     0.0000

@@ -1,0 +1,32 @@
+D3 it   30: loglik(O) -9391.81  mean e(x,1) 0.283 e on L 0.787  mean P(y>=1|z) all 0.2508  posterior P(y>=1) on U 0.1209  |theta| 30.55 |phi| 11.31 b_e -2.95
+D3 it   60: loglik(O) -9328.54  mean e(x,1) 0.338 e on L 0.803  mean P(y>=1|z) all 0.2161  posterior P(y>=1) on U 0.0812  |theta| 31.89 |phi| 9.48 b_e -2.27
+D3 it   90: loglik(O) -9311.70  mean e(x,1) 0.412 e on L 0.832  mean P(y>=1|z) all 0.1986  posterior P(y>=1) on U 0.0610  |theta| 32.65 |phi| 8.46 b_e -1.67
+D3 it  120: loglik(O) -9298.27  mean e(x,1) 0.490 e on L 0.864  mean P(y>=1|z) all 0.1899  posterior P(y>=1) on U 0.0511  |theta| 33.20 |phi| 8.15 b_e -1.20
+D3 it  150: loglik(O) -9262.39  mean e(x,1) 0.588 e on L 0.892  mean P(y>=1|z) all 0.1842  posterior P(y>=1) on U 0.0445  |theta| 35.61 |phi| 7.61 b_e -0.62
+D3 it  180: loglik(O) -9222.63  mean e(x,1) 0.738 e on L 0.933  mean P(y>=1|z) all 0.1770  posterior P(y>=1) on U 0.0360  |theta| 36.63 |phi| 7.59 b_e +0.27
+D3 it  210: loglik(O) -9210.48  mean e(x,1) 0.851 e on L 0.963  mean P(y>=1|z) all 0.1724  posterior P(y>=1) on U 0.0308  |theta| 36.45 |phi| 8.10 b_e +1.10
+D3 it  240: loglik(O) -9206.40  mean e(x,1) 0.889 e on L 0.973  mean P(y>=1|z) all 0.1693  posterior P(y>=1) on U 0.0272  |theta| 36.71 |phi| 8.32 b_e +1.49
+D3 it  270: loglik(O) -9205.54  mean e(x,1) 0.910 e on L 0.977  mean P(y>=1|z) all 0.1660  posterior P(y>=1) on U 0.0233  |theta| 36.68 |phi| 7.98 b_e +1.74
+D3 it  300: loglik(O) -9204.63  mean e(x,1) 0.925 e on L 0.980  mean P(y>=1|z) all 0.1632  posterior P(y>=1) on U 0.0200  |theta| 36.84 |phi| 7.81 b_e +1.95
+D3 it  330: loglik(O) -9204.25  mean e(x,1) 0.931 e on L 0.981  mean P(y>=1|z) all 0.1609  posterior P(y>=1) on U 0.0173  |theta| 36.86 |phi| 7.52 b_e +2.07
+D3 it  360: loglik(O) -9203.82  mean e(x,1) 0.944 e on L 0.983  mean P(y>=1|z) all 0.1584  posterior P(y>=1) on U 0.0144  |theta| 37.42 |phi| 6.79 b_e +2.32
+D3 it  390: loglik(O) -9204.81  mean e(x,1) 0.963 e on L 0.986  mean P(y>=1|z) all 0.1559  posterior P(y>=1) on U 0.0115  |theta| 37.62 |phi| 5.26 b_e +2.76
+D3 it  420: loglik(O) -9204.74  mean e(x,1) 0.972 e on L 0.986  mean P(y>=1|z) all 0.1535  posterior P(y>=1) on U 0.0085  |theta| 37.71 |phi| 3.59 b_e +3.12
+D3 it  450: loglik(O) -9204.62  mean e(x,1) 0.977 e on L 0.988  mean P(y>=1|z) all 0.1512  posterior P(y>=1) on U 0.0060  |theta| 37.20 |phi| 3.08 b_e +3.31
+D3 it  480: loglik(O) -9203.28  mean e(x,1) 0.982 e on L 0.989  mean P(y>=1|z) all 0.1496  posterior P(y>=1) on U 0.0042  |theta| 37.52 |phi| 2.43 b_e +3.60
+D3 it  510: loglik(O) -9202.09  mean e(x,1) 0.989 e on L 0.992  mean P(y>=1|z) all 0.1483  posterior P(y>=1) on U 0.0027  |theta| 37.96 |phi| 2.01 b_e +4.18
+D3 it  540: loglik(O) -9201.64  mean e(x,1) 0.993 e on L 0.995  mean P(y>=1|z) all 0.1475  posterior P(y>=1) on U 0.0017  |theta| 37.89 |phi| 1.70 b_e +4.69
+D3 it  570: loglik(O) -9201.31  mean e(x,1) 0.996 e on L 0.997  mean P(y>=1|z) all 0.1469  posterior P(y>=1) on U 0.0010  |theta| 38.07 |phi| 1.11 b_e +5.38
+D3 it  600: loglik(O) -9201.68  mean e(x,1) 0.995 e on L 0.997  mean P(y>=1|z) all 0.1465  posterior P(y>=1) on U 0.0006  |theta| 37.76 |phi| 1.72 b_e +5.13
+D2 it   30: loglik(O) -1059.32  mean e(x,1) 0.131 e on L 0.350  mean P(y>=1|z) all 0.2098  posterior P(y>=1) on U 0.3412  |theta| 11.24 |phi| 3.39 b_e -2.17  truth P(y>=1|U) 0.4150
+D2 it   60: loglik(O) -1058.26  mean e(x,1) 0.135 e on L 0.349  mean P(y>=1|z) all 0.2043  posterior P(y>=1) on U 0.3574  |theta| 11.60 |phi| 3.21 b_e -2.12  truth P(y>=1|U) 0.4150
+D2 it   90: loglik(O) -1058.27  mean e(x,1) 0.135 e on L 0.348  mean P(y>=1|z) all 0.2005  posterior P(y>=1) on U 0.3550  |theta| 11.59 |phi| 3.19 b_e -2.11  truth P(y>=1|U) 0.4150
+D2 it  120: loglik(O) -1058.02  mean e(x,1) 0.130 e on L 0.341  mean P(y>=1|z) all 0.1968  posterior P(y>=1) on U 0.3476  |theta| 11.67 |phi| 3.34 b_e -2.17  truth P(y>=1|U) 0.4150
+D2 it  150: loglik(O) -1057.40  mean e(x,1) 0.123 e on L 0.336  mean P(y>=1|z) all 0.1933  posterior P(y>=1) on U 0.3384  |theta| 11.79 |phi| 3.60 b_e -2.25  truth P(y>=1|U) 0.4150
+D2 it  180: loglik(O) -1056.86  mean e(x,1) 0.122 e on L 0.340  mean P(y>=1|z) all 0.1897  posterior P(y>=1) on U 0.3286  |theta| 11.72 |phi| 3.74 b_e -2.26  truth P(y>=1|U) 0.4150
+D2 it  210: loglik(O) -1056.35  mean e(x,1) 0.123 e on L 0.344  mean P(y>=1|z) all 0.1860  posterior P(y>=1) on U 0.3199  |theta| 11.90 |phi| 3.81 b_e -2.26  truth P(y>=1|U) 0.4150
+D2 it  240: loglik(O) -1055.97  mean e(x,1) 0.130 e on L 0.352  mean P(y>=1|z) all 0.1819  posterior P(y>=1) on U 0.3107  |theta| 12.13 |phi| 3.70 b_e -2.19  truth P(y>=1|U) 0.4150
+D2 it  270: loglik(O) -1055.75  mean e(x,1) 0.138 e on L 0.359  mean P(y>=1|z) all 0.1774  posterior P(y>=1) on U 0.3005  |theta| 12.37 |phi| 3.55 b_e -2.10  truth P(y>=1|U) 0.4150
+D2 it  300: loglik(O) -1055.72  mean e(x,1) 0.146 e on L 0.366  mean P(y>=1|z) all 0.1727  posterior P(y>=1) on U 0.2903  |theta| 12.31 |phi| 3.40 b_e -2.02  truth P(y>=1|U) 0.4150
+DONE
+EXIT:0

@@ -1,0 +1,37 @@
+config {"data_dir": "/root/autodl-tmp/work/t2r", "models_dir": "/root/autodl-tmp/work/nlp-project/models", "d1_dir": "/root/autodl-tmp/work/witness/d1", "ckpt_dir": "/root/autodl-tmp/work/witness/ckpt/ft_ce", "repo": "bge-base-zh-v1.5", "n_per_rel": 15000, "passage_chars": 512, "max_len": 256, "batch": 16, "lr": 2e-05, "warmup_frac": 0.06, "weight_decay": 0.01, "epochs": 1, "grad_ckpt": true, "score_batch": 64, "gpu_frac": 0.1, "seed": 0}
+torch 2.13.0+cu130 cuda 13.0
+train qids=258042  D1 qids=3000  shared qids=0
+train queries whose text equals a D1 query: 0 (distinct texts 0); removed
+train pairs=60000 queries=52537 grade counts=[30000, 15000, 15000] data prep 625s
+[transformers] You passed `num_labels=3` which is incompatible to the `id2label` map of length `1`.
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 2193.20it/s]
+[transformers] [1mBertForSequenceClassification LOAD REPORT[0m from: /root/autodl-tmp/work/nlp-project/models/bge-base-zh-v1.5
+Key               | Status  | 
+------------------+---------+-
+classifier.weight | MISSING | 
+classifier.bias   | MISSING | 
+
+Notes:
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+[transformers] `use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+step 250/3750 loss(last 250)=1.0281 elapsed 154s peak alloc 1.98 GiB
+step 500/3750 loss(last 250)=0.9696 elapsed 326s peak alloc 1.98 GiB
+step 750/3750 loss(last 250)=0.9505 elapsed 514s peak alloc 1.98 GiB
+step 1000/3750 loss(last 250)=0.9497 elapsed 714s peak alloc 1.98 GiB
+step 1250/3750 loss(last 250)=0.9580 elapsed 871s peak alloc 1.98 GiB
+step 1500/3750 loss(last 250)=0.9350 elapsed 970s peak alloc 1.98 GiB
+step 1750/3750 loss(last 250)=0.9119 elapsed 1060s peak alloc 1.98 GiB
+step 2000/3750 loss(last 250)=0.9217 elapsed 1102s peak alloc 1.98 GiB
+step 2250/3750 loss(last 250)=0.8971 elapsed 1139s peak alloc 1.98 GiB
+step 2500/3750 loss(last 250)=0.9116 elapsed 1176s peak alloc 1.98 GiB
+step 2750/3750 loss(last 250)=0.9109 elapsed 1212s peak alloc 1.98 GiB
+step 3000/3750 loss(last 250)=0.8808 elapsed 1249s peak alloc 1.98 GiB
+step 3250/3750 loss(last 250)=0.8689 elapsed 1285s peak alloc 1.98 GiB
+step 3500/3750 loss(last 250)=0.8871 elapsed 1319s peak alloc 1.98 GiB
+step 3750/3750 loss(last 250)=0.8822 elapsed 1361s peak alloc 1.98 GiB
+training done in 1361s  peak allocated 1.98 GiB  peak reserved 2.09 GiB
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:00<00:00,  1.71it/s]Writing model shards: 100%|██████████| 1/1 [00:00<00:00,  1.71it/s]
+scored D1 n=48640 in 102s; mean prob [0.5479999780654907, 0.22699999809265137, 0.22499999403953552]; all-item accuracy 0.607; peak allocated 2.11 GiB
+total 2095s
+DONE
+EXIT:0

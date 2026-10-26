@@ -1,0 +1,21 @@
+# Exact versions of the environment that produced every reported number (Python 3.12.3, CUDA GPU for encoding and
+# reranking only; everything downstream of the cached system scores and judge labels runs on CPU).
+numpy==2.3.2
+scipy==1.18.1
+pandas==3.0.6
+pyarrow==26.0.0
+PyYAML==6.0.3
+scikit-learn==1.9.1
+openpyxl==3.1.5
+torch==2.13.0
+transformers==5.17.0
+sentence-transformers==6.1.0
+huggingface_hub==1.33.0
+bm25s==0.3.13
+jieba==0.42.1
+nltk==3.9.1
+httpx==0.28.1
+matplotlib==3.10.5
+shapely==2.2.0
+pymupdf==1.28.2
+pytest==8.4.2

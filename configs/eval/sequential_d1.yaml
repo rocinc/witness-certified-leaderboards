@@ -1,0 +1,13 @@
+# M4 sequential certification on D1 (scripts/eval/sequential.py); testbed and estimator settings come from configs/eval/insample_d1.yaml.
+checkpoints: [800, 1600, 3200, 4800, 6400, 9600, 12800]
+batch: 100            # draws per batch with fixed PPS weights
+refit_every: 400      # GREG refit and Neyman weights from all earlier labels every this many draws (predictable)
+# rows test=check: cert_dec = coverage of 95% z intervals at rho = 1/2, fdp = mean z, n_wrong = sd of z
+mix: 0.2              # uniform share of the per-batch design weights (positivity)
+n_target: 3200        # labels at which the mixture process is tuned (asymptotic CS, comparison only)
+cap: 0.5              # betting fraction cap: 1 + lam z >= 1 - cap on the sure lower bound of z
+reps: 10
+tag: seqbet
+specs:
+  witness_seq: {f: pu, strata: LUh, extras: [ce, jpat], lam: prev}
+  judge_seq: {f: judge, strata: global, extras: [], lam: prev}

@@ -1,0 +1,11 @@
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+
+# Data, weights and release artifacts live outside the repository (see README)
+witness_artifacts_*.tar.gz
+*.zip
+*.xlsx
+.env

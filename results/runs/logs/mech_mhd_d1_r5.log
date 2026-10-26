@@ -1,0 +1,43 @@
+config: {'out_dir': '/root/autodl-tmp/work/witness/d1', 'id_prefix': 't2r', 'k': 5, 'pool_systems': ['bm25_char1', 'bm25_char2', 'bm25_jieba'], 'pool_k': 5, 'judges': ['flash', 'pro'], 'reranker': 'rerank_qwen3', 'mnar': {'kind': 'hidden', 'shift': None, 'hidden': {'engine': 'bge_base_zh', 'k': 10, 'p1': 0.5, 'p2': 0.9, 'p_err': 0.03, 'decay': 0.9, 'stop_after': 1}}, 'h_bins': [0.01, 0.34, 0.67, 0.99], 'budgets': [800, 3200, 12800], 'fracs': [0.25, 0.75], 'alpha': 0.05, 'z_plan': 2.5, 'ridge': 20.0, 'pi_min_frac': 0.2, 'v_floor': 0.03, 'cell_prior': 10, 'plan_iters': 2, 'xfit_folds': 5, 'reps': 10, 'seed': 0, 'tag': 'mhd', 'methods': ['classical', 'ppi_tuned_xfit', 'active_xfit', 'witness_xfit', 'witness_fam_xfit', 'abl_f_judge_xfit']}
+md5 witness_eval.py 4de0bc97289b5e7d2bbb2bee2ee2f425
+md5 witness.py a0535c091d9ab47debee7bc009b7c1b5
+md5 rivals.py 25c44c90e831e82fd02d0f29e5e4691a
+md5 witness_mech.py 8174f435196e6e3180cf21b8aff455c5
+systems=12 pairs=66 items=48640 queries=3000 frame=30390
+true DCG@k at rho=1/2: {'bge_small_zh': np.float64(0.8186), 'gte_base_zh': np.float64(0.8274), 'm3e_base': np.float64(0.8415), 'text2vec_zh': np.float64(0.7913), 'e5_small': np.float64(0.8218), 'e5_base': np.float64(0.8163), 'bge_m3': np.float64(0.8537), 'qwen3_emb': np.float64(0.8444), 'bm25_char1': np.float64(0.7818), 'bm25_char2': np.float64(0.7677), 'bm25_jieba': np.float64(0.7662), 'rerank_qwen3': np.float64(0.8433)}
+judges: ['flash', 'pro'] exact agreement: [0.504, 0.541] refused: [1, 1]
+qrels mechanism: hidden; expected qrels recall among relevant in frame 0.178, expected qrels per query 0.79
+rep 5: qrels recall=0.143 qrels error share=0.062 pu: max|e_hat-e| on relevant=0.851 corr(P(y>=1), u1) on U=0.317
+rep 5 done 88s
+rep 6: qrels recall=0.142 qrels error share=0.071 pu: max|e_hat-e| on relevant=0.853 corr(P(y>=1), u1) on U=0.307
+rep 6 done 94s
+rep 7: qrels recall=0.142 qrels error share=0.074 pu: max|e_hat-e| on relevant=0.852 corr(P(y>=1), u1) on U=0.312
+rep 7 done 104s
+rep 8: qrels recall=0.141 qrels error share=0.070 pu: max|e_hat-e| on relevant=0.852 corr(P(y>=1), u1) on U=0.320
+rep 8 done 155s
+rep 9: qrels recall=0.140 qrels error share=0.081 pu: max|e_hat-e| on relevant=0.847 corr(P(y>=1), u1) on U=0.307
+rep 9 done 103s
+                         n_labels  cert_bh  cert_dec_bh  fdp_bh  nwrong_bh  cert_by  cert_dec_by  fdp_by  nwrong_by  cover_pairs  cover_sys  z_mean    z_sd    rmse     tau  n_decidable
+method           budget                                                                                                                                                                 
+abl_f_judge_xfit 800        781.2   0.0000       0.0000  0.0000        0.0   0.0000       0.0000  0.0000        0.0       0.8909     0.8333  0.1043  1.1271  0.0468  0.5333         61.0
+                 3200      3209.4   0.1303       0.1410  0.0000        0.0   0.0364       0.0393  0.0000        0.0       0.9152     0.8500  0.0036  1.0297  0.0193  0.7879         61.0
+                 12800    12809.2   0.5242       0.5672  0.0000        0.0   0.4273       0.4623  0.0000        0.0       0.9424     0.9167 -0.0345  1.0026  0.0076  0.8848         61.0
+active_xfit      800        788.8   0.0000       0.0000  0.0000        0.0   0.0000       0.0000  0.0000        0.0       0.9758     0.9667 -0.3057  0.6824  0.0323  0.5758         61.0
+                 3200      3230.6   0.0545       0.0590  0.0000        0.0   0.0121       0.0131  0.0000        0.0       0.9758     1.0000 -0.1088  0.9229  0.0179  0.7697         61.0
+                 12800    12803.0   0.5364       0.5803  0.0000        0.0   0.4333       0.4689  0.0000        0.0       0.9273     0.8833  0.0679  1.0275  0.0078  0.8667         61.0
+classical        800        816.0   0.0030       0.0033  0.0000        0.0   0.0000       0.0000  0.0000        0.0       0.9303     0.9833  0.3433  0.9834  0.0590  0.4848         61.0
+                 3200      3201.2   0.0061       0.0066  0.0000        0.0   0.0000       0.0000  0.0000        0.0       0.8758     0.9000 -0.2936  1.1706  0.0313  0.5455         61.0
+                 12800    12729.2   0.4515       0.4885  0.0000        0.0   0.3182       0.3443  0.0000        0.0       0.9242     0.8833 -0.0412  1.0450  0.0113  0.8485         61.0
+judge_plugin     0            0.0   0.7273       0.6787  0.1374        6.6   0.6848       0.6525  0.1194        5.4       0.1667     0.0000 -1.4389  5.9340  0.0419  0.6182         61.0
+official         0            0.0   0.8061       0.7410  0.1501        8.0   0.7636       0.7115  0.1385        7.0       0.2939     0.0000  2.3113  3.3556  0.0270  0.6970         61.0
+ppi_tuned_xfit   800        804.8   0.0000       0.0000  0.0000        0.0   0.0000       0.0000  0.0000        0.0       0.9394     0.9667 -0.0996  0.9953  0.0436  0.4606         61.0
+                 3200      3252.2   0.1152       0.1246  0.0000        0.0   0.0242       0.0262  0.0000        0.0       0.9879     0.9833  0.1610  0.8253  0.0173  0.7697         61.0
+                 12800    12772.0   0.5030       0.5443  0.0000        0.0   0.4212       0.4557  0.0000        0.0       0.9576     0.8833  0.0178  0.9603  0.0076  0.9030         61.0
+witness_fam_xfit 800        817.4   0.0000       0.0000  0.0000        0.0   0.0000       0.0000  0.0000        0.0       0.9333     0.9833 -0.0788  0.9639  0.0364  0.4970         61.0
+                 3200      3191.0   0.2061       0.2230  0.0000        0.0   0.1303       0.1410  0.0000        0.0       0.9576     0.8000  0.1642  0.8545  0.0156  0.8364         61.0
+                 12800    12863.6   0.5455       0.5902  0.0000        0.0   0.4879       0.5279  0.0000        0.0       0.9515     1.0000 -0.2322  0.9541  0.0066  0.9091         61.0
+witness_xfit     800        772.0   0.0000       0.0000  0.0000        0.0   0.0000       0.0000  0.0000        0.0       0.9424     1.0000 -0.3023  0.9759  0.0378  0.4970         61.0
+                 3200      3197.0   0.1727       0.1869  0.0000        0.0   0.0970       0.1049  0.0000        0.0       0.9788     0.9833  0.1063  0.7944  0.0150  0.8121         61.0
+                 12800    12795.8   0.5818       0.6295  0.0000        0.0   0.5030       0.5443  0.0000        0.0       0.9939     1.0000 -0.0299  0.7518  0.0054  0.9273         61.0
+DONE
+EXIT:0

@@ -1,0 +1,26 @@
+   bge_m3         vs bm25_char2     D(0)=+1.1109 (se 0.1114) D(1)=+1.1448 (se 0.1299)  planned P(certified after batch 2) = 1.00
+   bm25_char2     vs rerank_bge_m3  D(0)=-0.8518 (se 0.1024) D(1)=-0.9822 (se 0.1200)  planned P(certified after batch 2) = 1.00
+   qwen3_emb      vs bm25_char2     D(0)=+0.7866 (se 0.0979) D(1)=+0.9513 (se 0.1324)  planned P(certified after batch 2) = 1.00
+   bge_m3         vs bm25_char1     D(0)=+0.9341 (se 0.1312) D(1)=+0.9291 (se 0.1473)  planned P(certified after batch 2) = 1.00
+   bge_m3         vs bm25_jieba     D(0)=+0.9360 (se 0.1292) D(1)=+0.8988 (se 0.1475)  planned P(certified after batch 2) = 1.00
+   bm25_char1     vs rerank_bge_m3  D(0)=-0.6822 (se 0.1160) D(1)=-0.7984 (se 0.1319)  planned P(certified after batch 2) = 1.00
+   e5_small       vs bm25_char2     D(0)=+0.7728 (se 0.1306) D(1)=+0.9234 (se 0.1678)  planned P(certified after batch 2) = 1.00
+   bm25_jieba     vs rerank_bge_m3  D(0)=-0.6755 (se 0.1132) D(1)=-0.7556 (se 0.1322)  planned P(certified after batch 2) = 1.00
+   qwen3_emb      vs bm25_char1     D(0)=+0.5734 (se 0.1071) D(1)=+0.7089 (se 0.1399)  planned P(certified after batch 2) = 1.00
+   e5_small       vs bm25_char1     D(0)=+0.6139 (se 0.1111) D(1)=+0.7264 (se 0.1522)  planned P(certified after batch 2) = 0.99
+   qwen3_emb      vs bm25_jieba     D(0)=+0.5805 (se 0.1064) D(1)=+0.6667 (se 0.1394)  planned P(certified after batch 2) = 0.99
+   e5_small       vs bm25_jieba     D(0)=+0.6136 (se 0.1094) D(1)=+0.6938 (se 0.1491)  planned P(certified after batch 2) = 0.99
+   bge_m3         vs qwen3_emb      D(0)=+0.3319 (se 0.0908) D(1)=+0.1993 (se 0.1301)  planned P(certified after batch 2) = 0.57
+   e5_small       vs bge_m3         D(0)=-0.3155 (se 0.0987) D(1)=-0.1906 (se 0.1432)  planned P(certified after batch 2) = 0.47
+   bm25_char2     vs bm25_jieba     D(0)=-0.1701 (se 0.0938) D(1)=-0.2193 (se 0.0967)  planned P(certified after batch 2) = 0.44
+   bge_m3         vs rerank_bge_m3  D(0)=+0.2387 (se 0.0923) D(1)=+0.0869 (se 0.0897)  planned P(certified after batch 2) = 0.28
+   bm25_char1     vs bm25_char2     D(0)=+0.1561 (se 0.0915) D(1)=+0.1721 (se 0.0971)  planned P(certified after batch 2) = 0.26
+   qwen3_emb      vs rerank_bge_m3  D(0)=-0.1102 (se 0.0783) D(1)=-0.1271 (se 0.1231)  planned P(certified after batch 2) = 0.17
+   e5_small       vs rerank_bge_m3  D(0)=-0.0635 (se 0.1034) D(1)=-0.0612 (se 0.1437)  planned P(certified after batch 2) = 0.06
+   e5_small       vs qwen3_emb      D(0)=-0.0090 (se 0.0979) D(1)=-0.0450 (se 0.1408)  planned P(certified after batch 2) = 0.04
+   bm25_char1     vs bm25_jieba     D(0)=+0.0288 (se 0.0469) D(1)=-0.0326 (se 0.0615)  planned P(certified after batch 2) = 0.02
+expected number of pairs certified after batch 2 (both endpoints, z=2.5): 14.3 of 21
+batch 2: designed n=400, drawn 373 (L 64, U 309); pi range [1.31e-03, 0.049]
+sheet rows=392 unique=373
+DONE
+EXIT:0

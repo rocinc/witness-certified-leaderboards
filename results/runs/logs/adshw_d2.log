@@ -1,0 +1,111 @@
+config: {'out_dir': '/root/autodl-tmp/work/witness/d2', 'id_prefix': 'dl19', 'k': 10, 'pool_systems': ['bm25_ws', 'bm25_ws_stem'], 'pool_k': 10, 'judges': ['flash', 'pro'], 'reranker': 'rerank_qwen3', 'mnar': {'a': -2.5, 'b': 4.0, 'a_fp': -6.5, 'c': 0.0, 'shift': {'judge': 0.65, 'ce': 0.72}}, 'h_bins': [0.01, 0.51, 0.99], 'budgets': [60, 200, 600], 'fracs': [0.25, 0.75], 'alpha': 0.05, 'z_plan': 2.5, 'ridge': 20.0, 'pi_min_frac': 0.2, 'v_floor': 0.03, 'cell_prior': 10, 'plan_iters': 2, 'xfit_folds': 5, 'reps': 40, 'seed': 0, 'tag': 'adw_xmsh', 'methods': ['active_xfit', 'witness_fam_xfit', 'witness_2stage_xs', 'witness_adapt', 'witness_adapt_w']}
+md5 witness_eval.py dd26c36829ca3fe5aa6779dd4403c9a7
+md5 witness.py 79cb9f50b23af68fee05f0fd3be8d60d
+md5 rivals.py 25c44c90e831e82fd02d0f29e5e4691a
+md5 witness_mech.py 8174f435196e6e3180cf21b8aff455c5
+systems=7 pairs=21 items=9260 queries=43 frame=1175
+true DCG@k at rho=1/2: {'e5_small': np.float64(2.2062), 'e5_base': np.float64(2.2897), 'bge_m3': np.float64(2.2372), 'qwen3_emb': np.float64(2.1774), 'bm25_ws': np.float64(1.1538), 'bm25_ws_stem': np.float64(1.2337), 'rerank_qwen3': np.float64(2.2522)}
+judges: ['flash', 'pro'] exact agreement: [0.695, 0.735] refused: [0, 0]
+qrels shift: judge 0.65 ce 0.72 sd on frame 1.218
+qrels mechanism: logistic; expected qrels recall among relevant in frame 0.359, expected qrels per query 8.33
+rep 0: qrels recall=0.127 qrels error share=0.076 pu: max|e_hat-e| on relevant=0.308 corr(P(y>=1), u1) on U=0.507
+rep 0 done 64s
+rep 1: qrels recall=0.134 qrels error share=0.080 pu: max|e_hat-e| on relevant=0.414 corr(P(y>=1), u1) on U=0.485
+rep 1 done 77s
+rep 2: qrels recall=0.128 qrels error share=0.065 pu: max|e_hat-e| on relevant=0.338 corr(P(y>=1), u1) on U=0.490
+rep 2 done 66s
+rep 3: qrels recall=0.138 qrels error share=0.060 pu: max|e_hat-e| on relevant=0.358 corr(P(y>=1), u1) on U=0.500
+rep 3 done 64s
+rep 4: qrels recall=0.120 qrels error share=0.071 pu: max|e_hat-e| on relevant=0.382 corr(P(y>=1), u1) on U=0.520
+rep 4 done 64s
+rep 5: qrels recall=0.134 qrels error share=0.062 pu: max|e_hat-e| on relevant=0.317 corr(P(y>=1), u1) on U=0.506
+rep 5 done 65s
+rep 6: qrels recall=0.131 qrels error share=0.102 pu: max|e_hat-e| on relevant=0.296 corr(P(y>=1), u1) on U=0.474
+rep 6 done 65s
+rep 7: qrels recall=0.127 qrels error share=0.056 pu: max|e_hat-e| on relevant=0.299 corr(P(y>=1), u1) on U=0.501
+rep 7 done 81s
+rep 8: qrels recall=0.136 qrels error share=0.058 pu: max|e_hat-e| on relevant=0.371 corr(P(y>=1), u1) on U=0.500
+rep 8 done 66s
+rep 9: qrels recall=0.130 qrels error share=0.087 pu: max|e_hat-e| on relevant=0.320 corr(P(y>=1), u1) on U=0.512
+rep 9 done 62s
+rep 10: qrels recall=0.133 qrels error share=0.083 pu: max|e_hat-e| on relevant=0.344 corr(P(y>=1), u1) on U=0.523
+rep 10 done 61s
+rep 11: qrels recall=0.134 qrels error share=0.067 pu: max|e_hat-e| on relevant=0.410 corr(P(y>=1), u1) on U=0.511
+rep 11 done 66s
+rep 12: qrels recall=0.140 qrels error share=0.069 pu: max|e_hat-e| on relevant=0.366 corr(P(y>=1), u1) on U=0.512
+rep 12 done 67s
+rep 13: qrels recall=0.131 qrels error share=0.081 pu: max|e_hat-e| on relevant=0.343 corr(P(y>=1), u1) on U=0.493
+rep 13 done 64s
+rep 14: qrels recall=0.124 qrels error share=0.085 pu: max|e_hat-e| on relevant=0.334 corr(P(y>=1), u1) on U=0.522
+rep 14 done 62s
+rep 15: qrels recall=0.131 qrels error share=0.084 pu: max|e_hat-e| on relevant=0.436 corr(P(y>=1), u1) on U=0.507
+rep 15 done 71s
+rep 16: qrels recall=0.144 qrels error share=0.060 pu: max|e_hat-e| on relevant=0.309 corr(P(y>=1), u1) on U=0.497
+rep 16 done 63s
+rep 17: qrels recall=0.140 qrels error share=0.072 pu: max|e_hat-e| on relevant=0.338 corr(P(y>=1), u1) on U=0.490
+rep 17 done 66s
+rep 18: qrels recall=0.126 qrels error share=0.076 pu: max|e_hat-e| on relevant=0.299 corr(P(y>=1), u1) on U=0.514
+rep 18 done 63s
+rep 19: qrels recall=0.140 qrels error share=0.079 pu: max|e_hat-e| on relevant=0.387 corr(P(y>=1), u1) on U=0.502
+rep 19 done 75s
+rep 20: qrels recall=0.140 qrels error share=0.041 pu: max|e_hat-e| on relevant=0.320 corr(P(y>=1), u1) on U=0.488
+rep 20 done 70s
+rep 21: qrels recall=0.138 qrels error share=0.085 pu: max|e_hat-e| on relevant=0.329 corr(P(y>=1), u1) on U=0.495
+rep 21 done 78s
+rep 22: qrels recall=0.135 qrels error share=0.053 pu: max|e_hat-e| on relevant=0.329 corr(P(y>=1), u1) on U=0.485
+rep 22 done 62s
+rep 23: qrels recall=0.137 qrels error share=0.090 pu: max|e_hat-e| on relevant=0.348 corr(P(y>=1), u1) on U=0.495
+rep 23 done 72s
+rep 24: qrels recall=0.125 qrels error share=0.085 pu: max|e_hat-e| on relevant=0.330 corr(P(y>=1), u1) on U=0.504
+rep 24 done 71s
+rep 25: qrels recall=0.128 qrels error share=0.056 pu: max|e_hat-e| on relevant=0.333 corr(P(y>=1), u1) on U=0.512
+rep 25 done 68s
+rep 26: qrels recall=0.132 qrels error share=0.078 pu: max|e_hat-e| on relevant=0.382 corr(P(y>=1), u1) on U=0.498
+rep 26 done 66s
+rep 27: qrels recall=0.143 qrels error share=0.070 pu: max|e_hat-e| on relevant=0.405 corr(P(y>=1), u1) on U=0.495
+rep 27 done 63s
+rep 28: qrels recall=0.125 qrels error share=0.074 pu: max|e_hat-e| on relevant=0.342 corr(P(y>=1), u1) on U=0.521
+rep 28 done 63s
+rep 29: qrels recall=0.135 qrels error share=0.074 pu: max|e_hat-e| on relevant=0.421 corr(P(y>=1), u1) on U=0.507
+rep 29 done 62s
+rep 30: qrels recall=0.131 qrels error share=0.071 pu: max|e_hat-e| on relevant=0.367 corr(P(y>=1), u1) on U=0.520
+rep 30 done 66s
+rep 31: qrels recall=0.135 qrels error share=0.084 pu: max|e_hat-e| on relevant=0.331 corr(P(y>=1), u1) on U=0.509
+rep 31 done 61s
+rep 32: qrels recall=0.134 qrels error share=0.048 pu: max|e_hat-e| on relevant=0.342 corr(P(y>=1), u1) on U=0.491
+rep 32 done 64s
+rep 33: qrels recall=0.123 qrels error share=0.089 pu: max|e_hat-e| on relevant=0.345 corr(P(y>=1), u1) on U=0.540
+rep 33 done 65s
+rep 34: qrels recall=0.131 qrels error share=0.074 pu: max|e_hat-e| on relevant=0.356 corr(P(y>=1), u1) on U=0.496
+rep 34 done 66s
+rep 35: qrels recall=0.132 qrels error share=0.055 pu: max|e_hat-e| on relevant=0.307 corr(P(y>=1), u1) on U=0.470
+rep 35 done 60s
+rep 36: qrels recall=0.131 qrels error share=0.066 pu: max|e_hat-e| on relevant=0.305 corr(P(y>=1), u1) on U=0.511
+rep 36 done 69s
+rep 37: qrels recall=0.133 qrels error share=0.078 pu: max|e_hat-e| on relevant=0.373 corr(P(y>=1), u1) on U=0.509
+rep 37 done 65s
+rep 38: qrels recall=0.133 qrels error share=0.072 pu: max|e_hat-e| on relevant=0.438 corr(P(y>=1), u1) on U=0.519
+rep 38 done 75s
+rep 39: qrels recall=0.116 qrels error share=0.076 pu: max|e_hat-e| on relevant=0.328 corr(P(y>=1), u1) on U=0.507
+rep 39 done 69s
+                          n_labels  cert_bh  cert_dec_bh  fdp_bh  nwrong_bh  cert_by  cert_dec_by  fdp_by  nwrong_by  cover_pairs  cover_sys  z_mean    z_sd    rmse     tau  n_decidable
+method            budget                                                                                                                                                                 
+active_xfit       60        61.300   0.0381       0.0421  0.0000        0.0   0.0167       0.0184    0.00        0.0       0.9667     0.9214 -0.0242  0.8124  0.2845  0.5667         19.0
+                  200      200.875   0.3738       0.4132  0.0000        0.0   0.2583       0.2855    0.00        0.0       0.9512     0.9036 -0.0313  0.9103  0.1537  0.7000         19.0
+                  600      597.400   0.4845       0.5355  0.0000        0.0   0.4786       0.5289    0.00        0.0       0.9369     0.9071 -0.1304  0.9504  0.0645  0.7833         19.0
+judge_plugin      0          0.000   0.4964       0.5487  0.0000        0.0   0.4798       0.5303    0.00        0.0       0.9976     0.0000  0.0687  0.5596  0.0561  0.9476         19.0
+official          0          0.000   0.0690       0.0079  0.2507        1.3   0.0286       0.0000    0.15        0.6       0.4833     0.1643 -2.6995  5.6853  0.8905 -0.2405         19.0
+witness_2stage_xs 60        57.825   0.0821       0.0908  0.0000        0.0   0.0417       0.0461    0.00        0.0       0.9155     0.9250 -0.1339  1.0124  0.3511  0.4810         19.0
+                  200      200.350   0.4286       0.4737  0.0000        0.0   0.3583       0.3961    0.00        0.0       0.9512     0.9286 -0.0303  0.9074  0.1513  0.6833         19.0
+                  600      595.325   0.4857       0.5368  0.0000        0.0   0.4810       0.5316    0.00        0.0       0.9488     0.9143 -0.1424  0.9116  0.0662  0.8310         19.0
+witness_adapt     60        58.000   0.0738       0.0816  0.0000        0.0   0.0429       0.0474    0.00        0.0       0.9131     0.8857 -0.1329  0.9895  0.3336  0.5000         19.0
+                  200      202.525   0.4286       0.4737  0.0000        0.0   0.3714       0.4105    0.00        0.0       0.9417     0.9429 -0.0678  0.9152  0.1586  0.6095         19.0
+                  600      601.425   0.4881       0.5395  0.0000        0.0   0.4810       0.5316    0.00        0.0       0.9571     0.9571  0.0328  0.8246  0.0601  0.8048         19.0
+witness_adapt_w   60        61.200   0.0726       0.0803  0.0000        0.0   0.0226       0.0250    0.00        0.0       0.9226     0.9036 -0.0081  0.9679  0.3540  0.5429         19.0
+                  200      198.650   0.4071       0.4500  0.0000        0.0   0.3381       0.3737    0.00        0.0       0.9440     0.9357 -0.1034  0.9109  0.1520  0.6357         19.0
+                  600      600.725   0.4845       0.5355  0.0000        0.0   0.4786       0.5289    0.00        0.0       0.9286     0.9357 -0.0742  0.9806  0.0728  0.7690         19.0
+witness_fam_xfit  60        60.350   0.1464       0.1618  0.0000        0.0   0.0464       0.0513    0.00        0.0       0.9548     0.9179  0.0829  0.8671  0.2981  0.5905         19.0
+                  200      198.850   0.4429       0.4895  0.0000        0.0   0.3917       0.4329    0.00        0.0       0.9548     0.9286 -0.1449  0.8879  0.1376  0.6381         19.0
+                  600      591.975   0.5083       0.5618  0.0000        0.0   0.4833       0.5342    0.00        0.0       0.9429     0.9393 -0.1089  0.9113  0.0532  0.8595         19.0
+DONE
+EXIT:0

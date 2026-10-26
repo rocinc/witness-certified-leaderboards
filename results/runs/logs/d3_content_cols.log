@@ -1,0 +1,41 @@
+[A] judge             certified BH 13/21, BY 12/21; mean SE rho=0 0.0647, 1/2 0.0554, 1 0.0786
+[A] judge+fam         certified BH 14/21, BY 12/21; mean SE rho=0 0.0641, 1/2 0.0545, 1 0.0767
+[A] judge_cos         certified BH 13/21, BY 12/21; mean SE rho=0 0.0647, 1/2 0.0551, 1 0.0773
+[A] judge_cos+fam     certified BH 14/21, BY 12/21; mean SE rho=0 0.0641, 1/2 0.0545, 1 0.0764
+[A] pu_prior          certified BH 13/21, BY 12/21; mean SE rho=0 0.0647, 1/2 0.0553, 1 0.0781
+[A] pu_prior+fam      certified BH 13/21, BY 12/21; mean SE rho=0 0.0642, 1/2 0.0544, 1 0.0763
+[A] pu_prior_cos+fam  certified BH 14/21, BY 12/21; mean SE rho=0 0.0640, 1/2 0.0544, 1 0.0763
+[A] SE ratio judge / judge+fam per pair: rho=0 median 1.006 [1.000, 1.068]; rho=1/2 median 1.018 [1.001, 1.032]; rho=1 median 1.021 [1.002, 1.058]; BH decisions differing: ['bm25_char1-bm25_char2']
+[A] SE ratio judge_cos / judge+fam per pair: rho=0 median 1.007 [1.001, 1.057]; rho=1/2 median 1.011 [1.003, 1.023]; rho=1 median 1.008 [0.992, 1.054]; BH decisions differing: ['bm25_char1-bm25_char2']
+[A] SE ratio judge_cos+fam / judge+fam per pair: rho=0 median 1.000 [0.998, 1.002]; rho=1/2 median 1.001 [0.997, 1.003]; rho=1 median 0.996 [0.991, 1.000]; BH decisions differing: []
+[A] SE ratio pu_prior / judge+fam per pair: rho=0 median 1.008 [0.998, 1.051]; rho=1/2 median 1.015 [0.993, 1.028]; rho=1 median 1.017 [0.977, 1.059]; BH decisions differing: ['bm25_char1-bm25_char2']
+[A] SE ratio pu_prior+fam / judge+fam per pair: rho=0 median 1.001 [0.995, 1.007]; rho=1/2 median 0.997 [0.988, 1.008]; rho=1 median 0.996 [0.977, 1.003]; BH decisions differing: ['bm25_char1-bm25_char2']
+[A] SE ratio pu_prior_cos+fam / judge+fam per pair: rho=0 median 0.998 [0.991, 1.007]; rho=1/2 median 0.999 [0.990, 1.010]; rho=1 median 0.995 [0.978, 1.003]; BH decisions differing: []
+[B] pro+flash: certified BH 13; mean SE rho=1/2 0.0554
+[B] bm25_char1: certified BH 14; mean SE rho=1/2 0.0933
+[B] pro+flash: BH rejections 13; threshold alpha*k/2P = 0.01548; p of rank k 1.00e-02, rank k+1 2.39e-02 (threshold at k+1 0.01667)
+[B] bm25_char1: BH rejections 14; threshold alpha*k/2P = 0.01667; p of rank k 9.27e-03, rank k+1 2.27e-02 (threshold at k+1 0.01786)
+[B] per pair (D at rho=0 / rho=1, se, IU p of the favoured direction, BH certified) pro+flash | bm25_char1:
+   e5_small      vs bge_m3        D0 -0.190 (0.058) D1 -0.150 (0.078) p 2.7e-02 - | D0 -0.296 (0.084) D1 -0.229 (0.114) p 2.3e-02 -
+   e5_small      vs qwen3_emb     D0 -0.005 (0.063) D1 -0.027 (0.079) p 4.7e-01 - | D0 -0.023 (0.081) D1 -0.053 (0.114) p 3.9e-01 -
+   e5_small      vs bm25_char1    D0 +0.579 (0.079) D1 +0.697 (0.095) p 1.5e-13 C | D0 +0.517 (0.116) D1 +0.617 (0.147) p 1.5e-05 C
+   e5_small      vs bm25_char2    D0 +0.683 (0.079) D1 +0.861 (0.099) p 1.6e-18 C | D0 +0.700 (0.119) D1 +0.854 (0.150) p 5.7e-09 C
+   e5_small      vs bm25_jieba    D0 +0.575 (0.072) D1 +0.674 (0.095) p 5.9e-13 C | D0 +0.571 (0.109) D1 +0.635 (0.143) p 4.3e-06 C
+   e5_small      vs rerank_bge_m3 D0 -0.112 (0.060) D1 -0.120 (0.079) p 6.5e-02 - | D0 -0.128 (0.085) D1 -0.136 (0.119) p 1.3e-01 -
+   bge_m3        vs qwen3_emb     D0 +0.225 (0.051) D1 +0.142 (0.072) p 2.4e-02 - | D0 +0.282 (0.073) D1 +0.185 (0.102) p 3.5e-02 -
+   bge_m3        vs bm25_char1    D0 +0.825 (0.087) D1 +0.890 (0.095) p 2.9e-21 C | D0 +0.865 (0.125) D1 +0.880 (0.144) p 4.9e-10 C
+   bge_m3        vs bm25_char2    D0 +0.917 (0.071) D1 +1.053 (0.082) p 4.5e-38 C | D0 +1.053 (0.112) D1 +1.128 (0.130) p 2.7e-18 C
+   bge_m3        vs bm25_jieba    D0 +0.811 (0.080) D1 +0.857 (0.094) p 4.6e-20 C | D0 +0.895 (0.120) D1 +0.875 (0.140) p 2.0e-10 C
+   bge_m3        vs rerank_bge_m3 D0 +0.098 (0.053) D1 +0.047 (0.057) p 2.1e-01 - | D0 +0.182 (0.080) D1 +0.096 (0.090) p 1.4e-01 -
+   qwen3_emb     vs bm25_char1    D0 +0.573 (0.071) D1 +0.748 (0.090) p 4.8e-16 C | D0 +0.553 (0.101) D1 +0.679 (0.129) p 7.3e-08 C
+   qwen3_emb     vs bm25_char2    D0 +0.685 (0.060) D1 +0.927 (0.081) p 3.2e-30 C | D0 +0.765 (0.098) D1 +0.955 (0.123) p 4.1e-15 C
+   qwen3_emb     vs bm25_jieba    D0 +0.566 (0.066) D1 +0.728 (0.090) p 3.8e-16 C | D0 +0.599 (0.098) D1 +0.691 (0.127) p 2.5e-08 C
+   qwen3_emb     vs rerank_bge_m3 D0 -0.115 (0.050) D1 -0.089 (0.069) p 9.9e-02 - | D0 -0.109 (0.064) D1 -0.102 (0.098) p 1.5e-01 -
+   bm25_char1    vs bm25_char2    D0 +0.090 (0.053) D1 +0.158 (0.059) p 4.6e-02 - | D0 +0.222 (0.079) D1 +0.305 (0.091) p 2.5e-03 C <== differs
+   bm25_char1    vs bm25_jieba    D0 +0.012 (0.040) D1 -0.024 (0.045) p 6.2e-01 - | D0 +0.054 (0.052) D1 +0.031 (0.066) p 3.2e-01 -
+   bm25_char1    vs rerank_bge_m3 D0 -0.719 (0.080) D1 -0.846 (0.082) p 1.7e-19 C | D0 -0.693 (0.109) D1 -0.790 (0.126) p 1.8e-10 C
+   bm25_char2    vs bm25_jieba    D0 -0.102 (0.044) D1 -0.183 (0.057) p 1.0e-02 C | D0 -0.167 (0.071) D1 -0.278 (0.081) p 9.3e-03 C
+   bm25_char2    vs rerank_bge_m3 D0 -0.837 (0.067) D1 -1.027 (0.071) p 7.0e-36 C | D0 -0.886 (0.104) D1 -1.052 (0.118) p 7.2e-18 C
+   bm25_jieba    vs rerank_bge_m3 D0 -0.711 (0.074) D1 -0.816 (0.082) p 5.0e-22 C | D0 -0.727 (0.107) D1 -0.789 (0.124) p 8.9e-11 C
+DONE
+EXIT:0

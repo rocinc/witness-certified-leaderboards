@@ -1,0 +1,24 @@
+mnar: {'a': -2.5, 'b': 4.0, 'a_fp': -6.5, 'c': 0.0, 'shift': None}
+systems=['e5_small', 'e5_base', 'bge_m3', 'qwen3_emb', 'bm25_ws', 'bm25_ws_stem', 'rerank_qwen3']
+pairs=21 queries=43; expected qrels per query 7.515; expected recall among relevant in frame 0.262; expected qrels error share 0.083
+predicted sign flips of E[Delta_off] vs Delta(1/2): 13/21
+refined (query-CLT SE, BH cut z=2.27): expected certified 9.700, expected wrongly certified (endpoint rule) 9.522, share 0.982; (rho=1/2 sign rule) 9.442
+per system: true DCG(1/2), DCG(1), e_bar, DCG(1)*e_bar, share of top-k inside the engine list
+  e5_small       2.2062 3.0168 0.3031 0.9144 nan
+  e5_base        2.2897 3.1525 0.2923 0.9216 nan
+  bge_m3         2.2372 3.0680 0.2779 0.8526 nan
+  qwen3_emb      2.1774 2.9952 0.2790 0.8357 nan
+  bm25_ws        1.1538 1.6107 0.7357 1.1850 nan
+  bm25_ws_stem   1.2337 1.7524 0.7050 1.2355 nan
+  rerank_qwen3   2.2522 3.0589 0.3099 0.9481 nan
+pairs with the largest wrong-certification probability (A, B, Delta(1/2), E[Delta_off], sd, s_q, P(wrong)):
+  bge_m3         bm25_ws_stem   +1.0035 -0.5224 0.0788 0.1328 0.997
+  qwen3_emb      bm25_ws_stem   +0.9437 -0.5358 0.0795 0.1414 0.997
+  e5_small       bm25_ws_stem   +0.9724 -0.4554 0.0791 0.1284 0.981
+  bge_m3         bm25_ws        +1.0835 -0.4828 0.0834 0.1421 0.972
+  qwen3_emb      bm25_ws        +1.0237 -0.4962 0.0838 0.1503 0.968
+  e5_base        bm25_ws_stem   +1.0559 -0.4559 0.0791 0.1365 0.967
+  bm25_ws_stem   rerank_qwen3   -1.0185 +0.4274 0.0768 0.1283 0.962
+  e5_small       bm25_ws        +1.0524 -0.4157 0.0816 0.1364 0.903
+DONE
+EXIT:0

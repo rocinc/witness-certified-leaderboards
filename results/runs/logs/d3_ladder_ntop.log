@@ -1,0 +1,10 @@
+rung pro+flash: psi (k=2 vs k=1 logit of e) e(x,2)-e(x,1) mean on U -0.0019
+   n_top 1-2: U items 43122 (labelled 542); human HT P(y>=1) 0.124; mean on labelled: posterior 0.093, prior 0.102; e(x,1) mean over U items 0.120; share of the bin's relevant frame items in qrels (labelled, L+U) 0.128
+   n_top 3-4: U items 6661 (labelled 103); human HT P(y>=1) 0.395; mean on labelled: posterior 0.248, prior 0.332; e(x,1) mean over U items 0.436; share of the bin's relevant frame items in qrels (labelled, L+U) 0.409
+   n_top 5-7: U items 2782 (labelled 60); human HT P(y>=1) 0.733; mean on labelled: posterior 0.543, prior 0.725; e(x,1) mean over U items 0.801; share of the bin's relevant frame items in qrels (labelled, L+U) 0.681
+rung cos_text2vec_zh: psi (k=2 vs k=1 logit of e) e(x,2)-e(x,1) mean on U -0.0024
+   n_top 1-2: U items 43122 (labelled 542); human HT P(y>=1) 0.124; mean on labelled: posterior 0.160, prior 0.173; e(x,1) mean over U items 0.077; share of the bin's relevant frame items in qrels (labelled, L+U) 0.128
+   n_top 3-4: U items 6661 (labelled 103); human HT P(y>=1) 0.395; mean on labelled: posterior 0.279, prior 0.420; e(x,1) mean over U items 0.383; share of the bin's relevant frame items in qrels (labelled, L+U) 0.409
+   n_top 5-7: U items 2782 (labelled 60); human HT P(y>=1) 0.733; mean on labelled: posterior 0.392, prior 0.716; e(x,1) mean over U items 0.786; share of the bin's relevant frame items in qrels (labelled, L+U) 0.681
+DONE
+EXIT:0

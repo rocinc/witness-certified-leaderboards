@@ -1,0 +1,22 @@
+certified k=12 of 21; z*=2.189; z_beta=0.842 (power 0.8); target t=3.031; labels so far 843
+endpoint rho=0: realised / working-model variance, median 2.39
+endpoint rho=1: realised / working-model variance, median 1.69
+pair | Delta(0) Delta(1) | z_p (current) | same sign | 1/n extrapolation (total labels) | single-pair complexity
+bge_m3         vs qwen3_emb      +0.154 +0.144  z=1.72  yes        2605         522
+e5_small       vs bge_m3         -0.125 -0.146  z=1.23  yes        5106         699
+bm25_char1     vs bm25_char2     +0.082 +0.139  z=1.12  yes        6194        1296
+qwen3_emb      vs rerank_bge_m3  -0.090 -0.096  z=1.11  yes        6260        1154
+bm25_char2     vs bm25_jieba     -0.078 -0.150  z=1.07  yes        6732         968
+e5_small       vs rerank_bge_m3  -0.067 -0.105  z=0.65  yes       18419        2408
+bge_m3         vs rerank_bge_m3  +0.072 +0.044  z=0.61  yes       21038        2832
+e5_small       vs qwen3_emb      +0.010 -0.010  z=0.11  NO          inf         inf
+bm25_char1     vs bm25_jieba     +0.010 -0.011  z=0.17  NO          inf         inf
+joint budget to close the m easiest open pairs together (both endpoints, shared sample):
+  m=1 (bge_m3 vs qwen3_emb):       591 expected labels, max relative violation +2.2e-16
+  m=2 (e5_small vs bge_m3):      1117 expected labels, max relative violation +2.2e-16
+  m=3 (bm25_char1 vs bm25_char2):      3065 expected labels, max relative violation +2.2e-16
+  m=4 (qwen3_emb vs rerank_bge_m3):      3601 expected labels, max relative violation +0.0e+00
+  m=5 (bm25_char2 vs bm25_jieba):      3966 expected labels, max relative violation +2.2e-16
+  m=6 (e5_small vs rerank_bge_m3):      5263 expected labels, max relative violation +2.2e-16
+  m=7 (bge_m3 vs rerank_bge_m3):      6259 expected labels, max relative violation +2.2e-16
+DONE

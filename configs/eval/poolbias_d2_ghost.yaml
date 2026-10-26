@@ -1,0 +1,24 @@
+# D2 sensitivity of the qrels mechanism (ghost): pool [bge_m3], b: 4.0.
+out_dir: ${WITNESS_ROOT}/outputs/d2
+id_prefix: dl19
+k: 10
+pool_systems: [bge_m3]
+pool_k: 10
+judges: [flash, pro]
+reranker: rerank_qwen3
+# P(labelled | y, h) = sigmoid(a_y + b h + c 1[y=2]); a_fp for y = 0 (qrels errors); c: grade dependence
+mnar: {a: -2.5, b: 4.0, a_fp: -6.5, c: 0.0, shift: null}
+h_bins: [0.5]                      # one pool system: h in {0, 1}
+budgets: [60, 200]
+fracs: [0.25, 0.75]     # stage split for the two-stage ablations (the main method is one stage)
+alpha: 0.05
+z_plan: 2.5              # certification threshold used for planning (BH over 2P one-sided nulls)
+ridge: 20.0              # the base predictor is worth this many labelled items in GREG
+pi_min_frac: 0.2         # pi_min = pi_min_frac * stage budget / frame size
+v_floor: 0.03            # floor of the working Var(u | x) before calibration
+cell_prior: 10           # pseudo-items of the model variance in the per-cell calibration
+plan_iters: 2
+reps: 20
+seed: 0
+tag: sens_ghost
+methods: [ppi_tuned, active, witness, abl_L_not_sampled]

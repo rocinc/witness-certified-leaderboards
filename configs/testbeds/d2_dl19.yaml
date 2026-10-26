@@ -1,0 +1,13 @@
+# D2 testbed: TREC DL 2019 passage deep judgments (43 queries, every judged passage is a candidate, 0-3 label).
+data_dir: ${WITNESS_ROOT}/raw/msmarco   # mteb/msmarco: test.tsv (DL19 qrels), queries.jsonl, corpus.jsonl
+models_dir: ${WITNESS_ROOT}/models
+out_dir: ${WITNESS_ROOT}/outputs/d2
+gpu_frac: 0.075          # shared card cap
+passage_chars: 2000      # MS MARCO passages are short; this cap does not truncate in practice
+dense:
+  e5_small: {repo: multilingual-e5-small, q_prefix: "query: ", p_prefix: "passage: ", batch: 64}
+  e5_base: {repo: multilingual-e5-base, q_prefix: "query: ", p_prefix: "passage: ", batch: 64}
+  bge_m3: {repo: bge-m3, q_prefix: "", p_prefix: "", batch: 16}
+  qwen3_emb: {repo: Qwen3-Embedding-0.6B, q_prefix: "", p_prefix: "", batch: 8, prompt_name: query}
+lexical: [ws, ws_stem]
+reranker: {repo: Qwen3-Reranker-0.6B, batch: 8}

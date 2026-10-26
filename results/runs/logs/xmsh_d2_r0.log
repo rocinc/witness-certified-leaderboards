@@ -1,0 +1,72 @@
+config: {'out_dir': '/root/autodl-tmp/work/witness/d2', 'id_prefix': 'dl19', 'k': 10, 'pool_systems': ['bm25_ws', 'bm25_ws_stem'], 'pool_k': 10, 'judges': ['flash', 'pro'], 'reranker': 'rerank_qwen3', 'mnar': {'a': -2.5, 'b': 4.0, 'a_fp': -6.5, 'c': 0.0, 'shift': {'judge': 0.65, 'ce': 0.72}}, 'h_bins': [0.01, 0.51, 0.99], 'budgets': [60, 200, 600], 'fracs': [0.25, 0.75], 'alpha': 0.05, 'z_plan': 2.5, 'ridge': 20.0, 'pi_min_frac': 0.2, 'v_floor': 0.03, 'cell_prior': 10, 'plan_iters': 2, 'xfit_folds': 5, 'reps': 40, 'seed': 0, 'tag': 'xmsh', 'methods': ['ppi_tuned_xfit', 'active_xfit', 'witness_xfit', 'witness_fam_xfit', 'abl_f_judge_xfit', 'abl_alloc_uniform_xfit']}
+md5 witness_eval.py f416295963837a35ec6753d3aafa7cb0
+md5 witness.py 3fcf67c2f2cbfb331f2629aef51ef63d
+md5 rivals.py 25c44c90e831e82fd02d0f29e5e4691a
+systems=7 pairs=21 items=9260 queries=43 frame=1175
+true DCG@k at rho=1/2: {'e5_small': np.float64(2.2062), 'e5_base': np.float64(2.2897), 'bge_m3': np.float64(2.2372), 'qwen3_emb': np.float64(2.1774), 'bm25_ws': np.float64(1.1538), 'bm25_ws_stem': np.float64(1.2337), 'rerank_qwen3': np.float64(2.2522)}
+judges: ['flash', 'pro'] exact agreement: [0.695, 0.735] refused: [0, 0]
+qrels shift: judge 0.65 ce 0.72 sd on frame 1.218
+rep 0: qrels recall=0.127 qrels error share=0.076 pu: max|e_hat-e| on relevant=0.308 corr(P(y>=1), u1) on U=0.507
+rep 0 done 109s
+rep 1: qrels recall=0.134 qrels error share=0.080 pu: max|e_hat-e| on relevant=0.414 corr(P(y>=1), u1) on U=0.485
+rep 1 done 159s
+rep 2: qrels recall=0.128 qrels error share=0.065 pu: max|e_hat-e| on relevant=0.338 corr(P(y>=1), u1) on U=0.490
+rep 2 done 92s
+rep 3: qrels recall=0.138 qrels error share=0.060 pu: max|e_hat-e| on relevant=0.358 corr(P(y>=1), u1) on U=0.500
+rep 3 done 87s
+rep 4: qrels recall=0.120 qrels error share=0.071 pu: max|e_hat-e| on relevant=0.382 corr(P(y>=1), u1) on U=0.520
+rep 4 done 56s
+rep 5: qrels recall=0.134 qrels error share=0.062 pu: max|e_hat-e| on relevant=0.317 corr(P(y>=1), u1) on U=0.506
+rep 5 done 25s
+rep 6: qrels recall=0.131 qrels error share=0.102 pu: max|e_hat-e| on relevant=0.296 corr(P(y>=1), u1) on U=0.474
+rep 6 done 21s
+rep 7: qrels recall=0.127 qrels error share=0.056 pu: max|e_hat-e| on relevant=0.299 corr(P(y>=1), u1) on U=0.501
+rep 7 done 24s
+rep 8: qrels recall=0.136 qrels error share=0.058 pu: max|e_hat-e| on relevant=0.371 corr(P(y>=1), u1) on U=0.500
+rep 8 done 15s
+rep 9: qrels recall=0.130 qrels error share=0.087 pu: max|e_hat-e| on relevant=0.320 corr(P(y>=1), u1) on U=0.512
+rep 9 done 14s
+rep 10: qrels recall=0.133 qrels error share=0.083 pu: max|e_hat-e| on relevant=0.344 corr(P(y>=1), u1) on U=0.523
+rep 10 done 16s
+rep 11: qrels recall=0.134 qrels error share=0.067 pu: max|e_hat-e| on relevant=0.410 corr(P(y>=1), u1) on U=0.511
+rep 11 done 15s
+rep 12: qrels recall=0.140 qrels error share=0.069 pu: max|e_hat-e| on relevant=0.366 corr(P(y>=1), u1) on U=0.512
+rep 12 done 27s
+rep 13: qrels recall=0.131 qrels error share=0.081 pu: max|e_hat-e| on relevant=0.343 corr(P(y>=1), u1) on U=0.493
+rep 13 done 70s
+rep 14: qrels recall=0.124 qrels error share=0.085 pu: max|e_hat-e| on relevant=0.334 corr(P(y>=1), u1) on U=0.522
+rep 14 done 76s
+rep 15: qrels recall=0.131 qrels error share=0.084 pu: max|e_hat-e| on relevant=0.436 corr(P(y>=1), u1) on U=0.507
+rep 15 done 94s
+rep 16: qrels recall=0.144 qrels error share=0.060 pu: max|e_hat-e| on relevant=0.309 corr(P(y>=1), u1) on U=0.497
+rep 16 done 75s
+rep 17: qrels recall=0.140 qrels error share=0.072 pu: max|e_hat-e| on relevant=0.338 corr(P(y>=1), u1) on U=0.490
+rep 17 done 62s
+rep 18: qrels recall=0.126 qrels error share=0.076 pu: max|e_hat-e| on relevant=0.299 corr(P(y>=1), u1) on U=0.514
+rep 18 done 27s
+rep 19: qrels recall=0.140 qrels error share=0.079 pu: max|e_hat-e| on relevant=0.387 corr(P(y>=1), u1) on U=0.502
+rep 19 done 16s
+                               n_labels  cert_bh  cert_dec_bh  fdp_bh  nwrong_bh  cert_by  cert_dec_by  fdp_by  nwrong_by  cover_pairs  cover_sys  z_mean    z_sd    rmse     tau  n_decidable
+method                 budget                                                                                                                                                                 
+abl_alloc_uniform_xfit 60         58.45   0.0357       0.0395  0.0000       0.00   0.0119       0.0132     0.0       0.00       0.9286     0.8786 -0.1663  0.9544  0.3415  0.5667         19.0
+                       200       201.30   0.3452       0.3816  0.0000       0.00   0.2119       0.2342     0.0       0.00       0.9643     0.9429 -0.0551  0.8208  0.1399  0.6048         19.0
+                       600       598.05   0.4857       0.5368  0.0000       0.00   0.4762       0.5263     0.0       0.00       0.9405     0.9071 -0.1028  0.8981  0.0710  0.8048         19.0
+abl_f_judge_xfit       60         60.40   0.0690       0.0737  0.0167       0.05   0.0286       0.0316     0.0       0.00       0.9190     0.9500  0.0400  1.0224  0.4059  0.5381         19.0
+                       200       200.10   0.3024       0.3342  0.0000       0.00   0.1976       0.2184     0.0       0.00       0.9690     0.8857 -0.0301  0.8527  0.1667  0.6619         19.0
+                       600       595.10   0.4857       0.5368  0.0000       0.00   0.4738       0.5237     0.0       0.00       0.8833     0.8357 -0.0955  1.0719  0.1075  0.8143         19.0
+active_xfit            60         59.35   0.0690       0.0763  0.0000       0.00   0.0119       0.0132     0.0       0.00       0.9857     0.9357  0.1137  0.8078  0.2778  0.6381         19.0
+                       200       200.75   0.3905       0.4316  0.0000       0.00   0.3190       0.3526     0.0       0.00       0.9524     0.9429  0.0223  0.8527  0.1434  0.5905         19.0
+                       600       600.65   0.4762       0.5263  0.0000       0.00   0.4762       0.5263     0.0       0.00       0.9810     0.9357  0.0006  0.8311  0.0567  0.7952         19.0
+judge_plugin           0           0.00   0.4952       0.5474  0.0000       0.00   0.4810       0.5316     0.0       0.00       0.9952     0.0000  0.0620  0.5784  0.0588  0.9381         19.0
+official               0           0.00   0.0524       0.0026  0.2429       1.05   0.0310       0.0000     0.1       0.65       0.4857     0.1214 -2.7116  5.7038  0.9067 -0.2714         19.0
+ppi_tuned_xfit         60         59.40   0.0214       0.0237  0.0000       0.00   0.0000       0.0000     0.0       0.00       0.9548     0.8929  0.0362  0.8421  0.3283  0.5810         19.0
+                       200       197.15   0.3143       0.3474  0.0000       0.00   0.2095       0.2316     0.0       0.00       0.9500     0.9714 -0.0056  0.8591  0.1695  0.6095         19.0
+                       600       599.45   0.4786       0.5289  0.0000       0.00   0.4762       0.5263     0.0       0.00       0.9643     0.9500  0.0838  0.8096  0.0704  0.8333         19.0
+witness_fam_xfit       60         58.10   0.1262       0.1368  0.0083       0.05   0.0524       0.0579     0.0       0.00       0.9357     0.8857 -0.0518  0.9638  0.3065  0.5143         19.0
+                       200       201.05   0.4500       0.4974  0.0000       0.00   0.4000       0.4421     0.0       0.00       0.9595     0.9143 -0.0917  0.8590  0.1305  0.6476         19.0
+                       600       606.35   0.5000       0.5500  0.0036       0.05   0.4786       0.5289     0.0       0.00       0.9405     0.9500  0.1593  0.8673  0.0514  0.8571         19.0
+witness_xfit           60         61.35   0.1238       0.1368  0.0000       0.00   0.0405       0.0447     0.0       0.00       0.9690     0.8929  0.0760  0.8637  0.2737  0.5000         19.0
+                       200       194.90   0.4048       0.4474  0.0000       0.00   0.3286       0.3632     0.0       0.00       0.9190     0.9214 -0.0854  0.9694  0.1511  0.6619         19.0
+                       600       599.30   0.4881       0.5395  0.0000       0.00   0.4810       0.5316     0.0       0.00       0.9548     0.9071 -0.0244  0.9350  0.0543  0.8095         19.0
+DONE
+EXIT:0

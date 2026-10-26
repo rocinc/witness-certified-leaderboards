@@ -1,0 +1,53 @@
+md5 witness_complexity_check.py c6f41fc51d4d740f8fdeba99077c6bc6
+batch-1 endpoint correlation of HT terms, quantiles (.1,.5,.9) = [0.345, 0.43, 0.647]
+planner reproduction (indep endpoints, z=2.5, separate averaging): 14.29
+realised two-batch certified (design_fam, BH): 14  (BH cut z=2.128)
+prediction                                     E[K]  Brier  (realised 14)
+old det rho=1/2 t=3                           16.00  0.190
+det two endpoints t=3                         13.00  0.048
+indep z=2.5 (planner)                         14.29  0.072
+indep z=2.5 joint-avg                         14.53  0.063
+joint z=2.5 joint-avg                         14.69  0.059
+det two endpoints BH fixed point              16.00  0.095
+indep BH fixed point, no avg (z*=2.09)        15.21  0.073
+joint BH fixed point, no avg (z*=2.09)        15.46  0.068
+indep BH fixed point, avg (z*=2.10)           15.12  0.067
+joint BH fixed point, avg (z*=2.09)           15.30  0.064
+endpoint rho=0: final Vhat / predicted V_fin quantiles (.1,.5,.9) = [0.778, 0.898, 1.024]
+endpoint rho=1: final Vhat / predicted V_fin quantiles (.1,.5,.9) = [0.677, 0.856, 0.994]
+endpoint rho=0: V_new with two-batch s2 / with batch-1 s2, quantiles (.1,.5,.9) = [0.938, 1.005, 1.029]
+endpoint rho=1: V_new with two-batch s2 / with batch-1 s2, quantiles (.1,.5,.9) = [0.694, 0.772, 0.791]
+endpoint rho=0: sign(batch1) (final - batch1) / se1 mean -0.513 sd 0.609; |final| < |batch1| for 17/21 pairs
+endpoint rho=1: sign(batch1) (final - batch1) / se1 mean -0.084 sd 0.376; |final| < |batch1| for 14/21 pairs
+share of y=2 among y>=1, batch 2 minus batch 1 within cells (cells with >=5 relevant per batch: 4): weighted mean -0.421, per cell [-0.35, -0.51, -0.44, -0.02]
+Hajek-weighted share of y=2 among y>=1, batch 2 minus batch 1 within cells: weighted mean -0.425, per cell [-0.44, -0.54, -0.34, -0.19]
+raw shares y=2 among y>=1: batch 1 0.643, batch 2 0.317
+predictive sd of K under the planner's per-pair probabilities (pairs independent): 1.19
+post-hoc plug-in (Delta=final est, V=final var, joint, BH): E[K]=14.21 z*=2.12
+   decomposition: batch-1 Delta  x predicted V_fin : E[K] (joint, BH, no averaging) = 15.46 (z*=2.09)
+   decomposition: batch-1 Delta  x final Vhat      : E[K] (joint, BH, no averaging) = 15.77 (z*=2.08)
+   decomposition: final Delta    x predicted V_fin : E[K] (joint, BH, no averaging) = 13.92 (z*=2.13)
+   decomposition: final Delta    x final Vhat      : E[K] (joint, BH, no averaging) = 14.21 (z*=2.12)
+   bge_m3         vs bm25_char2     planner 1.00 joint-avg-z2.5 1.00 r=+0.38 t0=+14.35 t1=+12.65 realised 1 final z0=+13.09 z1=+13.70
+   bm25_char2     vs rerank_bge_m3  planner 1.00 joint-avg-z2.5 1.00 r=+0.43 t0=-11.60 t1=-11.36 realised 1 final z0=-12.57 z1=-14.92
+   qwen3_emb      vs bm25_char2     planner 1.00 joint-avg-z2.5 1.00 r=+0.40 t0=+11.04 t1=+10.45 realised 1 final z0=+11.31 z1=+12.47
+   bge_m3         vs bm25_char1     planner 1.00 joint-avg-z2.5 1.00 r=+0.45 t0=+11.16 t1=+9.63 realised 1 final z0=+9.54 z1=+9.63
+   bge_m3         vs bm25_jieba     planner 1.00 joint-avg-z2.5 1.00 r=+0.43 t0=+11.25 t1=+9.36 realised 1 final z0=+10.27 z1=+9.51
+   bm25_char1     vs rerank_bge_m3  planner 1.00 joint-avg-z2.5 1.00 r=+0.47 t0=-8.72 t1=-8.76 realised 1 final z0=-9.05 z1=-10.45
+   e5_small       vs bm25_char2     planner 1.00 joint-avg-z2.5 1.00 r=+0.62 t0=+9.22 t1=+8.85 realised 1 final z0=+8.77 z1=+9.13
+   bm25_jieba     vs rerank_bge_m3  planner 1.00 joint-avg-z2.5 1.00 r=+0.46 t0=-8.73 t1=-8.33 realised 1 final z0=-9.70 z1=-10.13
+   qwen3_emb      vs bm25_char1     planner 1.00 joint-avg-z2.5 1.00 r=+0.38 t0=+7.68 t1=+7.54 realised 1 final z0=+7.93 z1=+8.66
+   e5_small       vs bm25_char1     planner 0.99 joint-avg-z2.5 0.99 r=+0.40 t0=+7.84 t1=+7.20 realised 1 final z0=+7.36 z1=+7.46
+   qwen3_emb      vs bm25_jieba     planner 0.99 joint-avg-z2.5 0.99 r=+0.40 t0=+7.79 t1=+7.15 realised 1 final z0=+8.46 z1=+8.56
+   e5_small       vs bm25_jieba     planner 0.99 joint-avg-z2.5 0.99 r=+0.38 t0=+7.90 t1=+6.98 realised 1 final z0=+8.15 z1=+7.34
+   bm25_char2     vs bm25_jieba     planner 0.44 joint-avg-z2.5 0.58 r=+0.84 t0=-3.38 t1=-3.21 realised 1 final z0=-2.41 z1=-3.25
+   bge_m3         vs qwen3_emb      planner 0.57 joint-avg-z2.5 0.57 r=+0.47 t0=+6.17 t1=+2.91 realised 0 final z0=+4.19 z1=+1.70
+   e5_small       vs bge_m3         planner 0.47 joint-avg-z2.5 0.48 r=+0.41 t0=-5.34 t1=-2.48 realised 0 final z0=-3.29 z1=-1.90
+   bm25_char1     vs bm25_char2     planner 0.26 joint-avg-z2.5 0.41 r=+0.84 t0=+2.81 t1=+2.33 realised 1 final z0=+2.18 z1=+2.75
+   bge_m3         vs rerank_bge_m3  planner 0.28 joint-avg-z2.5 0.31 r=+0.65 t0=+4.51 t1=+1.59 realised 0 final z0=+1.85 z1=+0.31
+   qwen3_emb      vs rerank_bge_m3  planner 0.17 joint-avg-z2.5 0.20 r=+0.26 t0=-2.12 t1=-1.88 realised 0 final z0=-2.30 z1=-1.38
+   e5_small       vs rerank_bge_m3  planner 0.06 joint-avg-z2.5 0.08 r=+0.34 t0=-1.00 t1=-0.77 realised 0 final z0=-1.90 z1=-1.61
+   e5_small       vs qwen3_emb      planner 0.04 joint-avg-z2.5 0.07 r=+0.50 t0=-0.15 t1=-0.56 realised 0 final z0=-0.10 z1=-0.32
+   bm25_char1     vs bm25_jieba     planner 0.02 joint-avg-z2.5 0.01 r=+0.31 t0=+0.74 t1=-0.61 realised 0 final z0=+0.40 z1=-0.59
+DONE
+EXIT:0

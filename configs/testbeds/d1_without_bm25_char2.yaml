@@ -1,0 +1,22 @@
+# D1 testbed with bm25_char2 removed from the evaluated systems: it is the hidden annotation engine.
+# D1 controlled testbed: T2Ranking dev rerank setting (every candidate carries a 0-3 human label).
+data_dir: ${WITNESS_ROOT}/raw/t2ranking
+models_dir: ${WITNESS_ROOT}/models
+out_dir: ${WITNESS_ROOT}/outputs/d1
+n_queries: 3000          # dev queries sampled for the testbed
+min_candidates: 8
+seed: 0
+gpu_frac: 0.075          # shared card cap
+passage_chars: 512
+dense:
+  bge_small_zh: {repo: bge-small-zh-v1.5, q_prefix: "为这个句子生成表示以用于检索相关文章：", p_prefix: "", batch: 64}
+  bge_base_zh: {repo: bge-base-zh-v1.5, q_prefix: "为这个句子生成表示以用于检索相关文章：", p_prefix: "", batch: 64}
+  gte_base_zh: {repo: gte-base-zh, q_prefix: "", p_prefix: "", batch: 64}
+  m3e_base: {repo: m3e-base, q_prefix: "", p_prefix: "", batch: 64}
+  text2vec_zh: {repo: text2vec-base-chinese, q_prefix: "", p_prefix: "", batch: 64}
+  e5_small: {repo: multilingual-e5-small, q_prefix: "query: ", p_prefix: "passage: ", batch: 64}
+  e5_base: {repo: multilingual-e5-base, q_prefix: "query: ", p_prefix: "passage: ", batch: 64}
+  bge_m3: {repo: bge-m3, q_prefix: "", p_prefix: "", batch: 16}
+  qwen3_emb: {repo: Qwen3-Embedding-0.6B, q_prefix: "", p_prefix: "", batch: 8, prompt_name: query}
+lexical: [char1, jieba]
+reranker: {repo: Qwen3-Reranker-0.6B, batch: 8}

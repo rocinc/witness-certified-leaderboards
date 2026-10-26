@@ -1,0 +1,29 @@
+mnar: {'kind': 'hidden', 'shift': None, 'hidden': {'engine': 'bge_base_zh', 'k': 10, 'p1': 0.5, 'p2': 0.9, 'p_err': 0.03, 'decay': 0.9, 'stop_after': 1}}
+systems=['bge_small_zh', 'gte_base_zh', 'm3e_base', 'text2vec_zh', 'e5_small', 'e5_base', 'bge_m3', 'qwen3_emb', 'bm25_char1', 'bm25_char2', 'bm25_jieba', 'rerank_qwen3']
+pairs=66 queries=3000; expected qrels per query 0.794; expected recall among relevant in frame 0.178; expected qrels error share 0.075
+predicted sign flips of E[Delta_off] vs Delta(1/2): 11/66
+refined (query-CLT SE, BH cut z=2.04): expected certified 54.196, expected wrongly certified (endpoint rule) 8.642, share 0.159; (rho=1/2 sign rule) 6.276
+per system: true DCG(1/2), DCG(1), e_bar, DCG(1)*e_bar, share of top-k inside the engine list
+  bge_small_zh   0.8186 1.3195 0.2876 0.3794 0.970
+  gte_base_zh    0.8274 1.3316 0.2930 0.3901 0.975
+  m3e_base       0.8415 1.3467 0.2817 0.3794 0.966
+  text2vec_zh    0.7913 1.2814 0.2434 0.3119 0.927
+  e5_small       0.8218 1.3233 0.2696 0.3568 0.950
+  e5_base        0.8163 1.3161 0.2741 0.3607 0.954
+  bge_m3         0.8537 1.3706 0.2934 0.4021 0.971
+  qwen3_emb      0.8444 1.3628 0.2845 0.3877 0.965
+  bm25_char1     0.7818 1.2938 0.2351 0.3041 0.916
+  bm25_char2     0.7677 1.2661 0.2411 0.3053 0.914
+  bm25_jieba     0.7662 1.2633 0.2372 0.2996 0.908
+  rerank_qwen3   0.8433 1.3389 0.2550 0.3414 0.944
+pairs with the largest wrong-certification probability (A, B, Delta(1/2), E[Delta_off], sd, s_q, P(wrong)):
+  bge_m3         rerank_qwen3   +0.0104 +0.0637 0.0052 0.0065 1.000
+  gte_base_zh    rerank_qwen3   -0.0159 +0.0519 0.0053 0.0067 1.000
+  qwen3_emb      rerank_qwen3   +0.0011 +0.0485 0.0053 0.0067 1.000
+  bge_small_zh   rerank_qwen3   -0.0248 +0.0415 0.0053 0.0067 1.000
+  m3e_base       rerank_qwen3   -0.0019 +0.0401 0.0052 0.0066 1.000
+  bge_small_zh   e5_small       -0.0032 +0.0248 0.0048 0.0060 0.996
+  e5_base        rerank_qwen3   -0.0271 +0.0212 0.0052 0.0066 0.932
+  e5_small       rerank_qwen3   -0.0215 +0.0167 0.0053 0.0066 0.727
+DONE
+EXIT:0

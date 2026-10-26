@@ -1,0 +1,34 @@
+# D3: DuRetrieval, 2,000 dev queries, 7 systems; human labels bought by stagewise Poisson sampling.
+duretrieval_dir: ${WITNESS_ROOT}/duretrieval   # hf/ (corpus, queries, qrels), systems/ (runs), judgments/ (LLM labels)
+out_dir: ${WITNESS_ROOT}/outputs/d3
+models_dir: ${WITNESS_ROOT}/models   # encoders and reranker of the upstream pipeline (scripts/duretrieval/)
+gpu_frac: 0.075      # per-process GPU memory cap (shared card)
+systems:
+  e5_small: {kind: dense}
+  bge_m3: {kind: dense}
+  qwen3_emb: {kind: dense}
+  bm25_char1: {kind: bm25, tok: char1}
+  bm25_char2: {kind: bm25, tok: char2}
+  bm25_jieba: {kind: bm25, tok: jieba}
+  rerank_bge_m3: {kind: rerank, first: bge_m3}
+k: 10
+rho: 0.5
+alpha: 0.05            # certification level (BH and BY over the 2P one-sided nulls)
+ridge: 20.0            # GREG prior strength in labelled-item units
+judges: [pro, flash]
+judge_files:          # every (query, doc) in the frame carries a label from one of these, per judge
+  pro: [judged_pro, judged_ext_pro, judged_full_pro, judged_qrels_pro]
+  flash: [judged_flash, judged_ext_flash, judged_full_flash, judged_qrels_flash]
+meta_files: [items_meta, items_ext_meta, items_full_meta, items_qrels_meta]
+next_batch:            # batches >= 2 (scripts/d3/make_next_batch.py)
+  extras: [fam]        # provenance calibration in the planning estimate
+  z_plan: 2.5
+  pi_min_frac: 0.2
+  plan_iters: 3
+batch:
+  stage: 1
+  n_unlabelled: 400    # expected Poisson sample size in the unlabelled stratum
+  n_qrels: 80          # expected sample size in the qrels stratum (qrels errors)
+  repeat_share: 0.05   # exact repeats for the intra-annotator check
+  delta_floor: 0.01    # smallest DCG@10 difference stage 1 aims to resolve
+  seed: 20261022

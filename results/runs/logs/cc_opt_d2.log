@@ -1,0 +1,27 @@
+config: {'out_dir': '/root/autodl-tmp/work/witness/d2', 'id_prefix': 'dl19', 'k': 10, 'pool_systems': ['bm25_ws', 'bm25_ws_stem'], 'pool_k': 10, 'judges': ['flash', 'pro'], 'reranker': 'rerank_qwen3', 'mnar': {'a': -2.5, 'b': 4.0, 'a_fp': -6.5, 'c': 0.0, 'shift': None}, 'h_bins': [0.01, 0.51, 0.99], 'budgets': [60, 200, 600], 'fracs': [0.25, 0.75], 'alpha': 0.05, 'z_plan': 2.5, 'ridge': 20.0, 'pi_min_frac': 0.2, 'v_floor': 0.03, 'cell_prior': 10, 'plan_iters': 2, 'xfit_folds': 5, 'reps': 40, 'seed': 0, 'tag': 'xm', 'methods': ['classical', 'ppi_tuned_xfit', 'active_xfit', 'witness_xfit', 'witness_fam_xfit', 'abl_f_judge_xfit', 'abl_no_extras_xfit', 'abl_no_strata_xfit', 'abl_alloc_single_xfit', 'abl_alloc_uniform_xfit']}
+md5 witness_eval.py 4de0bc97289b5e7d2bbb2bee2ee2f425
+md5 witness.py 79cb9f50b23af68fee05f0fd3be8d60d
+md5 rivals.py 25c44c90e831e82fd02d0f29e5e4691a
+md5 witness_mech.py 8174f435196e6e3180cf21b8aff455c5
+systems=7 pairs=21 items=9260 queries=43 frame=1175
+true DCG@k at rho=1/2: {'e5_small': np.float64(2.2062), 'e5_base': np.float64(2.2897), 'bge_m3': np.float64(2.2372), 'qwen3_emb': np.float64(2.1774), 'bm25_ws': np.float64(1.1538), 'bm25_ws_stem': np.float64(1.2337), 'rerank_qwen3': np.float64(2.2522)}
+judges: ['flash', 'pro'] exact agreement: [0.695, 0.735] refused: [0, 0]
+qrels mechanism: logistic; expected qrels recall among relevant in frame 0.262, expected qrels per query 7.51
+md5 witness_complexity_check.py 0b28f84b558b3dbc65b0a73e0f090280
+n=60 E[K] under the two-endpoint 9.3b-optimal pi (m=8 target pairs, scaled to n): 1.86
+n=60 two_end_bh           1:52; 2:52; 3:61; 4:62; 5:60; 6:59; 7:60; 8:58; 9:62; 10:61; 11:240; 12:497; 13:617; 14:614; 15:650; 16:680; 17:734; 18:780; 19:796
+n=60 two_end_t3           1:51; 2:57; 3:74; 4:79; 5:80; 6:83; 7:88; 8:88; 9:97; 10:98; 11:288; 12:548; 13:669; 14:669; 15:717; 16:750; 17:791; 18:848; 19:862
+n=60 old                  1:30; 2:36; 3:40; 4:44; 5:45; 6:48; 7:48; 8:52; 9:54; 10:54; 11:223; 12:438; 13:540; 14:621; 15:675; 16:718; 17:781; 18:813; 19:845; 20:872; 21:872
+n=60 old_prog_new_sigma   1:19; 2:23; 3:26; 4:29; 5:29; 6:31; 7:32; 8:32; 9:35; 10:36; 11:147; 12:307; 13:381; 14:451; 15:517; 16:607; 17:635; 18:635; 19:674; 20:721; 21:721
+n=200 E[K] under the two-endpoint 9.3b-optimal pi (m=10 target pairs, scaled to n): 9.99
+n=200 two_end_bh           1:49; 2:49; 3:58; 4:59; 5:57; 6:56; 7:57; 8:55; 9:59; 10:58; 11:236; 12:463; 13:601; 14:611; 15:646; 16:675; 17:729; 18:774; 19:790
+n=200 two_end_t3           1:48; 2:54; 3:69; 4:75; 5:77; 6:79; 7:84; 8:84; 9:92; 10:93; 11:283; 12:520; 13:656; 14:666; 15:714; 16:746; 17:788; 18:844; 19:858
+n=200 old                  1:30; 2:36; 3:40; 4:44; 5:45; 6:48; 7:48; 8:52; 9:54; 10:54; 11:223; 12:438; 13:540; 14:621; 15:675; 16:718; 17:781; 18:813; 19:845; 20:872; 21:872
+n=200 old_prog_new_sigma   1:18; 2:22; 3:25; 4:27; 5:28; 6:30; 7:31; 8:31; 9:34; 10:34; 11:144; 12:307; 13:382; 14:452; 15:517; 16:610; 17:639; 18:639; 19:684; 20:730; 21:730
+n=600 E[K] under the two-endpoint 9.3b-optimal pi (m=13 target pairs, scaled to n): 3.69
+n=600 two_end_bh           1:43; 2:44; 3:53; 4:52; 5:55; 6:52; 7:54; 8:53; 9:56; 10:55; 11:229; 12:450; 13:597; 14:612; 15:647; 16:670; 17:723; 18:765; 19:780
+n=600 two_end_t3           1:42; 2:48; 3:64; 4:67; 5:74; 6:74; 7:79; 8:80; 9:88; 10:89; 11:276; 12:509; 13:652; 14:667; 15:714; 16:741; 17:783; 18:838; 19:851
+n=600 old                  1:30; 2:36; 3:40; 4:44; 5:45; 6:48; 7:48; 8:52; 9:54; 10:54; 11:223; 12:438; 13:540; 14:621; 15:675; 16:718; 17:781; 18:813; 19:845; 20:872; 21:872
+n=600 old_prog_new_sigma   1:18; 2:21; 3:24; 4:26; 5:27; 6:29; 7:30; 8:30; 9:32; 10:33; 11:141; 12:304; 13:381; 14:450; 15:517; 16:551; 17:637; 18:637; 19:680; 20:732; 21:732
+DONE
+EXIT:0

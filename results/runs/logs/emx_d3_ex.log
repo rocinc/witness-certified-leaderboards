@@ -1,0 +1,11 @@
+d3 ex: n 61554, L 8989, U 52565, z 9 cols, x 2 cols, human HT P(y>=1 | U) .189 [.154, .224]
+d3 ex it    30 (25s): loglik(O) -9440.55  mean e(x,1) on L 0.778  P(y>=1) on U 0.1348  max|dP| vs last ckpt nan
+d3 ex it    60 (57s): loglik(O) -9430.69  mean e(x,1) on L 0.782  P(y>=1) on U 0.1220  max|dP| vs last ckpt 0.1237
+d3 ex it   100 (103s): loglik(O) -9431.57  mean e(x,1) on L 0.773  P(y>=1) on U 0.1213  max|dP| vs last ckpt 0.1026
+d3 ex it   200 (215s): loglik(O) -9298.63  mean e(x,1) on L 0.601  P(y>=1) on U 0.1737  max|dP| vs last ckpt 0.3425
+d3 ex it   300 (318s): loglik(O) -9271.95  mean e(x,1) on L 0.594  P(y>=1) on U 0.2063  max|dP| vs last ckpt 0.1821
+d3 ex it   500 (547s): loglik(O) -9262.05  mean e(x,1) on L 0.597  P(y>=1) on U 0.2142  max|dP| vs last ckpt 0.1588
+d3 ex it   700 (783s): loglik(O) -9261.36  mean e(x,1) on L 0.597  P(y>=1) on U 0.2149  max|dP| vs last ckpt 0.0225
+d3 ex it  1000 (1138s): loglik(O) -9260.44  mean e(x,1) on L 0.598  P(y>=1) on U 0.2139  max|dP| vs last ckpt 0.0424
+DONE
+EXIT:0

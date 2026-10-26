@@ -1,0 +1,5 @@
+eligible queries=22610 sampled=3000 items=48640
+passages found=48212 of 48212
+{0: 25252, 1: 7761, 2: 12340, 3: 3287}
+candidates per query {'count': 3000.0, 'mean': 16.2, 'std': 6.9, 'min': 8.0, '25%': 12.0, '50%': 15.0, '75%': 18.0, 'max': 155.0}
+DONE

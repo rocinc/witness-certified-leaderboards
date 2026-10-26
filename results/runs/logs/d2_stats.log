@@ -1,0 +1,28 @@
+items=9260 queries=43 rel_counts={0: 5158, 1: 1601, 2: 1804, 3: 697}
+oracle DCG@5=2.4869
+DCG@5 bge_m3         1.5527
+DCG@5 bm25_ws        0.7955
+DCG@5 bm25_ws_stem   0.8595
+DCG@5 e5_base        1.5940
+DCG@5 e5_small       1.5309
+DCG@5 qwen3_emb      1.5321
+DCG@5 rerank_qwen3   1.6433
+judge flash: n_ok=9260 refused=0 exact=0.6955 binary=0.7678
+  label_counts={0: 5563, 1: 2794, 2: 903}
+  judge        0     1    2
+  trec_rel                 
+  0         4339   763   56
+  1          747   772   82
+  2          289  1052  463
+  3          188   207  302
+  log: DONE 9260 refused 0 new_in_tok 1922965 new_out_tok 243659
+judge pro: n_ok=9260 refused=0 exact=0.7354 binary=0.8017
+  label_counts={0: 6313, 1: 2105, 2: 842}
+  judge        0    1    2
+  trec_rel                
+  0         4647  454   57
+  1          971  542   88
+  2          469  915  420
+  3          226  194  277
+  log: DONE 9260 refused 0 new_in_tok 1912554 new_out_tok 264704
+EXIT:0

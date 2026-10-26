@@ -1,0 +1,21 @@
+pairs=21  pool=['bm25_ws', 'bm25_ws_stem']  a=-2.5 a_fp=-6.5 c=0.0
+b= 0.0: mean qrels recall among relevant 0.076; predicted flips 1/21; 'certifiable' (|E|>3sd) 0, of which flipped 0 (share 0.000)
+         refined (query-CLT SE, BH cut z=3.04): expected certified 0.99, expected wrongly certified 0.01, expected false-certification share 0.006
+b= 1.0: mean qrels recall among relevant 0.082; predicted flips 1/21; 'certifiable' (|E|>3sd) 0, of which flipped 0 (share 0.000)
+         refined (query-CLT SE, BH cut z=3.04): expected certified 0.06, expected wrongly certified 0.01, expected false-certification share 0.086
+b= 2.0: mean qrels recall among relevant 0.093; predicted flips 12/21; 'certifiable' (|E|>3sd) 0, of which flipped 0 (share 0.000)
+         refined (query-CLT SE, BH cut z=3.04): expected certified 0.10, expected wrongly certified 0.07, expected false-certification share 0.755
+b= 2.5: mean qrels recall among relevant 0.099; predicted flips 12/21; 'certifiable' (|E|>3sd) 0, of which flipped 0 (share 0.000)
+         refined (query-CLT SE, BH cut z=3.04): expected certified 0.41, expected wrongly certified 0.39, expected false-certification share 0.942
+b= 3.0: mean qrels recall among relevant 0.106; predicted flips 12/21; 'certifiable' (|E|>3sd) 7, of which flipped 7 (share 1.000)
+         refined (query-CLT SE, BH cut z=2.75): expected certified 2.53, expected wrongly certified 2.47, expected false-certification share 0.975
+b= 3.5: mean qrels recall among relevant 0.113; predicted flips 12/21; 'certifiable' (|E|>3sd) 10, of which flipped 10 (share 1.000)
+         refined (query-CLT SE, BH cut z=2.37): expected certified 7.42, expected wrongly certified 7.22, expected false-certification share 0.974
+b= 4.0: mean qrels recall among relevant 0.118; predicted flips 13/21; 'certifiable' (|E|>3sd) 10, of which flipped 10 (share 1.000)
+         refined (query-CLT SE, BH cut z=2.27): expected certified 9.70, expected wrongly certified 9.44, expected false-certification share 0.973
+b= 5.0: mean qrels recall among relevant 0.127; predicted flips 13/21; 'certifiable' (|E|>3sd) 10, of which flipped 10 (share 1.000)
+         refined (query-CLT SE, BH cut z=2.25): expected certified 10.31, expected wrongly certified 10.05, expected false-certification share 0.975
+b= 6.0: mean qrels recall among relevant 0.133; predicted flips 14/21; 'certifiable' (|E|>3sd) 10, of which flipped 10 (share 1.000)
+         refined (query-CLT SE, BH cut z=2.25): expected certified 10.30, expected wrongly certified 10.07, expected false-certification share 0.978
+DONE
+EXIT:0

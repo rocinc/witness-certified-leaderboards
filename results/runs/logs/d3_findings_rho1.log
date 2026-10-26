@@ -1,0 +1,25 @@
+rho=1.0; sampled items=470 (L 74, U 396); frame L=8989, U=52565, queries=2000
+[1] qrels entries labelled 0 by humans: 0.209 [0.069, 0.357]
+[1] qrels entries labelled 1 by humans: 0.087 [0.029, 0.164]
+[1] qrels entries labelled 2 by humans: 0.704 [0.550, 0.839]
+[2] unlabelled frame items relevant (>=1): 0.216 [0.167, 0.268]  -> about 11342 holes vs 8989 qrels entries in the frame
+[2] unlabelled frame items fully relevant (2): 0.104 [0.072, 0.139]
+[3] per system: official DCG@10 | B_s holes missed [CI] | E_s qrels over-credit [CI] | corrected = off - E + B
+   e5_small       2.2645 | 0.8742 [0.5141, 1.2848] | 0.1838 [0.0412, 0.3639] | 2.9549
+   bge_m3         2.3202 | 1.0803 [0.6714, 1.5357] | 0.1976 [0.0345, 0.4209] | 3.2028
+   qwen3_emb      2.2851 | 0.9710 [0.5878, 1.3989] | 0.3148 [0.0795, 0.5946] | 2.9413
+   bm25_char1     1.6454 | 0.8628 [0.5633, 1.2137] | 0.1822 [0.0276, 0.3754] | 2.3260
+   bm25_char2     1.5981 | 0.5633 [0.3419, 0.8677] | 0.3031 [0.0632, 0.6395] | 1.8583
+   bm25_jieba     1.6526 | 0.8139 [0.5217, 1.1870] | 0.1598 [0.0319, 0.3292] | 2.3067
+   rerank_bge_m3  2.2969 | 1.0523 [0.6991, 1.4549] | 0.3013 [0.0903, 0.5608] | 3.0479
+[4] judge pro: weighted exact agreement 0.795 [0.748, 0.837], binary 0.891 [0.850, 0.924]
+   weighted confusion (rows judge 0/1/2, cols human 0/1/2, share of weight): [[0.662, 0.059, 0.011], [0.037, 0.044, 0.09], [0.003, 0.006, 0.089]]
+[4] judge flash: weighted exact agreement 0.788 [0.742, 0.831], binary 0.882 [0.844, 0.916]
+   weighted confusion (rows judge 0/1/2, cols human 0/1/2, share of weight): [[0.643, 0.054, 0.005], [0.057, 0.052, 0.093], [0.002, 0.002, 0.092]]
+[5] provenance groups: {'lex_only': 225, 'neural_only': 93, 'both': 152} ; judge states with >= 5 items in both groups: [(0, 0), (0, 1), (1, 1)]
+   state (pro,flash)=(0,0): lex_only n=169 u=0.037 | neural_only n=52 u=0.107
+   state (pro,flash)=(0,1): lex_only n=13 u=0.101 | neural_only n=5 u=0.626
+   state (pro,flash)=(1,1): lex_only n=31 u=0.547 | neural_only n=28 u=0.781
+[5] state-weighted human relevance gap u(lex_only) - u(neural_only) = -0.151 [-0.252, -0.043]
+DONE
+EXIT:0

@@ -1,0 +1,30 @@
+mnar: {'a': -2.5, 'b': 4.0, 'a_fp': -6.5, 'c': 0.0, 'shift': None}
+systems=['bge_small_zh', 'bge_base_zh', 'gte_base_zh', 'm3e_base', 'text2vec_zh', 'e5_small', 'e5_base', 'bge_m3', 'qwen3_emb', 'bm25_char1', 'bm25_char2', 'bm25_jieba', 'rerank_qwen3']
+pairs=78 queries=3000; expected qrels per query 2.082; expected recall among relevant in frame 0.448; expected qrels error share 0.086
+predicted sign flips of E[Delta_off] vs Delta(1/2): 45/78
+refined (query-CLT SE, BH cut z=2.07): expected certified 59.527, expected wrongly certified (endpoint rule) 41.812, share 0.702; (rho=1/2 sign rule) 36.812
+per system: true DCG(1/2), DCG(1), e_bar, DCG(1)*e_bar, share of top-k inside the engine list
+  bge_small_zh   0.8186 1.3195 0.5639 0.7441 nan
+  bge_base_zh    0.8292 1.3297 0.5610 0.7460 nan
+  gte_base_zh    0.8274 1.3316 0.5409 0.7202 nan
+  m3e_base       0.8415 1.3467 0.5400 0.7273 nan
+  text2vec_zh    0.7913 1.2814 0.5530 0.7086 nan
+  e5_small       0.8218 1.3233 0.5587 0.7394 nan
+  e5_base        0.8163 1.3161 0.5523 0.7269 nan
+  bge_m3         0.8537 1.3706 0.5580 0.7649 nan
+  qwen3_emb      0.8444 1.3628 0.5812 0.7921 nan
+  bm25_char1     0.7818 1.2938 0.7156 0.9259 nan
+  bm25_char2     0.7677 1.2661 0.7265 0.9198 nan
+  bm25_jieba     0.7662 1.2633 0.7300 0.9222 nan
+  rerank_qwen3   0.8433 1.3389 0.5396 0.7225 nan
+pairs with the largest wrong-certification probability (A, B, Delta(1/2), E[Delta_off], sd, s_q, P(wrong)):
+  bge_small_zh   bm25_char2     +0.0509 -0.2060 0.0064 0.0092 1.000
+  bge_small_zh   bm25_jieba     +0.0523 -0.2092 0.0065 0.0094 1.000
+  bge_small_zh   bm25_char1     +0.0368 -0.2095 0.0064 0.0093 1.000
+  gte_base_zh    bm25_jieba     +0.0612 -0.2378 0.0068 0.0099 1.000
+  gte_base_zh    bm25_char2     +0.0598 -0.2346 0.0066 0.0096 1.000
+  bge_base_zh    bm25_jieba     +0.0630 -0.2086 0.0066 0.0095 1.000
+  bge_base_zh    bm25_char2     +0.0616 -0.2054 0.0064 0.0093 1.000
+  bge_base_zh    bm25_char1     +0.0475 -0.2090 0.0065 0.0094 1.000
+DONE
+EXIT:0

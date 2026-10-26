@@ -1,0 +1,52 @@
+labels: batch 1 470, batch 2 373; Kish effective n: 244, 241
+[1] cells with >= 15 labels in both batches: 4
+    cell state=5 U: n 236/183  rate b1 0.075  b2 0.015  diff +0.060  boot sd 0.024  z +2.45
+    cell state=9 U: n 37/38  rate b1 0.448  b2 0.355  diff +0.093  boot sd 0.137  z +0.68
+    cell state=10 U: n 87/59  rate b1 0.752  b2 0.700  diff +0.052  boot sd 0.088  z +0.59
+    cell state=10 L: n 34/36  rate b1 0.895  b2 0.953  diff -0.058  boot sd 0.081  z -0.71
+[1] Wald sum z^2 = 7.32, df 4, p = 0.120
+[2] logit coefficient of batch 2 (cells only): -0.748 [-1.268, -0.229]
+[2] logit coefficient of batch 2 (cells + item covariates): -0.769 [-1.380, -0.157]
+[2] weighted mean cos (std)    b1 -0.131  b2 -0.143
+[2] weighted mean lex share    b1 +0.326  b2 +0.261
+[2] weighted mean dense share  b1 +0.328  b2 +0.307
+[2] weighted mean rerank share b1 +0.319  b2 +0.331
+[2] weighted mean n_top/S      b1 +0.326  b2 +0.291
+[3] batch 1: weighted P(y=2 | y>=1) = 0.635 (n relevant 185)
+[3] batch 2: weighted P(y=2 | y>=1) = 0.485 (n relevant 139)
+[3] difference b1 - b2: 95% [-0.006, +0.316]
+[4] delta -0.200: certified 14/21
+[4] delta -0.150: certified 14/21
+[4] delta -0.100: certified 14/21
+[4] delta -0.050: certified 14/21
+[4] delta -0.025: certified 14/21
+[4] delta +0.000: certified 14/21
+[4] delta +0.025: certified 13/21
+[4] delta +0.050: certified 12/21
+[4] delta +0.100: certified 12/21
+[4] delta +0.150: certified 12/21
+[4] delta +0.200: certified 12/21
+[4] delta -0.200: pairs whose certification differs from delta=0: 0 []
+[4] delta -0.150: pairs whose certification differs from delta=0: 0 []
+[4] delta -0.100: pairs whose certification differs from delta=0: 0 []
+[4] delta -0.050: pairs whose certification differs from delta=0: 0 []
+[4] delta -0.025: pairs whose certification differs from delta=0: 0 []
+[4] delta +0.000: pairs whose certification differs from delta=0: 0 []
+[4] delta +0.025: pairs whose certification differs from delta=0: 1 ['bm25_char1 vs bm25_char2']
+[4] delta +0.050: pairs whose certification differs from delta=0: 2 ['bm25_char1 vs bm25_char2', 'bm25_char2 vs bm25_jieba']
+[4] delta +0.100: pairs whose certification differs from delta=0: 2 ['bm25_char1 vs bm25_char2', 'bm25_char2 vs bm25_jieba']
+[4] delta +0.150: pairs whose certification differs from delta=0: 2 ['bm25_char1 vs bm25_char2', 'bm25_char2 vs bm25_jieba']
+[4] delta +0.200: pairs whose certification differs from delta=0: 2 ['bm25_char1 vs bm25_char2', 'bm25_char2 vs bm25_jieba']
+[5] block rho=0: adjusted gain difference b2 - b1 = -0.0680 [-0.0972, -0.0412]
+[5] block rho=0.5: adjusted gain difference b2 - b1 = -0.0595 [-0.0893, -0.0325]
+[5] block rho=1: adjusted gain difference b2 - b1 = -0.0510 [-0.0929, -0.0099]
+[5] batch 2 aligned to batch 1: certified 12/21; changed ['bm25_char1 vs bm25_char2 (+->?)', 'bm25_char2 vs bm25_jieba (-->?)']
+    bm25_char1 vs bm25_char2: D(.5) +0.1185 se 0.0457  D(0) +0.0937 D(1) +0.1487
+    bm25_char1 vs bm25_jieba: D(.5) -0.0058 se 0.0310  D(0) +0.0155 D(1) -0.0272
+    bm25_char2 vs bm25_jieba: D(.5) -0.1239 se 0.0421  D(0) -0.0868 D(1) -0.1691
+[5] batch 1 aligned to batch 2: certified 12/21; changed ['bm25_char1 vs bm25_char2 (+->?)', 'bm25_char2 vs bm25_jieba (-->?)']
+    bm25_char1 vs bm25_char2: D(.5) +0.1182 se 0.0459  D(0) +0.0948 D(1) +0.1482
+    bm25_char1 vs bm25_jieba: D(.5) -0.0063 se 0.0311  D(0) +0.0151 D(1) -0.0275
+    bm25_char2 vs bm25_jieba: D(.5) -0.1242 se 0.0423  D(0) -0.0886 D(1) -0.1688
+DONE
+EXIT:0

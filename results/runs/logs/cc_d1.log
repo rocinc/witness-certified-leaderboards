@@ -1,0 +1,132 @@
+config: {'out_dir': '/root/autodl-tmp/work/witness/d1', 'id_prefix': 't2r', 'k': 5, 'pool_systems': ['bm25_char1', 'bm25_char2', 'bm25_jieba'], 'pool_k': 5, 'judges': ['flash', 'pro'], 'reranker': 'rerank_qwen3', 'mnar': {'a': -2.5, 'b': 4.0, 'a_fp': -6.5, 'c': 0.0, 'shift': None}, 'h_bins': [0.01, 0.34, 0.67, 0.99], 'budgets': [800, 3200, 12800], 'fracs': [0.25, 0.75], 'alpha': 0.05, 'z_plan': 2.5, 'ridge': 20.0, 'pi_min_frac': 0.2, 'v_floor': 0.03, 'cell_prior': 10, 'plan_iters': 2, 'xfit_folds': 5, 'reps': 20, 'seed': 0, 'tag': 'xm', 'methods': ['classical', 'ppi_tuned_xfit', 'active_xfit', 'witness_xfit', 'witness_fam_xfit', 'abl_f_judge_xfit', 'abl_no_extras_xfit', 'abl_no_strata_xfit', 'abl_alloc_single_xfit', 'abl_alloc_uniform_xfit']}
+md5 witness_eval.py 4de0bc97289b5e7d2bbb2bee2ee2f425
+md5 witness.py a0535c091d9ab47debee7bc009b7c1b5
+md5 rivals.py 25c44c90e831e82fd02d0f29e5e4691a
+md5 witness_mech.py 8174f435196e6e3180cf21b8aff455c5
+systems=13 pairs=78 items=48640 queries=3000 frame=30529
+true DCG@k at rho=1/2: {'bge_small_zh': np.float64(0.8186), 'bge_base_zh': np.float64(0.8292), 'gte_base_zh': np.float64(0.8274), 'm3e_base': np.float64(0.8415), 'text2vec_zh': np.float64(0.7913), 'e5_small': np.float64(0.8218), 'e5_base': np.float64(0.8163), 'bge_m3': np.float64(0.8537), 'qwen3_emb': np.float64(0.8444), 'bm25_char1': np.float64(0.7818), 'bm25_char2': np.float64(0.7677), 'bm25_jieba': np.float64(0.7662), 'rerank_qwen3': np.float64(0.8433)}
+judges: ['flash', 'pro'] exact agreement: [0.504, 0.541] refused: [1, 1]
+qrels mechanism: logistic; expected qrels recall among relevant in frame 0.448, expected qrels per query 2.08
+md5 witness_complexity_check.py e93c7f2839338cff807cd9da7bc3d7a6
+rep 0 n=800 witness_xfit  realised   0 | old det(t=3,rho=.5)   0 det2 t3   0 det2 BH   0 | EK indep   0.05 joint   0.13 (z*=3.41) MC pairs-indep   0.16 MC full   0.32 | median Vhat/V 0.913
+rep 0 n=800 active_xfit   realised   0 | old det(t=3,rho=.5)   0 det2 t3   0 det2 BH   0 | EK indep   0.01 joint   0.04 (z*=3.41) MC pairs-indep   0.04 MC full   0.09 | median Vhat/V 0.979
+rep 0 n=3200 witness_xfit  realised  24 | old det(t=3,rho=.5)  26 det2 t3   9 det2 BH  14 | EK indep  12.87 joint  14.15 (z*=2.61) MC pairs-indep  14.38 MC full  13.78 | median Vhat/V 1.006
+rep 0 n=3200 active_xfit   realised  21 | old det(t=3,rho=.5)  17 det2 t3   4 det2 BH   4 | EK indep   4.31 joint   5.52 (z*=2.92) MC pairs-indep   5.94 MC full   6.48 | median Vhat/V 0.946
+rep 0 n=12800 witness_xfit  realised  47 | old det(t=3,rho=.5)  55 det2 t3  36 det2 BH  44 | EK indep  44.15 joint  44.60 (z*=2.19) MC pairs-indep  44.65 MC full  44.65 | median Vhat/V 1.000
+rep 0 n=12800 active_xfit   realised  38 | old det(t=3,rho=.5)  50 det2 t3  31 det2 BH  37 | EK indep  37.73 joint  38.19 (z*=2.25) MC pairs-indep  38.20 MC full  38.26 | median Vhat/V 1.004
+rep 1 n=800 witness_xfit  realised   0 | old det(t=3,rho=.5)   0 det2 t3   0 det2 BH   0 | EK indep   0.05 joint   0.13 (z*=3.41) MC pairs-indep   0.17 MC full   0.35 | median Vhat/V 0.948
+rep 1 n=800 active_xfit   realised   0 | old det(t=3,rho=.5)   0 det2 t3   0 det2 BH   0 | EK indep   0.01 joint   0.04 (z*=3.41) MC pairs-indep   0.04 MC full   0.09 | median Vhat/V 1.020
+rep 1 n=3200 witness_xfit  realised  21 | old det(t=3,rho=.5)  24 det2 t3   9 det2 BH  14 | EK indep  12.63 joint  14.00 (z*=2.61) MC pairs-indep  14.08 MC full  14.37 | median Vhat/V 1.010
+rep 1 n=3200 active_xfit   realised   0 | old det(t=3,rho=.5)  17 det2 t3   4 det2 BH   4 | EK indep   4.29 joint   5.51 (z*=2.92) MC pairs-indep   5.99 MC full   6.47 | median Vhat/V 1.049
+rep 1 n=12800 witness_xfit  realised  46 | old det(t=3,rho=.5)  54 det2 t3  36 det2 BH  44 | EK indep  44.00 joint  44.48 (z*=2.19) MC pairs-indep  44.54 MC full  44.52 | median Vhat/V 1.014
+rep 1 n=12800 active_xfit   realised  40 | old det(t=3,rho=.5)  50 det2 t3  31 det2 BH  37 | EK indep  37.78 joint  38.24 (z*=2.25) MC pairs-indep  38.37 MC full  38.32 | median Vhat/V 0.998
+rep 2 n=800 witness_xfit  realised   0 | old det(t=3,rho=.5)   0 det2 t3   0 det2 BH   0 | EK indep   0.05 joint   0.13 (z*=3.41) MC pairs-indep   0.15 MC full   0.34 | median Vhat/V 1.037
+rep 2 n=800 active_xfit   realised   0 | old det(t=3,rho=.5)   0 det2 t3   0 det2 BH   0 | EK indep   0.01 joint   0.04 (z*=3.41) MC pairs-indep   0.04 MC full   0.09 | median Vhat/V 0.963
+rep 2 n=3200 witness_xfit  realised   9 | old det(t=3,rho=.5)  25 det2 t3   9 det2 BH  14 | EK indep  12.72 joint  14.05 (z*=2.61) MC pairs-indep  14.24 MC full  14.07 | median Vhat/V 1.019
+rep 2 n=3200 active_xfit   realised   0 | old det(t=3,rho=.5)  17 det2 t3   4 det2 BH   4 | EK indep   4.25 joint   5.48 (z*=2.92) MC pairs-indep   6.05 MC full   6.56 | median Vhat/V 1.049
+rep 2 n=12800 witness_xfit  realised  39 | old det(t=3,rho=.5)  55 det2 t3  36 det2 BH  44 | EK indep  43.96 joint  44.42 (z*=2.19) MC pairs-indep  44.44 MC full  44.38 | median Vhat/V 0.986
+rep 2 n=12800 active_xfit   realised  39 | old det(t=3,rho=.5)  50 det2 t3  31 det2 BH  37 | EK indep  37.71 joint  38.17 (z*=2.25) MC pairs-indep  38.19 MC full  38.27 | median Vhat/V 1.018
+rep 3 n=800 witness_xfit  realised   6 | old det(t=3,rho=.5)   0 det2 t3   0 det2 BH   0 | EK indep   0.05 joint   0.13 (z*=3.41) MC pairs-indep   0.16 MC full   0.36 | median Vhat/V 0.993
+rep 3 n=800 active_xfit   realised   0 | old det(t=3,rho=.5)   0 det2 t3   0 det2 BH   0 | EK indep   0.01 joint   0.04 (z*=3.41) MC pairs-indep   0.04 MC full   0.11 | median Vhat/V 0.946
+rep 3 n=3200 witness_xfit  realised  26 | old det(t=3,rho=.5)  26 det2 t3   9 det2 BH  14 | EK indep  13.06 joint  14.36 (z*=2.60) MC pairs-indep  14.50 MC full  14.38 | median Vhat/V 1.010
+rep 3 n=3200 active_xfit   realised   5 | old det(t=3,rho=.5)  17 det2 t3   4 det2 BH   4 | EK indep   4.35 joint   5.56 (z*=2.91) MC pairs-indep   6.09 MC full   6.53 | median Vhat/V 0.984
+rep 3 n=12800 witness_xfit  realised  42 | old det(t=3,rho=.5)  55 det2 t3  36 det2 BH  44 | EK indep  44.09 joint  44.54 (z*=2.19) MC pairs-indep  44.66 MC full  44.55 | median Vhat/V 1.009
+rep 3 n=12800 active_xfit   realised  35 | old det(t=3,rho=.5)  50 det2 t3  31 det2 BH  37 | EK indep  37.75 joint  38.20 (z*=2.25) MC pairs-indep  38.33 MC full  38.23 | median Vhat/V 1.017
+rep 4 n=800 witness_xfit  realised   0 | old det(t=3,rho=.5)   0 det2 t3   0 det2 BH   0 | EK indep   0.05 joint   0.13 (z*=3.41) MC pairs-indep   0.17 MC full   0.35 | median Vhat/V 1.066
+rep 4 n=800 active_xfit   realised   0 | old det(t=3,rho=.5)   0 det2 t3   0 det2 BH   0 | EK indep   0.01 joint   0.04 (z*=3.41) MC pairs-indep   0.04 MC full   0.09 | median Vhat/V 1.032
+rep 4 n=3200 witness_xfit  realised  14 | old det(t=3,rho=.5)  23 det2 t3  10 det2 BH  14 | EK indep  12.53 joint  13.85 (z*=2.62) MC pairs-indep  13.98 MC full  13.60 | median Vhat/V 0.977
+rep 4 n=3200 active_xfit   realised   8 | old det(t=3,rho=.5)  17 det2 t3   4 det2 BH   4 | EK indep   4.34 joint   5.56 (z*=2.91) MC pairs-indep   6.01 MC full   6.72 | median Vhat/V 1.020
+rep 4 n=12800 witness_xfit  realised  51 | old det(t=3,rho=.5)  54 det2 t3  37 det2 BH  44 | EK indep  43.81 joint  44.28 (z*=2.19) MC pairs-indep  44.32 MC full  44.31 | median Vhat/V 1.004
+rep 4 n=12800 active_xfit   realised  30 | old det(t=3,rho=.5)  50 det2 t3  31 det2 BH  37 | EK indep  37.77 joint  38.23 (z*=2.25) MC pairs-indep  38.30 MC full  38.30 | median Vhat/V 1.009
+rep 5 n=800 witness_xfit  realised   0 | old det(t=3,rho=.5)   0 det2 t3   0 det2 BH   0 | EK indep   0.05 joint   0.13 (z*=3.41) MC pairs-indep   0.15 MC full   0.37 | median Vhat/V 1.067
+rep 5 n=800 active_xfit   realised   0 | old det(t=3,rho=.5)   0 det2 t3   0 det2 BH   0 | EK indep   0.01 joint   0.04 (z*=3.41) MC pairs-indep   0.04 MC full   0.09 | median Vhat/V 1.063
+rep 5 n=3200 witness_xfit  realised  26 | old det(t=3,rho=.5)  24 det2 t3   9 det2 BH  14 | EK indep  12.54 joint  13.85 (z*=2.62) MC pairs-indep  14.08 MC full  13.85 | median Vhat/V 1.006
+rep 5 n=3200 active_xfit   realised   6 | old det(t=3,rho=.5)  17 det2 t3   4 det2 BH   4 | EK indep   4.32 joint   5.54 (z*=2.92) MC pairs-indep   6.00 MC full   6.58 | median Vhat/V 0.991
+rep 5 n=12800 witness_xfit  realised  40 | old det(t=3,rho=.5)  54 det2 t3  37 det2 BH  44 | EK indep  43.96 joint  44.41 (z*=2.19) MC pairs-indep  44.40 MC full  44.47 | median Vhat/V 0.997
+rep 5 n=12800 active_xfit   realised  40 | old det(t=3,rho=.5)  50 det2 t3  31 det2 BH  37 | EK indep  37.73 joint  38.19 (z*=2.25) MC pairs-indep  38.24 MC full  38.20 | median Vhat/V 0.988
+rep 6 n=800 witness_xfit  realised   0 | old det(t=3,rho=.5)   0 det2 t3   0 det2 BH   0 | EK indep   0.05 joint   0.13 (z*=3.41) MC pairs-indep   0.16 MC full   0.40 | median Vhat/V 0.940
+rep 6 n=800 active_xfit   realised   0 | old det(t=3,rho=.5)   0 det2 t3   0 det2 BH   0 | EK indep   0.01 joint   0.04 (z*=3.41) MC pairs-indep   0.04 MC full   0.08 | median Vhat/V 1.013
+rep 6 n=3200 witness_xfit  realised   0 | old det(t=3,rho=.5)  25 det2 t3   9 det2 BH  14 | EK indep  12.78 joint  14.08 (z*=2.61) MC pairs-indep  14.28 MC full  14.19 | median Vhat/V 1.037
+rep 6 n=3200 active_xfit   realised   5 | old det(t=3,rho=.5)  17 det2 t3   4 det2 BH   4 | EK indep   4.30 joint   5.51 (z*=2.92) MC pairs-indep   5.97 MC full   6.75 | median Vhat/V 0.935
+rep 6 n=12800 witness_xfit  realised  47 | old det(t=3,rho=.5)  54 det2 t3  36 det2 BH  43 | EK indep  44.15 joint  44.61 (z*=2.19) MC pairs-indep  44.70 MC full  44.70 | median Vhat/V 0.999
+rep 6 n=12800 active_xfit   realised  35 | old det(t=3,rho=.5)  50 det2 t3  31 det2 BH  37 | EK indep  37.76 joint  38.21 (z*=2.25) MC pairs-indep  38.28 MC full  38.21 | median Vhat/V 1.007
+rep 7 n=800 witness_xfit  realised   0 | old det(t=3,rho=.5)   0 det2 t3   0 det2 BH   0 | EK indep   0.05 joint   0.13 (z*=3.41) MC pairs-indep   0.15 MC full   0.34 | median Vhat/V 0.842
+rep 7 n=800 active_xfit   realised   0 | old det(t=3,rho=.5)   0 det2 t3   0 det2 BH   0 | EK indep   0.01 joint   0.04 (z*=3.41) MC pairs-indep   0.04 MC full   0.10 | median Vhat/V 0.944
+rep 7 n=3200 witness_xfit  realised   3 | old det(t=3,rho=.5)  24 det2 t3   9 det2 BH  14 | EK indep  12.64 joint  13.89 (z*=2.62) MC pairs-indep  14.16 MC full  14.31 | median Vhat/V 0.949
+rep 7 n=3200 active_xfit   realised   6 | old det(t=3,rho=.5)  17 det2 t3   4 det2 BH   4 | EK indep   4.30 joint   5.50 (z*=2.92) MC pairs-indep   6.05 MC full   6.46 | median Vhat/V 0.978
+rep 7 n=12800 witness_xfit  realised  41 | old det(t=3,rho=.5)  54 det2 t3  37 det2 BH  43 | EK indep  44.21 joint  44.64 (z*=2.19) MC pairs-indep  44.62 MC full  44.76 | median Vhat/V 1.019
+rep 7 n=12800 active_xfit   realised  35 | old det(t=3,rho=.5)  50 det2 t3  31 det2 BH  37 | EK indep  37.77 joint  38.23 (z*=2.25) MC pairs-indep  38.33 MC full  38.25 | median Vhat/V 1.014
+rep 8 n=800 witness_xfit  realised   0 | old det(t=3,rho=.5)   0 det2 t3   0 det2 BH   0 | EK indep   0.05 joint   0.13 (z*=3.41) MC pairs-indep   0.16 MC full   0.32 | median Vhat/V 0.988
+rep 8 n=800 active_xfit   realised   0 | old det(t=3,rho=.5)   0 det2 t3   0 det2 BH   0 | EK indep   0.01 joint   0.04 (z*=3.41) MC pairs-indep   0.03 MC full   0.10 | median Vhat/V 0.929
+rep 8 n=3200 witness_xfit  realised  23 | old det(t=3,rho=.5)  26 det2 t3   9 det2 BH  14 | EK indep  12.91 joint  14.21 (z*=2.61) MC pairs-indep  14.33 MC full  14.02 | median Vhat/V 1.034
+rep 8 n=3200 active_xfit   realised   0 | old det(t=3,rho=.5)  17 det2 t3   4 det2 BH   4 | EK indep   4.33 joint   5.56 (z*=2.91) MC pairs-indep   6.09 MC full   6.49 | median Vhat/V 1.002
+rep 8 n=12800 witness_xfit  realised  47 | old det(t=3,rho=.5)  55 det2 t3  36 det2 BH  44 | EK indep  44.00 joint  44.46 (z*=2.19) MC pairs-indep  44.49 MC full  44.55 | median Vhat/V 1.021
+rep 8 n=12800 active_xfit   realised  34 | old det(t=3,rho=.5)  50 det2 t3  31 det2 BH  37 | EK indep  37.77 joint  38.23 (z*=2.25) MC pairs-indep  38.34 MC full  38.34 | median Vhat/V 0.994
+rep 9 n=800 witness_xfit  realised   0 | old det(t=3,rho=.5)   0 det2 t3   0 det2 BH   0 | EK indep   0.05 joint   0.13 (z*=3.41) MC pairs-indep   0.14 MC full   0.32 | median Vhat/V 1.058
+rep 9 n=800 active_xfit   realised   0 | old det(t=3,rho=.5)   0 det2 t3   0 det2 BH   0 | EK indep   0.01 joint   0.04 (z*=3.41) MC pairs-indep   0.04 MC full   0.09 | median Vhat/V 0.962
+rep 9 n=3200 witness_xfit  realised  10 | old det(t=3,rho=.5)  24 det2 t3   9 det2 BH  14 | EK indep  12.69 joint  13.99 (z*=2.61) MC pairs-indep  14.15 MC full  13.98 | median Vhat/V 1.014
+rep 9 n=3200 active_xfit   realised   9 | old det(t=3,rho=.5)  17 det2 t3   4 det2 BH   4 | EK indep   4.30 joint   5.51 (z*=2.92) MC pairs-indep   6.00 MC full   6.47 | median Vhat/V 0.971
+rep 9 n=12800 witness_xfit  realised  37 | old det(t=3,rho=.5)  54 det2 t3  36 det2 BH  43 | EK indep  44.07 joint  44.52 (z*=2.19) MC pairs-indep  44.54 MC full  44.58 | median Vhat/V 1.013
+rep 9 n=12800 active_xfit   realised  33 | old det(t=3,rho=.5)  50 det2 t3  31 det2 BH  37 | EK indep  37.69 joint  38.15 (z*=2.25) MC pairs-indep  38.24 MC full  38.27 | median Vhat/V 0.977
+rep 10 n=800 witness_xfit  realised   0 | old det(t=3,rho=.5)   0 det2 t3   0 det2 BH   0 | EK indep   0.04 joint   0.13 (z*=3.41) MC pairs-indep   0.16 MC full   0.32 | median Vhat/V 0.825
+rep 10 n=800 active_xfit   realised   0 | old det(t=3,rho=.5)   0 det2 t3   0 det2 BH   0 | EK indep   0.01 joint   0.04 (z*=3.41) MC pairs-indep   0.04 MC full   0.13 | median Vhat/V 0.986
+rep 10 n=3200 witness_xfit  realised  20 | old det(t=3,rho=.5)  23 det2 t3  10 det2 BH  14 | EK indep  12.32 joint  13.67 (z*=2.62) MC pairs-indep  13.97 MC full  13.56 | median Vhat/V 1.056
+rep 10 n=3200 active_xfit   realised  10 | old det(t=3,rho=.5)  17 det2 t3   4 det2 BH   4 | EK indep   4.28 joint   5.50 (z*=2.92) MC pairs-indep   5.99 MC full   6.39 | median Vhat/V 1.007
+rep 10 n=12800 witness_xfit  realised  45 | old det(t=3,rho=.5)  54 det2 t3  37 det2 BH  44 | EK indep  43.85 joint  44.31 (z*=2.19) MC pairs-indep  44.41 MC full  44.24 | median Vhat/V 1.002
+rep 10 n=12800 active_xfit   realised  38 | old det(t=3,rho=.5)  50 det2 t3  31 det2 BH  37 | EK indep  37.71 joint  38.17 (z*=2.25) MC pairs-indep  38.17 MC full  38.31 | median Vhat/V 0.995
+rep 11 n=800 witness_xfit  realised   0 | old det(t=3,rho=.5)   0 det2 t3   0 det2 BH   0 | EK indep   0.05 joint   0.13 (z*=3.41) MC pairs-indep   0.14 MC full   0.34 | median Vhat/V 1.025
+rep 11 n=800 active_xfit   realised   0 | old det(t=3,rho=.5)   0 det2 t3   0 det2 BH   0 | EK indep   0.01 joint   0.04 (z*=3.41) MC pairs-indep   0.04 MC full   0.09 | median Vhat/V 0.935
+rep 11 n=3200 witness_xfit  realised  11 | old det(t=3,rho=.5)  26 det2 t3   9 det2 BH  14 | EK indep  12.95 joint  14.21 (z*=2.61) MC pairs-indep  14.33 MC full  14.10 | median Vhat/V 0.999
+rep 11 n=3200 active_xfit   realised  17 | old det(t=3,rho=.5)  17 det2 t3   4 det2 BH   4 | EK indep   4.39 joint   5.59 (z*=2.91) MC pairs-indep   6.07 MC full   6.66 | median Vhat/V 0.946
+rep 11 n=12800 witness_xfit  realised  45 | old det(t=3,rho=.5)  55 det2 t3  36 det2 BH  44 | EK indep  44.16 joint  44.59 (z*=2.19) MC pairs-indep  44.67 MC full  44.52 | median Vhat/V 1.003
+rep 11 n=12800 active_xfit   realised  43 | old det(t=3,rho=.5)  50 det2 t3  31 det2 BH  37 | EK indep  37.78 joint  38.24 (z*=2.25) MC pairs-indep  38.29 MC full  38.28 | median Vhat/V 0.995
+rep 12 n=800 witness_xfit  realised   0 | old det(t=3,rho=.5)   0 det2 t3   0 det2 BH   0 | EK indep   0.05 joint   0.13 (z*=3.41) MC pairs-indep   0.15 MC full   0.37 | median Vhat/V 1.069
+rep 12 n=800 active_xfit   realised   0 | old det(t=3,rho=.5)   0 det2 t3   0 det2 BH   0 | EK indep   0.01 joint   0.04 (z*=3.41) MC pairs-indep   0.04 MC full   0.10 | median Vhat/V 1.048
+rep 12 n=3200 witness_xfit  realised  12 | old det(t=3,rho=.5)  24 det2 t3   9 det2 BH  14 | EK indep  12.75 joint  14.03 (z*=2.61) MC pairs-indep  14.25 MC full  13.91 | median Vhat/V 0.961
+rep 12 n=3200 active_xfit   realised  14 | old det(t=3,rho=.5)  17 det2 t3   4 det2 BH   4 | EK indep   4.27 joint   5.49 (z*=2.92) MC pairs-indep   6.07 MC full   6.57 | median Vhat/V 0.994
+rep 12 n=12800 witness_xfit  realised  46 | old det(t=3,rho=.5)  54 det2 t3  37 det2 BH  43 | EK indep  44.13 joint  44.58 (z*=2.19) MC pairs-indep  44.68 MC full  44.66 | median Vhat/V 0.974
+rep 12 n=12800 active_xfit   realised  38 | old det(t=3,rho=.5)  50 det2 t3  31 det2 BH  37 | EK indep  37.73 joint  38.19 (z*=2.25) MC pairs-indep  38.23 MC full  38.29 | median Vhat/V 1.007
+rep 13 n=800 witness_xfit  realised   0 | old det(t=3,rho=.5)   0 det2 t3   0 det2 BH   0 | EK indep   0.05 joint   0.13 (z*=3.41) MC pairs-indep   0.15 MC full   0.40 | median Vhat/V 0.896
+rep 13 n=800 active_xfit   realised   0 | old det(t=3,rho=.5)   0 det2 t3   0 det2 BH   0 | EK indep   0.01 joint   0.04 (z*=3.41) MC pairs-indep   0.04 MC full   0.09 | median Vhat/V 1.046
+rep 13 n=3200 witness_xfit  realised  16 | old det(t=3,rho=.5)  24 det2 t3  10 det2 BH  14 | EK indep  12.77 joint  14.07 (z*=2.61) MC pairs-indep  14.24 MC full  14.22 | median Vhat/V 1.011
+rep 13 n=3200 active_xfit   realised   1 | old det(t=3,rho=.5)  17 det2 t3   4 det2 BH   4 | EK indep   4.38 joint   5.59 (z*=2.91) MC pairs-indep   6.20 MC full   6.64 | median Vhat/V 1.007
+rep 13 n=12800 witness_xfit  realised  46 | old det(t=3,rho=.5)  54 det2 t3  37 det2 BH  44 | EK indep  44.12 joint  44.58 (z*=2.19) MC pairs-indep  44.58 MC full  44.49 | median Vhat/V 1.024
+rep 13 n=12800 active_xfit   realised  38 | old det(t=3,rho=.5)  50 det2 t3  31 det2 BH  37 | EK indep  37.81 joint  38.26 (z*=2.25) MC pairs-indep  38.25 MC full  38.42 | median Vhat/V 0.993
+rep 14 n=800 witness_xfit  realised   0 | old det(t=3,rho=.5)   0 det2 t3   0 det2 BH   0 | EK indep   0.05 joint   0.13 (z*=3.41) MC pairs-indep   0.15 MC full   0.34 | median Vhat/V 0.986
+rep 14 n=800 active_xfit   realised   0 | old det(t=3,rho=.5)   0 det2 t3   0 det2 BH   0 | EK indep   0.01 joint   0.04 (z*=3.41) MC pairs-indep   0.04 MC full   0.12 | median Vhat/V 0.964
+rep 14 n=3200 witness_xfit  realised  23 | old det(t=3,rho=.5)  25 det2 t3   9 det2 BH  14 | EK indep  12.82 joint  14.13 (z*=2.61) MC pairs-indep  14.35 MC full  14.38 | median Vhat/V 1.004
+rep 14 n=3200 active_xfit   realised   4 | old det(t=3,rho=.5)  17 det2 t3   4 det2 BH   4 | EK indep   4.35 joint   5.57 (z*=2.91) MC pairs-indep   5.99 MC full   6.69 | median Vhat/V 0.995
+rep 14 n=12800 witness_xfit  realised  34 | old det(t=3,rho=.5)  54 det2 t3  36 det2 BH  44 | EK indep  44.12 joint  44.58 (z*=2.19) MC pairs-indep  44.62 MC full  44.60 | median Vhat/V 1.018
+rep 14 n=12800 active_xfit   realised  36 | old det(t=3,rho=.5)  50 det2 t3  31 det2 BH  37 | EK indep  37.81 joint  38.27 (z*=2.25) MC pairs-indep  38.36 MC full  38.32 | median Vhat/V 1.018
+rep 15 n=800 witness_xfit  realised   0 | old det(t=3,rho=.5)   0 det2 t3   0 det2 BH   0 | EK indep   0.05 joint   0.13 (z*=3.41) MC pairs-indep   0.15 MC full   0.37 | median Vhat/V 0.975
+rep 15 n=800 active_xfit   realised   0 | old det(t=3,rho=.5)   0 det2 t3   0 det2 BH   0 | EK indep   0.01 joint   0.04 (z*=3.41) MC pairs-indep   0.04 MC full   0.08 | median Vhat/V 1.004
+rep 15 n=3200 witness_xfit  realised  21 | old det(t=3,rho=.5)  24 det2 t3   9 det2 BH  14 | EK indep  12.72 joint  14.03 (z*=2.61) MC pairs-indep  14.24 MC full  14.07 | median Vhat/V 0.997
+rep 15 n=3200 active_xfit   realised  11 | old det(t=3,rho=.5)  17 det2 t3   4 det2 BH   4 | EK indep   4.28 joint   5.50 (z*=2.92) MC pairs-indep   5.94 MC full   6.77 | median Vhat/V 0.980
+rep 15 n=12800 witness_xfit  realised  48 | old det(t=3,rho=.5)  54 det2 t3  36 det2 BH  44 | EK indep  44.12 joint  44.57 (z*=2.19) MC pairs-indep  44.68 MC full  44.59 | median Vhat/V 0.976
+rep 15 n=12800 active_xfit   realised  39 | old det(t=3,rho=.5)  50 det2 t3  31 det2 BH  37 | EK indep  37.71 joint  38.17 (z*=2.25) MC pairs-indep  38.27 MC full  38.32 | median Vhat/V 1.007
+rep 16 n=800 witness_xfit  realised   0 | old det(t=3,rho=.5)   0 det2 t3   0 det2 BH   0 | EK indep   0.05 joint   0.13 (z*=3.41) MC pairs-indep   0.16 MC full   0.37 | median Vhat/V 1.028
+rep 16 n=800 active_xfit   realised   0 | old det(t=3,rho=.5)   0 det2 t3   0 det2 BH   0 | EK indep   0.01 joint   0.04 (z*=3.41) MC pairs-indep   0.04 MC full   0.10 | median Vhat/V 1.061
+rep 16 n=3200 witness_xfit  realised  10 | old det(t=3,rho=.5)  23 det2 t3   9 det2 BH  14 | EK indep  12.55 joint  13.91 (z*=2.62) MC pairs-indep  14.06 MC full  14.10 | median Vhat/V 1.041
+rep 16 n=3200 active_xfit   realised   9 | old det(t=3,rho=.5)  17 det2 t3   4 det2 BH   4 | EK indep   4.35 joint   5.56 (z*=2.91) MC pairs-indep   5.97 MC full   6.66 | median Vhat/V 1.031
+rep 16 n=12800 witness_xfit  realised  44 | old det(t=3,rho=.5)  54 det2 t3  36 det2 BH  44 | EK indep  43.95 joint  44.42 (z*=2.19) MC pairs-indep  44.45 MC full  44.48 | median Vhat/V 0.982
+rep 16 n=12800 active_xfit   realised  35 | old det(t=3,rho=.5)  50 det2 t3  31 det2 BH  37 | EK indep  37.78 joint  38.24 (z*=2.25) MC pairs-indep  38.33 MC full  38.31 | median Vhat/V 0.995
+rep 17 n=800 witness_xfit  realised   0 | old det(t=3,rho=.5)   0 det2 t3   0 det2 BH   0 | EK indep   0.05 joint   0.13 (z*=3.41) MC pairs-indep   0.16 MC full   0.36 | median Vhat/V 1.069
+rep 17 n=800 active_xfit   realised   0 | old det(t=3,rho=.5)   0 det2 t3   0 det2 BH   0 | EK indep   0.01 joint   0.04 (z*=3.41) MC pairs-indep   0.04 MC full   0.10 | median Vhat/V 1.029
+rep 17 n=3200 witness_xfit  realised   0 | old det(t=3,rho=.5)  24 det2 t3   9 det2 BH  14 | EK indep  12.80 joint  14.11 (z*=2.61) MC pairs-indep  14.31 MC full  14.16 | median Vhat/V 1.023
+rep 17 n=3200 active_xfit   realised   0 | old det(t=3,rho=.5)  17 det2 t3   4 det2 BH   4 | EK indep   4.29 joint   5.51 (z*=2.92) MC pairs-indep   5.98 MC full   6.45 | median Vhat/V 1.001
+rep 17 n=12800 witness_xfit  realised  39 | old det(t=3,rho=.5)  54 det2 t3  36 det2 BH  44 | EK indep  44.20 joint  44.65 (z*=2.19) MC pairs-indep  44.77 MC full  44.59 | median Vhat/V 1.009
+rep 17 n=12800 active_xfit   realised  39 | old det(t=3,rho=.5)  50 det2 t3  31 det2 BH  37 | EK indep  37.74 joint  38.20 (z*=2.25) MC pairs-indep  38.32 MC full  38.28 | median Vhat/V 1.008
+rep 18 n=800 witness_xfit  realised   0 | old det(t=3,rho=.5)   0 det2 t3   0 det2 BH   0 | EK indep   0.05 joint   0.12 (z*=3.41) MC pairs-indep   0.14 MC full   0.32 | median Vhat/V 0.972
+rep 18 n=800 active_xfit   realised   0 | old det(t=3,rho=.5)   0 det2 t3   0 det2 BH   0 | EK indep   0.01 joint   0.03 (z*=3.41) MC pairs-indep   0.03 MC full   0.11 | median Vhat/V 0.997
+rep 18 n=3200 witness_xfit  realised  10 | old det(t=3,rho=.5)  26 det2 t3   9 det2 BH  14 | EK indep  12.87 joint  14.16 (z*=2.61) MC pairs-indep  14.37 MC full  14.31 | median Vhat/V 1.048
+rep 18 n=3200 active_xfit   realised   0 | old det(t=3,rho=.5)  17 det2 t3   4 det2 BH   4 | EK indep   4.28 joint   5.49 (z*=2.92) MC pairs-indep   6.07 MC full   6.65 | median Vhat/V 1.026
+rep 18 n=12800 witness_xfit  realised  44 | old det(t=3,rho=.5)  54 det2 t3  36 det2 BH  44 | EK indep  44.18 joint  44.63 (z*=2.19) MC pairs-indep  44.74 MC full  44.71 | median Vhat/V 1.016
+rep 18 n=12800 active_xfit   realised  39 | old det(t=3,rho=.5)  50 det2 t3  31 det2 BH  37 | EK indep  37.70 joint  38.16 (z*=2.25) MC pairs-indep  38.27 MC full  38.24 | median Vhat/V 0.982
+rep 19 n=800 witness_xfit  realised   0 | old det(t=3,rho=.5)   0 det2 t3   0 det2 BH   0 | EK indep   0.05 joint   0.13 (z*=3.41) MC pairs-indep   0.16 MC full   0.34 | median Vhat/V 1.007
+rep 19 n=800 active_xfit   realised   0 | old det(t=3,rho=.5)   0 det2 t3   0 det2 BH   0 | EK indep   0.01 joint   0.04 (z*=3.41) MC pairs-indep   0.04 MC full   0.09 | median Vhat/V 1.039
+rep 19 n=3200 witness_xfit  realised  10 | old det(t=3,rho=.5)  24 det2 t3   9 det2 BH  14 | EK indep  12.69 joint  13.98 (z*=2.61) MC pairs-indep  14.23 MC full  13.98 | median Vhat/V 0.992
+rep 19 n=3200 active_xfit   realised  11 | old det(t=3,rho=.5)  17 det2 t3   4 det2 BH   4 | EK indep   4.31 joint   5.53 (z*=2.92) MC pairs-indep   6.00 MC full   6.55 | median Vhat/V 1.020
+rep 19 n=12800 witness_xfit  realised  46 | old det(t=3,rho=.5)  54 det2 t3  36 det2 BH  44 | EK indep  44.13 joint  44.58 (z*=2.19) MC pairs-indep  44.61 MC full  44.67 | median Vhat/V 1.002
+rep 19 n=12800 active_xfit   realised  39 | old det(t=3,rho=.5)  50 det2 t3  31 det2 BH  37 | EK indep  37.74 joint  38.20 (z*=2.25) MC pairs-indep  38.23 MC full  38.22 | median Vhat/V 1.014
+DONE
+EXIT:0

@@ -1,0 +1,51 @@
+config: {'out_dir': '/root/autodl-tmp/work/witness/d1', 'id_prefix': 't2r', 'k': 5, 'pool_systems': ['bm25_char1', 'bm25_char2', 'bm25_jieba'], 'pool_k': 5, 'judges': ['flash', 'pro'], 'reranker': 'rerank_qwen3', 'mnar': {'a': -2.5, 'b': 4.0, 'a_fp': -6.5, 'c': 0.0, 'shift': {'judge': 0.65, 'ce': 0.72}}, 'h_bins': [0.01, 0.34, 0.67, 0.99], 'budgets': [800, 3200, 12800], 'fracs': [0.25, 0.75], 'alpha': 0.05, 'z_plan': 2.5, 'ridge': 20.0, 'pi_min_frac': 0.2, 'v_floor': 0.03, 'cell_prior': 10, 'plan_iters': 2, 'xfit_folds': 5, 'reps': 20, 'seed': 0, 'tag': 'adw_xmsh', 'methods': ['active_xfit', 'witness_fam_xfit', 'witness_2stage_xs', 'witness_adapt', 'witness_adapt_w']}
+md5 witness_eval.py dd26c36829ca3fe5aa6779dd4403c9a7
+md5 witness.py 79cb9f50b23af68fee05f0fd3be8d60d
+md5 rivals.py 25c44c90e831e82fd02d0f29e5e4691a
+md5 witness_mech.py 8174f435196e6e3180cf21b8aff455c5
+systems=13 pairs=78 items=48640 queries=3000 frame=30529
+true DCG@k at rho=1/2: {'bge_small_zh': np.float64(0.8186), 'bge_base_zh': np.float64(0.8292), 'gte_base_zh': np.float64(0.8274), 'm3e_base': np.float64(0.8415), 'text2vec_zh': np.float64(0.7913), 'e5_small': np.float64(0.8218), 'e5_base': np.float64(0.8163), 'bge_m3': np.float64(0.8537), 'qwen3_emb': np.float64(0.8444), 'bm25_char1': np.float64(0.7818), 'bm25_char2': np.float64(0.7677), 'bm25_jieba': np.float64(0.7662), 'rerank_qwen3': np.float64(0.8433)}
+judges: ['flash', 'pro'] exact agreement: [0.504, 0.541] refused: [1, 1]
+qrels shift: judge 0.65 ce 0.72 sd on frame 1.173
+qrels mechanism: logistic; expected qrels recall among relevant in frame 0.517, expected qrels per query 2.33
+rep 0: qrels recall=0.416 qrels error share=0.077 pu: max|e_hat-e| on relevant=0.689 corr(P(y>=1), u1) on U=0.193
+rep 0 done 542s
+rep 1: qrels recall=0.415 qrels error share=0.075 pu: max|e_hat-e| on relevant=0.694 corr(P(y>=1), u1) on U=0.194
+rep 1 done 583s
+rep 2: qrels recall=0.412 qrels error share=0.078 pu: max|e_hat-e| on relevant=0.695 corr(P(y>=1), u1) on U=0.202
+rep 2 done 498s
+rep 3: qrels recall=0.414 qrels error share=0.072 pu: max|e_hat-e| on relevant=0.704 corr(P(y>=1), u1) on U=0.210
+rep 3 done 555s
+rep 4: qrels recall=0.414 qrels error share=0.079 pu: max|e_hat-e| on relevant=0.706 corr(P(y>=1), u1) on U=0.198
+rep 4 done 602s
+rep 5: qrels recall=0.408 qrels error share=0.075 pu: max|e_hat-e| on relevant=0.712 corr(P(y>=1), u1) on U=0.200
+rep 5 done 618s
+rep 6: qrels recall=0.416 qrels error share=0.073 pu: max|e_hat-e| on relevant=0.698 corr(P(y>=1), u1) on U=0.194
+rep 6 done 574s
+rep 7: qrels recall=0.417 qrels error share=0.078 pu: max|e_hat-e| on relevant=0.689 corr(P(y>=1), u1) on U=0.183
+rep 7 done 482s
+rep 8: qrels recall=0.416 qrels error share=0.074 pu: max|e_hat-e| on relevant=0.685 corr(P(y>=1), u1) on U=0.185
+rep 8 done 480s
+rep 9: qrels recall=0.410 qrels error share=0.077 pu: max|e_hat-e| on relevant=0.686 corr(P(y>=1), u1) on U=0.188
+rep 9 done 555s
+                          n_labels  cert_bh  cert_dec_bh  fdp_bh  nwrong_bh  cert_by  cert_dec_by  fdp_by  nwrong_by  cover_pairs  cover_sys  z_mean     z_sd    rmse     tau  n_decidable
+method            budget                                                                                                                                                                  
+active_xfit       800        794.2   0.0000       0.0000  0.0000        0.0   0.0000       0.0000  0.0000        0.0       0.9474     0.9231  0.1079   0.9776  0.0365  0.5487         71.0
+                  3200      3180.2   0.0718       0.0789  0.0000        0.0   0.0359       0.0394  0.0000        0.0       0.9782     1.0000  0.0239   0.8015  0.0152  0.8026         71.0
+                  12800    12809.1   0.4910       0.5394  0.0000        0.0   0.4154       0.4563  0.0000        0.0       0.9833     0.8923  0.0601   0.8062  0.0061  0.9026         71.0
+judge_plugin      0            0.0   0.5192       0.3563  0.3741       15.2   0.4679       0.3380  0.3424       12.5       0.1179     0.0000 -6.0238   7.2437  0.0715  0.0538         71.0
+official          0            0.0   0.8090       0.3296  0.6292       39.7   0.7577       0.2958  0.6447       38.1       0.2910     0.0000 -8.0881  12.8184  0.1463 -0.0256         71.0
+witness_2stage_xs 800        801.6   0.0000       0.0000  0.0000        0.0   0.0000       0.0000  0.0000        0.0       0.9462     0.9308 -0.1304   0.9813  0.0367  0.5051         71.0
+                  3200      3211.0   0.1192       0.1310  0.0000        0.0   0.0577       0.0634  0.0000        0.0       0.9385     0.9154 -0.0285   1.0348  0.0181  0.7718         71.0
+                  12800    12812.1   0.5038       0.5535  0.0000        0.0   0.4295       0.4718  0.0000        0.0       0.9526     0.8846  0.0419   0.9586  0.0069  0.8923         71.0
+witness_adapt     800        804.7   0.0000       0.0000  0.0000        0.0   0.0000       0.0000  0.0000        0.0       0.9782     0.9846 -0.0033   0.8170  0.0312  0.5949         71.0
+                  3200      3185.1   0.1795       0.1972  0.0000        0.0   0.0628       0.0690  0.0000        0.0       0.9551     0.9846  0.0929   0.9343  0.0160  0.7615         71.0
+                  12800    12817.0   0.5718       0.6268  0.0020        0.1   0.4769       0.5239  0.0000        0.0       0.9679     0.9846  0.1226   0.9057  0.0063  0.9205         71.0
+witness_adapt_w   800        793.0   0.0115       0.0127  0.0000        0.0   0.0000       0.0000  0.0000        0.0       0.9372     1.0000  0.0378   0.9769  0.0357  0.5333         71.0
+                  3200      3187.7   0.1051       0.1155  0.0000        0.0   0.0282       0.0310  0.0000        0.0       0.9423     0.9308 -0.1002   0.9897  0.0166  0.7718         71.0
+                  12800    12740.8   0.5321       0.5845  0.0000        0.0   0.4577       0.5028  0.0000        0.0       0.9372     0.9923  0.1073   0.9694  0.0066  0.9026         71.0
+witness_fam_xfit  800        792.1   0.0013       0.0014  0.0000        0.0   0.0000       0.0000  0.0000        0.0       0.9449     0.8692 -0.0231   0.9620  0.0335  0.5744         71.0
+                  3200      3231.9   0.1885       0.2070  0.0000        0.0   0.0910       0.1000  0.0000        0.0       0.9679     0.9923  0.2053   0.8278  0.0143  0.8333         71.0
+                  12800    12748.4   0.5462       0.6000  0.0000        0.0   0.4641       0.5099  0.0000        0.0       0.9769     1.0000  0.0667   0.7853  0.0055  0.9128         71.0
+DONE
+EXIT:0

@@ -1,0 +1,27 @@
+# WITNESS evaluator (scripts/eval/evaluate.py) on D1.
+out_dir: ${WITNESS_ROOT}/outputs/d1
+id_prefix: t2r
+k: 5
+pool_systems: [bm25_char1, bm25_char2, bm25_jieba]
+pool_k: 5
+judges: [flash, pro]
+reranker: rerank_qwen3
+# P(labelled | y, h) = sigmoid(a_y + b h + c 1[y=2]); a_fp for y = 0 (qrels errors); c: grade dependence
+mnar: {a: -2.5, b: 4.0, a_fp: -6.5, c: 1.0, shift: null}
+h_bins: [0.01, 0.34, 0.67, 0.99]   # witness strata on the pool share h (values 0, 1/3, 2/3, 1)
+budgets: [800, 3200, 12800]
+fracs: [0.25, 0.75]     # stage split for the two-stage ablations (the main method is one stage)
+alpha: 0.05
+z_plan: 2.5              # certification threshold used for planning (BH over 2P one-sided nulls)
+ridge: 20.0              # the base predictor is worth this many labelled items in GREG
+pi_min_frac: 0.2         # pi_min = pi_min_frac * stage budget / frame size
+v_floor: 0.03            # floor of the working Var(u | x) before calibration
+cell_prior: 10           # pseudo-items of the model variance in the per-cell calibration
+plan_iters: 2
+xfit_folds: 5            # frame-partition cross-fitting folds (lam: xfit)
+reps: 20
+seed: 0
+tag: v3c1
+methods: [classical, qrels_rectified, ppi, ppi_tuned, active, witness, witness_fam, witness_ft, abl_f_judge,
+          abl_no_strata, abl_alloc_single, abl_alloc_uniform, abl_L_not_sampled, abl_two_stage_final,
+          abl_two_stage_prev]

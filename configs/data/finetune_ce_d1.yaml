@@ -1,0 +1,18 @@
+# Cross-encoder fine-tuned on the T2Ranking train split, used as a relevance predictor on D1 (scripts/data/finetune_ce.py).
+data_dir: ${WITNESS_ROOT}/raw/t2ranking
+models_dir: ${WITNESS_ROOT}/models
+d1_dir: ${WITNESS_ROOT}/outputs/d1
+ckpt_dir: ${WITNESS_ROOT}/outputs/ckpt/ft_ce
+repo: bge-base-zh-v1.5
+n_per_rel: 15000         # train pairs sampled per 0-3 grade (60k total, balanced)
+passage_chars: 512       # same truncation as the D1 systems (configs/testbeds/d1_t2ranking.yaml)
+max_len: 256
+batch: 16
+lr: 2.0e-5
+warmup_frac: 0.06
+weight_decay: 0.01
+epochs: 1
+grad_ckpt: true
+score_batch: 64
+gpu_frac: 0.10           # shared card cap
+seed: 0

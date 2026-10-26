@@ -1,0 +1,28 @@
+frame items=30529 queries=3000 grade shares=[0.60139539 0.31026237 0.08834223]
+fine-tuned CE on frame: argmax accuracy=0.519
+== target u1=1[y>=1]: mean 0.399
+  (a) ft_ce iso                    AUC=0.695  calibrated R2=0.116
+  (a) ft_ce lr                     AUC=0.696  calibrated R2=0.117
+  (b) joint_state+qwen_ce          AUC=0.701  calibrated R2=0.116
+  (c) ft_ce+joint_state+qwen_ce    AUC=0.724  calibrated R2=0.148
+== target u0=1[y=2]: mean 0.088
+  (a) ft_ce iso                    AUC=0.704  calibrated R2=0.046
+  (a) ft_ce lr                     AUC=0.714  calibrated R2=0.050
+  (b) joint_state+qwen_ce          AUC=0.720  calibrated R2=0.054
+  (c) ft_ce+joint_state+qwen_ce    AUC=0.739  calibrated R2=0.066
+== provenance gap within deciles of fine-tuned P(y>=1); group sizes: {'lex_only': 1962, 'neural_only': 10370, 'both': 18197}
+  decile 0 P in [0.033,0.171] lex_only: n=  372 u=0.140 b=-0.032 | neural_only: n= 1023 u=0.129 b=-0.022 | both: n= 1658 u=0.128 b=-0.021
+  decile 1 P in [0.171,0.277] lex_only: n=  323 u=0.164 b=+0.059 | neural_only: n= 1083 u=0.218 b=+0.009 | both: n= 1647 u=0.254 b=-0.028
+  decile 2 P in [0.277,0.363] lex_only: n=  252 u=0.246 b=+0.073 | neural_only: n= 1099 u=0.249 b=+0.071 | both: n= 1702 u=0.314 b=+0.008
+  decile 3 P in [0.363,0.441] lex_only: n=  242 u=0.281 b=+0.121 | neural_only: n= 1148 u=0.294 b=+0.109 | both: n= 1663 u=0.379 b=+0.024
+  decile 4 P in [0.441,0.518] lex_only: n=  186 u=0.280 b=+0.200 | neural_only: n= 1138 u=0.330 b=+0.150 | both: n= 1728 u=0.385 b=+0.094
+  decile 5 P in [0.518,0.601] lex_only: n=  151 u=0.344 b=+0.206 | neural_only: n= 1119 u=0.371 b=+0.188 | both: n= 1783 u=0.428 b=+0.130
+  decile 6 P in [0.601,0.692] lex_only: n=  150 u=0.327 b=+0.314 | neural_only: n= 1078 u=0.432 b=+0.213 | both: n= 1825 u=0.455 b=+0.190
+  decile 7 P in [0.692,0.788] lex_only: n=  116 u=0.345 b=+0.393 | neural_only: n=  992 u=0.487 b=+0.251 | both: n= 1945 u=0.506 b=+0.233
+  decile 8 P in [0.788,0.891] lex_only: n=  102 u=0.490 b=+0.346 | neural_only: n=  920 u=0.539 b=+0.302 | both: n= 2031 u=0.584 b=+0.256
+  decile 9 P in [0.891,0.975] lex_only: n=   68 u=0.662 b=+0.270 | neural_only: n=  770 u=0.726 b=+0.207 | both: n= 2215 u=0.743 b=+0.192
+  deciles used: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+pooled decile-weighted gap u(lex_only) - u(neural_only) = -0.0368  query-bootstrap 95% [-0.0580, -0.0169]
+pooled decile-weighted gap b(lex_only) - b(neural_only) = +0.0349  query-bootstrap 95% [+0.0151, +0.0561]
+DONE
+EXIT:0

@@ -1,0 +1,26 @@
+frame items=61554 qrels in frame=8989 systems=['e5_small', 'bge_m3', 'qwen3_emb', 'bm25_char1', 'bm25_char2', 'bm25_jieba', 'rerank_bge_m3']
+e5_small - bge_m3: plug-in -0.1203 se 0.0080 weight 69.1
+e5_small - qwen3_emb: plug-in -0.0680 se 0.0093 weight 216
+e5_small - bm25_char1: plug-in +0.6396 se 0.0162 weight 2.44
+e5_small - bm25_char2: plug-in +0.7371 se 0.0190 weight 1.84
+e5_small - bm25_jieba: plug-in +0.6387 se 0.0183 weight 2.45
+e5_small - rerank_bge_m3: plug-in -0.1544 se 0.0082 weight 42
+bge_m3 - qwen3_emb: plug-in +0.0523 se 0.0083 weight 366
+bge_m3 - bm25_char1: plug-in +0.7599 se 0.0177 weight 1.73
+bge_m3 - bm25_char2: plug-in +0.8574 se 0.0190 weight 1.36
+bge_m3 - bm25_jieba: plug-in +0.7590 se 0.0186 weight 1.74
+bge_m3 - rerank_bge_m3: plug-in -0.0341 se 0.0060 weight 861
+qwen3_emb - bm25_char1: plug-in +0.7076 se 0.0183 weight 2
+qwen3_emb - bm25_char2: plug-in +0.8051 se 0.0197 weight 1.54
+qwen3_emb - bm25_jieba: plug-in +0.7067 se 0.0179 weight 2
+qwen3_emb - rerank_bge_m3: plug-in -0.0864 se 0.0077 weight 134
+bm25_char1 - bm25_char2: plug-in +0.0974 se 0.0158 weight 105
+bm25_char1 - bm25_jieba: plug-in -0.0010 se 0.0138 weight 1e+04
+bm25_char1 - rerank_bge_m3: plug-in -0.7940 se 0.0173 weight 1.59
+bm25_char2 - bm25_jieba: plug-in -0.0984 se 0.0129 weight 103
+bm25_char2 - rerank_bge_m3: plug-in -0.8914 se 0.0190 weight 1.26
+bm25_jieba - rerank_bge_m3: plug-in -0.7930 se 0.0176 weight 1.59
+sampled U=396 L=74; pi range U [8.11e-05, 0.081]
+sheet rows=494 unique=470 repeats=24
+DONE
+EXIT:0

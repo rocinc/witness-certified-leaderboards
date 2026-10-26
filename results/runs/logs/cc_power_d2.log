@@ -1,0 +1,21 @@
+config: {'out_dir': '/root/autodl-tmp/work/witness/d2', 'id_prefix': 'dl19', 'k': 10, 'pool_systems': ['bm25_ws', 'bm25_ws_stem'], 'pool_k': 10, 'judges': ['flash', 'pro'], 'reranker': 'rerank_qwen3', 'mnar': {'a': -2.5, 'b': 4.0, 'a_fp': -6.5, 'c': 0.0, 'shift': None}, 'h_bins': [0.01, 0.51, 0.99], 'budgets': [60, 200, 600], 'fracs': [0.25, 0.75], 'alpha': 0.05, 'z_plan': 2.5, 'ridge': 20.0, 'pi_min_frac': 0.2, 'v_floor': 0.03, 'cell_prior': 10, 'plan_iters': 2, 'xfit_folds': 5, 'reps': 40, 'seed': 0, 'tag': 'xm', 'methods': ['classical', 'ppi_tuned_xfit', 'active_xfit', 'witness_xfit', 'witness_fam_xfit', 'abl_f_judge_xfit', 'abl_no_extras_xfit', 'abl_no_strata_xfit', 'abl_alloc_single_xfit', 'abl_alloc_uniform_xfit']}
+md5 witness_eval.py 4de0bc97289b5e7d2bbb2bee2ee2f425
+md5 witness.py 79cb9f50b23af68fee05f0fd3be8d60d
+md5 rivals.py 25c44c90e831e82fd02d0f29e5e4691a
+md5 witness_mech.py 8174f435196e6e3180cf21b8aff455c5
+systems=7 pairs=21 items=9260 queries=43 frame=1175
+true DCG@k at rho=1/2: {'e5_small': np.float64(2.2062), 'e5_base': np.float64(2.2897), 'bge_m3': np.float64(2.2372), 'qwen3_emb': np.float64(2.1774), 'bm25_ws': np.float64(1.1538), 'bm25_ws_stem': np.float64(1.2337), 'rerank_qwen3': np.float64(2.2522)}
+judges: ['flash', 'pro'] exact agreement: [0.695, 0.735] refused: [0, 0]
+qrels mechanism: logistic; expected qrels recall among relevant in frame 0.262, expected qrels per query 7.51
+md5 witness_complexity_check.py 4c94b7acaf5b9bd82b4e3b9871a35820
+n=60 z_beta=0.00: 9.3b feasible m_max=8  E[K] at that design (scaled to n)=1.86  | E[K] at the WITNESS design=1.14
+n=60 z_beta=0.84: 9.3b feasible m_max=0  E[K] at that design (scaled to n)=nan  | E[K] at the WITNESS design=1.14
+n=60 z_beta=1.28: 9.3b feasible m_max=0  E[K] at that design (scaled to n)=nan  | E[K] at the WITNESS design=1.14
+n=200 z_beta=0.00: 9.3b feasible m_max=10  E[K] at that design (scaled to n)=9.99  | E[K] at the WITNESS design=9.40
+n=200 z_beta=0.84: 9.3b feasible m_max=10  E[K] at that design (scaled to n)=9.99  | E[K] at the WITNESS design=9.40
+n=200 z_beta=1.28: 9.3b feasible m_max=10  E[K] at that design (scaled to n)=9.99  | E[K] at the WITNESS design=9.40
+n=600 z_beta=0.00: 9.3b feasible m_max=13  E[K] at that design (scaled to n)=3.69  | E[K] at the WITNESS design=10.24
+n=600 z_beta=0.84: 9.3b feasible m_max=12  E[K] at that design (scaled to n)=11.50  | E[K] at the WITNESS design=10.24
+n=600 z_beta=1.28: 9.3b feasible m_max=12  E[K] at that design (scaled to n)=11.74  | E[K] at the WITNESS design=10.24
+DONE
+EXIT:0

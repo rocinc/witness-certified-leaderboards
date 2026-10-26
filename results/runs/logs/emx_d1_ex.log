@@ -1,0 +1,11 @@
+d1 ex: n 48640, L 6303, U 24518, z 10 cols, x 2 cols, truth P(y>=1 | U) 0.2724
+d1 ex it    30 (48s): loglik(O) -13293.22  mean e(x,1) on L 0.671  P(y>=1) on U 0.2944  max|dP| vs last ckpt nan  truth 0.2724  bias +0.0221  Brier 0.1735  AUC 0.725
+d1 ex it    60 (104s): loglik(O) -13290.55  mean e(x,1) on L 0.647  P(y>=1) on U 0.3161  max|dP| vs last ckpt 0.0612  truth 0.2724  bias +0.0437  Brier 0.1749  AUC 0.726
+d1 ex it   100 (178s): loglik(O) -13289.64  mean e(x,1) on L 0.631  P(y>=1) on U 0.3320  max|dP| vs last ckpt 0.0427  truth 0.2724  bias +0.0596  Brier 0.1766  AUC 0.726
+d1 ex it   200 (352s): loglik(O) -13289.28  mean e(x,1) on L 0.620  P(y>=1) on U 0.3478  max|dP| vs last ckpt 0.0417  truth 0.2724  bias +0.0755  Brier 0.1790  AUC 0.725
+d1 ex it   300 (536s): loglik(O) -13288.22  mean e(x,1) on L 0.618  P(y>=1) on U 0.3518  max|dP| vs last ckpt 0.0205  truth 0.2724  bias +0.0795  Brier 0.1797  AUC 0.725
+d1 ex it   500 (912s): loglik(O) -13280.32  mean e(x,1) on L 0.648  P(y>=1) on U 0.3544  max|dP| vs last ckpt 0.1592  truth 0.2724  bias +0.0820  Brier 0.1801  AUC 0.725
+d1 ex it   700 (1303s): loglik(O) -13277.89  mean e(x,1) on L 0.652  P(y>=1) on U 0.3651  max|dP| vs last ckpt 0.0801  truth 0.2724  bias +0.0927  Brier 0.1820  AUC 0.724
+d1 ex it  1000 (1888s): loglik(O) -13277.51  mean e(x,1) on L 0.649  P(y>=1) on U 0.3723  max|dP| vs last ckpt 0.0297  truth 0.2724  bias +0.0999  Brier 0.1834  AUC 0.724
+DONE
+EXIT:0

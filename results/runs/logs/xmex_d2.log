@@ -1,0 +1,184 @@
+config: {'out_dir': '/root/autodl-tmp/work/witness/d2', 'id_prefix': 'dl19', 'k': 10, 'pool_systems': ['bm25_ws', 'bm25_ws_stem'], 'pool_k': 10, 'judges': ['flash', 'pro'], 'reranker': 'rerank_qwen3', 'mnar': {'a': -2.5, 'b': 4.0, 'a_fp': -6.5, 'c': 0.0, 'shift': None}, 'h_bins': [0.01, 0.51, 0.99], 'budgets': [60, 200, 600], 'fracs': [0.25, 0.75], 'alpha': 0.05, 'z_plan': 2.5, 'ridge': 20.0, 'pi_min_frac': 0.2, 'v_floor': 0.03, 'cell_prior': 10, 'plan_iters': 2, 'xfit_folds': 5, 'reps': 40, 'seed': 0, 'tag': 'xmex', 'methods': ['abl_f_judge_xfit', 'witness_xfit', 'witness_xfit_ex'], 'pu_ex_iter': 200}
+md5 witness_eval.py f12d195b268df8fc0e99ce680d2b998e
+md5 witness.py 79cb9f50b23af68fee05f0fd3be8d60d
+md5 rivals.py 25c44c90e831e82fd02d0f29e5e4691a
+md5 witness_mech.py 8174f435196e6e3180cf21b8aff455c5
+systems=7 pairs=21 items=9260 queries=43 frame=1175
+true DCG@k at rho=1/2: {'e5_small': np.float64(2.2062), 'e5_base': np.float64(2.2897), 'bge_m3': np.float64(2.2372), 'qwen3_emb': np.float64(2.1774), 'bm25_ws': np.float64(1.1538), 'bm25_ws_stem': np.float64(1.2337), 'rerank_qwen3': np.float64(2.2522)}
+judges: ['flash', 'pro'] exact agreement: [0.695, 0.735] refused: [0, 0]
+qrels mechanism: logistic; expected qrels recall among relevant in frame 0.262, expected qrels per query 7.51
+rep 0: pu_ex (200 it) mean P(y>=1) on U frame 0.4155 vs truth 0.4150
+rep 0: pu (30 it) mean P(y>=1) on U frame 0.3412
+rep 0: qrels recall=0.118 qrels error share=0.081 pu: max|e_hat-e| on relevant=0.100 corr(P(y>=1), u1) on U=0.571
+rep 0 done 50s
+rep 1: pu_ex (200 it) mean P(y>=1) on U frame 0.3852 vs truth 0.4185
+rep 1: pu (30 it) mean P(y>=1) on U frame 0.3165
+rep 1: qrels recall=0.114 qrels error share=0.092 pu: max|e_hat-e| on relevant=0.087 corr(P(y>=1), u1) on U=0.575
+rep 1 done 102s
+rep 2: pu_ex (200 it) mean P(y>=1) on U frame 0.3918 vs truth 0.4076
+rep 2: pu (30 it) mean P(y>=1) on U frame 0.3422
+rep 2: qrels recall=0.119 qrels error share=0.069 pu: max|e_hat-e| on relevant=0.093 corr(P(y>=1), u1) on U=0.570
+rep 2 done 80s
+rep 3: pu_ex (200 it) mean P(y>=1) on U frame 0.3808 vs truth 0.4161
+rep 3: pu (30 it) mean P(y>=1) on U frame 0.3211
+rep 3: qrels recall=0.126 qrels error share=0.065 pu: max|e_hat-e| on relevant=0.123 corr(P(y>=1), u1) on U=0.581
+rep 3 done 61s
+rep 4: pu_ex (200 it) mean P(y>=1) on U frame 0.3991 vs truth 0.4241
+rep 4: pu (30 it) mean P(y>=1) on U frame 0.3158
+rep 4: qrels recall=0.113 qrels error share=0.075 pu: max|e_hat-e| on relevant=0.159 corr(P(y>=1), u1) on U=0.574
+rep 4 done 54s
+rep 5: pu_ex (200 it) mean P(y>=1) on U frame 0.3855 vs truth 0.4231
+rep 5: pu (30 it) mean P(y>=1) on U frame 0.3126
+rep 5: qrels recall=0.121 qrels error share=0.068 pu: max|e_hat-e| on relevant=0.086 corr(P(y>=1), u1) on U=0.579
+rep 5 done 56s
+rep 6: pu_ex (200 it) mean P(y>=1) on U frame 0.4608 vs truth 0.4244
+rep 6: pu (30 it) mean P(y>=1) on U frame 0.3684
+rep 6: qrels recall=0.119 qrels error share=0.110 pu: max|e_hat-e| on relevant=0.089 corr(P(y>=1), u1) on U=0.560
+rep 6 done 59s
+rep 7: pu_ex (200 it) mean P(y>=1) on U frame 0.4084 vs truth 0.4227
+rep 7: pu (30 it) mean P(y>=1) on U frame 0.3618
+rep 7: qrels recall=0.118 qrels error share=0.060 pu: max|e_hat-e| on relevant=0.077 corr(P(y>=1), u1) on U=0.576
+rep 7 done 89s
+rep 8: pu_ex (200 it) mean P(y>=1) on U frame 0.3516 vs truth 0.4152
+rep 8: pu (30 it) mean P(y>=1) on U frame 0.3090
+rep 8: qrels recall=0.114 qrels error share=0.068 pu: max|e_hat-e| on relevant=0.081 corr(P(y>=1), u1) on U=0.584
+rep 8 done 58s
+rep 9: pu_ex (200 it) mean P(y>=1) on U frame 0.4104 vs truth 0.4293
+rep 9: pu (30 it) mean P(y>=1) on U frame 0.3144
+rep 9: qrels recall=0.115 qrels error share=0.097 pu: max|e_hat-e| on relevant=0.116 corr(P(y>=1), u1) on U=0.568
+rep 9 done 58s
+rep 10: pu_ex (200 it) mean P(y>=1) on U frame 0.3903 vs truth 0.4177
+rep 10: pu (30 it) mean P(y>=1) on U frame 0.3174
+rep 10: qrels recall=0.120 qrels error share=0.091 pu: max|e_hat-e| on relevant=0.132 corr(P(y>=1), u1) on U=0.578
+rep 10 done 58s
+rep 11: pu_ex (200 it) mean P(y>=1) on U frame 0.3963 vs truth 0.4137
+rep 11: pu (30 it) mean P(y>=1) on U frame 0.3243
+rep 11: qrels recall=0.116 qrels error share=0.076 pu: max|e_hat-e| on relevant=0.150 corr(P(y>=1), u1) on U=0.578
+rep 11 done 55s
+rep 12: pu_ex (200 it) mean P(y>=1) on U frame 0.3725 vs truth 0.4181
+rep 12: pu (30 it) mean P(y>=1) on U frame 0.3108
+rep 12: qrels recall=0.121 qrels error share=0.079 pu: max|e_hat-e| on relevant=0.144 corr(P(y>=1), u1) on U=0.569
+rep 12 done 59s
+rep 13: pu_ex (200 it) mean P(y>=1) on U frame 0.4122 vs truth 0.4196
+rep 13: pu (30 it) mean P(y>=1) on U frame 0.3267
+rep 13: qrels recall=0.114 qrels error share=0.093 pu: max|e_hat-e| on relevant=0.139 corr(P(y>=1), u1) on U=0.559
+rep 13 done 63s
+rep 14: pu_ex (200 it) mean P(y>=1) on U frame 0.4238 vs truth 0.4266
+rep 14: pu (30 it) mean P(y>=1) on U frame 0.3166
+rep 14: qrels recall=0.109 qrels error share=0.096 pu: max|e_hat-e| on relevant=0.130 corr(P(y>=1), u1) on U=0.580
+rep 14 done 58s
+rep 15: pu_ex (200 it) mean P(y>=1) on U frame 0.4111 vs truth 0.4125
+rep 15: pu (30 it) mean P(y>=1) on U frame 0.3534
+rep 15: qrels recall=0.116 qrels error share=0.094 pu: max|e_hat-e| on relevant=0.073 corr(P(y>=1), u1) on U=0.576
+rep 15 done 68s
+rep 16: pu_ex (200 it) mean P(y>=1) on U frame 0.3980 vs truth 0.4149
+rep 16: pu (30 it) mean P(y>=1) on U frame 0.3251
+rep 16: qrels recall=0.127 qrels error share=0.067 pu: max|e_hat-e| on relevant=0.084 corr(P(y>=1), u1) on U=0.576
+rep 16 done 64s
+rep 17: pu_ex (200 it) mean P(y>=1) on U frame 0.4041 vs truth 0.4167
+rep 17: pu (30 it) mean P(y>=1) on U frame 0.3301
+rep 17: qrels recall=0.123 qrels error share=0.081 pu: max|e_hat-e| on relevant=0.147 corr(P(y>=1), u1) on U=0.574
+rep 17 done 61s
+rep 18: pu_ex (200 it) mean P(y>=1) on U frame 0.4137 vs truth 0.4163
+rep 18: pu (30 it) mean P(y>=1) on U frame 0.3489
+rep 18: qrels recall=0.116 qrels error share=0.082 pu: max|e_hat-e| on relevant=0.116 corr(P(y>=1), u1) on U=0.570
+rep 18 done 42s
+rep 19: pu_ex (200 it) mean P(y>=1) on U frame 0.4040 vs truth 0.4200
+rep 19: pu (30 it) mean P(y>=1) on U frame 0.3286
+rep 19: qrels recall=0.122 qrels error share=0.090 pu: max|e_hat-e| on relevant=0.128 corr(P(y>=1), u1) on U=0.579
+rep 19 done 64s
+rep 20: pu_ex (200 it) mean P(y>=1) on U frame 0.4179 vs truth 0.4165
+rep 20: pu (30 it) mean P(y>=1) on U frame 0.3540
+rep 20: qrels recall=0.124 qrels error share=0.046 pu: max|e_hat-e| on relevant=0.080 corr(P(y>=1), u1) on U=0.574
+rep 20 done 57s
+rep 21: pu_ex (200 it) mean P(y>=1) on U frame 0.3915 vs truth 0.4272
+rep 21: pu (30 it) mean P(y>=1) on U frame 0.3372
+rep 21: qrels recall=0.118 qrels error share=0.098 pu: max|e_hat-e| on relevant=0.100 corr(P(y>=1), u1) on U=0.574
+rep 21 done 74s
+rep 22: pu_ex (200 it) mean P(y>=1) on U frame 0.4172 vs truth 0.4115
+rep 22: pu (30 it) mean P(y>=1) on U frame 0.3592
+rep 22: qrels recall=0.116 qrels error share=0.061 pu: max|e_hat-e| on relevant=0.146 corr(P(y>=1), u1) on U=0.572
+rep 22 done 58s
+rep 23: pu_ex (200 it) mean P(y>=1) on U frame 0.3519 vs truth 0.4193
+rep 23: pu (30 it) mean P(y>=1) on U frame 0.3220
+rep 23: qrels recall=0.120 qrels error share=0.102 pu: max|e_hat-e| on relevant=0.102 corr(P(y>=1), u1) on U=0.570
+rep 23 done 59s
+rep 24: pu_ex (200 it) mean P(y>=1) on U frame 0.3894 vs truth 0.4291
+rep 24: pu (30 it) mean P(y>=1) on U frame 0.3124
+rep 24: qrels recall=0.105 qrels error share=0.099 pu: max|e_hat-e| on relevant=0.086 corr(P(y>=1), u1) on U=0.583
+rep 24 done 57s
+rep 25: pu_ex (200 it) mean P(y>=1) on U frame 0.3485 vs truth 0.4262
+rep 25: pu (30 it) mean P(y>=1) on U frame 0.3270
+rep 25: qrels recall=0.112 qrels error share=0.063 pu: max|e_hat-e| on relevant=0.098 corr(P(y>=1), u1) on U=0.577
+rep 25 done 47s
+rep 26: pu_ex (200 it) mean P(y>=1) on U frame 0.4049 vs truth 0.4222
+rep 26: pu (30 it) mean P(y>=1) on U frame 0.3350
+rep 26: qrels recall=0.113 qrels error share=0.090 pu: max|e_hat-e| on relevant=0.109 corr(P(y>=1), u1) on U=0.560
+rep 26 done 56s
+rep 27: pu_ex (200 it) mean P(y>=1) on U frame 0.3816 vs truth 0.4083
+rep 27: pu (30 it) mean P(y>=1) on U frame 0.3515
+rep 27: qrels recall=0.119 qrels error share=0.083 pu: max|e_hat-e| on relevant=0.101 corr(P(y>=1), u1) on U=0.575
+rep 27 done 48s
+rep 28: pu_ex (200 it) mean P(y>=1) on U frame 0.4080 vs truth 0.4231
+rep 28: pu (30 it) mean P(y>=1) on U frame 0.3460
+rep 28: qrels recall=0.116 qrels error share=0.079 pu: max|e_hat-e| on relevant=0.117 corr(P(y>=1), u1) on U=0.573
+rep 28 done 87s
+rep 29: pu_ex (200 it) mean P(y>=1) on U frame 0.3881 vs truth 0.4189
+rep 29: pu (30 it) mean P(y>=1) on U frame 0.3183
+rep 29: qrels recall=0.116 qrels error share=0.085 pu: max|e_hat-e| on relevant=0.164 corr(P(y>=1), u1) on U=0.575
+rep 29 done 51s
+rep 30: pu_ex (200 it) mean P(y>=1) on U frame 0.3635 vs truth 0.4204
+rep 30: pu (30 it) mean P(y>=1) on U frame 0.3113
+rep 30: qrels recall=0.122 qrels error share=0.076 pu: max|e_hat-e| on relevant=0.129 corr(P(y>=1), u1) on U=0.572
+rep 30 done 60s
+rep 31: pu_ex (200 it) mean P(y>=1) on U frame 0.4153 vs truth 0.4167
+rep 31: pu (30 it) mean P(y>=1) on U frame 0.3480
+rep 31: qrels recall=0.117 qrels error share=0.096 pu: max|e_hat-e| on relevant=0.046 corr(P(y>=1), u1) on U=0.567
+rep 31 done 45s
+rep 32: pu_ex (200 it) mean P(y>=1) on U frame 0.3461 vs truth 0.4212
+rep 32: pu (30 it) mean P(y>=1) on U frame 0.3270
+rep 32: qrels recall=0.114 qrels error share=0.056 pu: max|e_hat-e| on relevant=0.162 corr(P(y>=1), u1) on U=0.569
+rep 32 done 56s
+rep 33: pu_ex (200 it) mean P(y>=1) on U frame 0.4218 vs truth 0.4220
+rep 33: pu (30 it) mean P(y>=1) on U frame 0.3376
+rep 33: qrels recall=0.116 qrels error share=0.094 pu: max|e_hat-e| on relevant=0.080 corr(P(y>=1), u1) on U=0.568
+rep 33 done 58s
+rep 34: pu_ex (200 it) mean P(y>=1) on U frame 0.3558 vs truth 0.4153
+rep 34: pu (30 it) mean P(y>=1) on U frame 0.2853
+rep 34: qrels recall=0.120 qrels error share=0.080 pu: max|e_hat-e| on relevant=0.115 corr(P(y>=1), u1) on U=0.577
+rep 34 done 63s
+rep 35: pu_ex (200 it) mean P(y>=1) on U frame 0.4075 vs truth 0.4157
+rep 35: pu (30 it) mean P(y>=1) on U frame 0.3372
+rep 35: qrels recall=0.120 qrels error share=0.059 pu: max|e_hat-e| on relevant=0.112 corr(P(y>=1), u1) on U=0.565
+rep 35 done 90s
+rep 36: pu_ex (200 it) mean P(y>=1) on U frame 0.3900 vs truth 0.4148
+rep 36: pu (30 it) mean P(y>=1) on U frame 0.3569
+rep 36: qrels recall=0.118 qrels error share=0.072 pu: max|e_hat-e| on relevant=0.063 corr(P(y>=1), u1) on U=0.572
+rep 36 done 67s
+rep 37: pu_ex (200 it) mean P(y>=1) on U frame 0.3911 vs truth 0.4209
+rep 37: pu (30 it) mean P(y>=1) on U frame 0.3403
+rep 37: qrels recall=0.122 qrels error share=0.084 pu: max|e_hat-e| on relevant=0.069 corr(P(y>=1), u1) on U=0.577
+rep 37 done 62s
+rep 38: pu_ex (200 it) mean P(y>=1) on U frame 0.3817 vs truth 0.4161
+rep 38: pu (30 it) mean P(y>=1) on U frame 0.3140
+rep 38: qrels recall=0.119 qrels error share=0.080 pu: max|e_hat-e| on relevant=0.104 corr(P(y>=1), u1) on U=0.565
+rep 38 done 90s
+rep 39: pu_ex (200 it) mean P(y>=1) on U frame 0.3636 vs truth 0.4217
+rep 39: pu (30 it) mean P(y>=1) on U frame 0.3351
+rep 39: qrels recall=0.113 qrels error share=0.078 pu: max|e_hat-e| on relevant=0.085 corr(P(y>=1), u1) on U=0.571
+rep 39 done 56s
+                         n_labels  cert_bh  cert_dec_bh  fdp_bh  nwrong_bh  cert_by  cert_dec_by  fdp_by  nwrong_by  cover_pairs  cover_sys  z_mean    z_sd    rmse     tau  n_decidable
+method           budget                                                                                                                                                                 
+abl_f_judge_xfit 60        61.425   0.0381       0.0421  0.0000      0.000   0.0131       0.0145  0.0000      0.000       0.9583     0.8786  0.0252  0.8650  0.3549  0.5286         19.0
+                 200      200.225   0.2607       0.2882  0.0000      0.000   0.1452       0.1605  0.0000      0.000       0.9417     0.9357 -0.0350  0.8898  0.1740  0.6333         19.0
+                 600      599.400   0.4940       0.5461  0.0000      0.000   0.4619       0.5105  0.0000      0.000       0.9679     0.9571 -0.1702  0.8151  0.0790  0.8262         19.0
+judge_plugin     0          0.000   0.4940       0.5461  0.0000      0.000   0.4774       0.5276  0.0000      0.000       1.0000     0.0000  0.1148  0.5692  0.0585  0.9167         19.0
+official         0          0.000   0.4667       0.0118  0.9811      9.575   0.3310       0.0013  0.8719      6.925       0.4881     0.2679 -3.0226  7.1347  1.0333 -0.2976         19.0
+witness_xfit     60        60.375   0.0917       0.1013  0.0000      0.000   0.0524       0.0579  0.0000      0.000       0.9536     0.9286  0.0516  0.8575  0.2793  0.5595         19.0
+                 200      199.500   0.4476       0.4947  0.0000      0.000   0.3952       0.4368  0.0000      0.000       0.9298     0.8964 -0.0512  0.9415  0.1454  0.6524         19.0
+                 600      600.325   0.4845       0.5355  0.0000      0.000   0.4798       0.5303  0.0000      0.000       0.9607     0.9286  0.0424  0.8192  0.0481  0.8476         19.0
+witness_xfit_ex  60        59.200   0.1060       0.1171  0.0000      0.000   0.0548       0.0605  0.0000      0.000       0.9595     0.9000  0.0299  0.8635  0.2599  0.5929         19.0
+                 200      197.250   0.4679       0.5145  0.0045      0.050   0.4024       0.4447  0.0000      0.000       0.9571     0.9393 -0.0462  0.8769  0.1370  0.6667         19.0
+                 600      599.350   0.4940       0.5461  0.0000      0.000   0.4821       0.5329  0.0000      0.000       0.9738     0.9214  0.1198  0.7614  0.0439  0.8738         19.0
+DONE
+EXIT:0

@@ -1,0 +1,46 @@
+config: {'out_dir': '/root/autodl-tmp/work/witness_root/outputs/d1', 'id_prefix': 't2r', 'k': 5, 'pool_systems': ['bm25_char1', 'bm25_char2', 'bm25_jieba'], 'pool_k': 5, 'judges': ['flash', 'pro'], 'reranker': 'rerank_qwen3', 'mnar': {'a': -2.5, 'b': 4.0, 'a_fp': -6.5, 'c': 1.0, 'shift': None}, 'h_bins': [0.01, 0.34, 0.67, 0.99], 'budgets': [3200], 'fracs': [0.25, 0.75], 'alpha': 0.05, 'z_plan': 2.5, 'ridge': 20.0, 'pi_min_frac': 0.2, 'v_floor': 0.03, 'cell_prior': 10, 'plan_iters': 2, 'xfit_folds': 5, 'reps': 20, 'seed': 0, 'tag': 'xf_grade', 'methods': ['witness_xfit']}
+md5 evaluate.py caa07fc6fbfecdf3d71ad412592f126c
+md5 core.py 5963b08fdcf9a13dea44cb0b4b131ce4
+md5 rivals.py ad1a1ffd1e7d7da39f63ed59a290de62
+md5 mech.py 908ce742d85d3d2f9bcb7fc61c6b8b9b
+systems=13 pairs=78 items=48640 queries=3000 frame=30529
+true DCG@k at rho=1/2: {'bge_small_zh': np.float64(0.8186), 'bge_base_zh': np.float64(0.8292), 'gte_base_zh': np.float64(0.8274), 'm3e_base': np.float64(0.8415), 'text2vec_zh': np.float64(0.7913), 'e5_small': np.float64(0.8218), 'e5_base': np.float64(0.8163), 'bge_m3': np.float64(0.8537), 'qwen3_emb': np.float64(0.8444), 'bm25_char1': np.float64(0.7818), 'bm25_char2': np.float64(0.7677), 'bm25_jieba': np.float64(0.7662), 'rerank_qwen3': np.float64(0.8433)}
+judges: ['flash', 'pro'] exact agreement: [0.504, 0.541] refused: [1, 1]
+qrels mechanism: logistic; expected qrels recall among relevant in frame 0.479, expected qrels per query 2.23
+rep 10: pu (30 it) mean P(y>=1) on U frame 0.2309
+rep 10: qrels recall=0.396 qrels error share=0.080 pu: max|e_hat-e| on relevant=0.290 corr(P(y>=1), u1) on U=0.329
+rep 10 done 58s
+rep 11: pu (30 it) mean P(y>=1) on U frame 0.2286
+rep 11: qrels recall=0.396 qrels error share=0.081 pu: max|e_hat-e| on relevant=0.236 corr(P(y>=1), u1) on U=0.344
+rep 11 done 52s
+rep 12: pu (30 it) mean P(y>=1) on U frame 0.2253
+rep 12: qrels recall=0.393 qrels error share=0.080 pu: max|e_hat-e| on relevant=0.259 corr(P(y>=1), u1) on U=0.336
+rep 12 done 37s
+rep 13: pu (30 it) mean P(y>=1) on U frame 0.2299
+rep 13: qrels recall=0.397 qrels error share=0.076 pu: max|e_hat-e| on relevant=0.312 corr(P(y>=1), u1) on U=0.322
+rep 13 done 56s
+rep 14: pu (30 it) mean P(y>=1) on U frame 0.2272
+rep 14: qrels recall=0.392 qrels error share=0.078 pu: max|e_hat-e| on relevant=0.262 corr(P(y>=1), u1) on U=0.340
+rep 14 done 51s
+rep 15: pu (30 it) mean P(y>=1) on U frame 0.2282
+rep 15: qrels recall=0.392 qrels error share=0.084 pu: max|e_hat-e| on relevant=0.280 corr(P(y>=1), u1) on U=0.335
+rep 15 done 49s
+rep 16: pu (30 it) mean P(y>=1) on U frame 0.2320
+rep 16: qrels recall=0.394 qrels error share=0.083 pu: max|e_hat-e| on relevant=0.292 corr(P(y>=1), u1) on U=0.330
+rep 16 done 54s
+rep 17: pu (30 it) mean P(y>=1) on U frame 0.2272
+rep 17: qrels recall=0.400 qrels error share=0.079 pu: max|e_hat-e| on relevant=0.254 corr(P(y>=1), u1) on U=0.336
+rep 17 done 51s
+rep 18: pu (30 it) mean P(y>=1) on U frame 0.2323
+rep 18: qrels recall=0.392 qrels error share=0.075 pu: max|e_hat-e| on relevant=0.250 corr(P(y>=1), u1) on U=0.339
+rep 18 done 53s
+rep 19: pu (30 it) mean P(y>=1) on U frame 0.2246
+rep 19: qrels recall=0.392 qrels error share=0.082 pu: max|e_hat-e| on relevant=0.274 corr(P(y>=1), u1) on U=0.330
+rep 19 done 50s
+                     n_labels  cert_bh  cert_dec_bh  fdp_bh  nwrong_bh  cert_by  cert_dec_by  fdp_by  nwrong_by  cover_pairs  cover_sys  z_mean     z_sd    rmse     tau  n_decidable
+method       budget                                                                                                                                                                  
+judge_plugin 0            0.0   0.5513       0.3507  0.4205       18.1   0.4846       0.3282  0.3832       14.5       0.1423     0.0000 -6.1053   7.6877  0.0751  0.0538         71.0
+official     0            0.0   0.7641       0.2634  0.6870       40.9   0.7026       0.2211  0.7140       39.1       0.2397     0.4154 -8.4123  14.9923  0.1655 -0.1333         71.0
+witness_xfit 3200      3222.5   0.1256       0.1380  0.0000        0.0   0.0590       0.0648  0.0000        0.0       0.9603     0.9846 -0.1722   0.8693  0.0144  0.7846         71.0
+DONE
+EXIT:0
