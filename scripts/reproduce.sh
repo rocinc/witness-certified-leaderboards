@@ -9,6 +9,8 @@
 #      with --full-d1 the same check also runs on T2Ranking (D1), 6 to 14 minutes per repetition in the original logs
 #   5. figure data recomputed from results/runs and compared with results/figs/fig_data.json, then every figure
 #      redrawn from the recomputed data
+# Verified on Ubuntu 22.04.5 LTS (x86_64) with Python 3.12.3, GNU bash 5.1, GNU coreutils 8.32 (md5sum, tar) and
+# curl 7.81; see README "Environment" for macOS and Windows.
 # usage: bash scripts/reproduce.sh <root> [--full-d1]    (<root> is created if absent)
 set -euo pipefail
 
@@ -22,6 +24,10 @@ export PYTHONPATH=src WITNESS_ROOT="$ROOT"
 LOGS="$ROOT/reproduce_logs"
 FIGS="$ROOT/figs"
 mkdir -p "$LOGS" "$FIGS"
+
+for tool in curl tar md5sum python; do
+  command -v "$tool" >/dev/null || { echo "missing '$tool' (see README, Environment)" >&2; exit 1; }
+done
 
 echo "[1/5] artifacts -> $ROOT"
 if [ ! -f "$ROOT/MANIFEST.md5" ]; then

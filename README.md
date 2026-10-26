@@ -40,7 +40,9 @@ REPRODUCED: D3 results, main-table repetitions and figure data match the release
 
 ## 环境与依赖
 
-Python 3.12，依赖的精确版本见 `requirements.txt`。只有编码与重排步骤需要 CUDA GPU，从缓存的系统得分与判官等级往后的一切计算都在 CPU 上完成。
+全部结果产自 Ubuntu 22.04.5 LTS（x86_64，Linux 5.15）上的 Python 3.12.3，依赖的精确版本见 `requirements.txt`。只有编码与重排步骤需要 CUDA GPU（原始运行用一块 RTX 4080 SUPER，CUDA 13.0），从缓存的系统得分与判官等级往后的一切计算都在 CPU 上完成。
+
+一键复核在同一系统上验证通过，所用工具为 GNU bash 5.1、GNU coreutils 8.32 的 `md5sum` 与 `tar`、curl 7.81。其他 Linux 发行版只要具备这几样工具即可运行；macOS 需先安装 GNU coreutils 以提供 `md5sum`；Windows 请在 WSL2 的 Ubuntu 中运行。`requirements.txt` 包含编码与重排所需的 torch，只做复核时可先装 CPU 版以节省下载：`pip install torch==2.13.0 --index-url https://download.pytorch.org/whl/cpu`，再执行 `pip install -r requirements.txt`。
 
 随机种子全部写在配置文件里。评估器每次重复的随机数生成器由配置中的 `seed` 与重复编号 `rep` 共同初始化，DuRetrieval 第一批抽样的种子是 `configs/d3_duretrieval.yaml` 中的 `20261022`。每次运行会在日志开头打印完整配置和所运行代码的 md5。
 
@@ -112,7 +114,9 @@ With the linear-algebra libraries limited to one thread (`OMP_NUM_THREADS=1`) th
 
 ## Environment
 
-Python 3.12, exact versions in `requirements.txt`. A CUDA GPU is needed only to encode and rerank; everything downstream of the cached system scores and judge grades runs on the CPU.
+Every result was produced with Python 3.12.3 on Ubuntu 22.04.5 LTS (x86_64, Linux 5.15), exact versions in `requirements.txt`. A CUDA GPU is needed only to encode and rerank (the original runs used one RTX 4080 SUPER with CUDA 13.0); everything downstream of the cached system scores and judge grades runs on the CPU.
+
+The one-command check was verified on the same system with GNU bash 5.1, `md5sum` and `tar` from GNU coreutils 8.32, and curl 7.81. Any other Linux distribution with these tools runs it; on macOS install GNU coreutils first for `md5sum`; on Windows run it inside Ubuntu under WSL2. `requirements.txt` includes torch for encoding and reranking; for the check alone, install the CPU build first to save the download, `pip install torch==2.13.0 --index-url https://download.pytorch.org/whl/cpu`, then `pip install -r requirements.txt`.
 
 Every random seed is in a config file: the evaluator seeds each repetition's generator from the config's `seed` and the repetition number `rep`, and the first DuRetrieval batch was drawn with seed `20261022` of `configs/d3_duretrieval.yaml`. Every run prints its full configuration and the md5 of the code it ran at the top of its log.
 
