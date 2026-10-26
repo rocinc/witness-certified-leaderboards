@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # One-command check of the reported results from the released data artifacts (CPU only, no LLM calls, no API keys).
-#   1. fetch the artifact bundle into <root> and verify every file against MANIFEST.md5
+#   1. use the artifact bundle already unpacked in <root> (no network), or else fetch it into <root>, and verify
+#      every file against MANIFEST.md5
 #   2. unit tests of the guarantees
 #   3. D3 (DuRetrieval): the human-certified leaderboard and its anchor-calibrated version, recomputed from the
 #      released human labels and compared value by value with results/figs/d3_results{,_anchor}.json

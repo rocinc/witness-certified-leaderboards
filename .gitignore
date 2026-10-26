@@ -6,6 +6,7 @@ __pycache__/
 
 # Data, weights and release artifacts live outside the repository (see README)
 witness_artifacts_*.tar.gz
+/witness_data/
 *.zip
 *.xlsx
 .env

@@ -20,7 +20,7 @@ bash scripts/reproduce.sh ./witness_data
 
 这条命令不需要 GPU 或调用任何大模型，不需 API 密钥，依次完成五步：
 
-1. 下载数据产物包（约 6 MB）到 `./witness_data`。
+1. 准备数据产物包（约 6 MB）并逐文件核对 md5。`./witness_data` 已存在时（例如随源码一并附带的解压副本）直接使用，不联网；不存在时从 GitHub Release 下载到该目录。
 2. 运行单元测试，覆盖设计无偏性、超鞅性质、BH 程序与标注机制。
 3. 用公开的人工标签重算 DuRetrieval 的可认证排行榜及其锚点校准版本，逐值比对 `results/figs/d3_results{,_anchor}.json`。
 4. 重跑 TREC DL 2019 主表的第 0–1 次重复，逐行比对仓库中 40 次重复的完整结果表。每次重复的随机数由 `(seed, rep)` 唯一确定，所以部分重复与完整表中的对应行必须完全一致。
@@ -94,7 +94,7 @@ bash scripts/reproduce.sh ./witness_data
 
 No GPU, no language-model calls and no API keys are needed. The command
 
-1. downloads the data-artifact bundle (about 6 MB) into `./witness_data` and checks every file against its md5;
+1. prepares the data-artifact bundle (about 6 MB) and checks every file against its md5: an existing `./witness_data` is used as it is, with no network access (for example an unpacked copy shipped with the source), otherwise the bundle is downloaded from the GitHub release into that directory;
 2. runs the unit tests of the guarantees (design unbiasedness, the supermartingale property, BH, the judging mechanisms);
 3. recomputes the certified DuRetrieval leaderboard and its anchor-calibrated version from the released human labels and compares them value by value with `results/figs/d3_results{,_anchor}.json`;
 4. reruns repetitions 0–1 of the main table on TREC DL 2019 and compares them row by row with the released 40-repetition table (every repetition is seeded by `(seed, rep)`, so a subset reproduces its rows of the full run exactly);
